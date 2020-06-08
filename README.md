@@ -7,7 +7,7 @@ This repository contains code listings from the book "Мэтт Зандстра.
 
 ## Running examples
 
-To run examples use command like:
+To run examples use the following command:
 
 ```
 php index.php ch03\\batch01
