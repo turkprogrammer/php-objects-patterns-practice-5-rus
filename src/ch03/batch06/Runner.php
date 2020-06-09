@@ -1,6 +1,6 @@
 <?php
 
-namespace vitaliyviznyuk\popp5rus\ch03\batch05;
+namespace vitaliyviznyuk\popp5rus\ch03\batch06;
 
 class Runner
 {

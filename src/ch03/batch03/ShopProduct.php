@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 
 namespace vitaliyviznyuk\popp5rus\ch03\batch03;
 
@@ -16,8 +16,7 @@ class ShopProduct
      */
     public function getProducer(): string
     {
-        return $this->producerFirstName . ' '
-            . $this->producerMainName;
+        return $this->producerFirstName . ' ' . $this->producerMainName;
     }
 }
 

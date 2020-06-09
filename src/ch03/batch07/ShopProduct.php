@@ -1,6 +1,6 @@
 <?php
 
-namespace vitaliyviznyuk\popp5rus\ch03\batch04;
+namespace vitaliyviznyuk\popp5rus\ch03\batch07;
 
 /* Листинг 03.12 */
 

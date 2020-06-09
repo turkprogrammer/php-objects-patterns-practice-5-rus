@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 
 namespace vitaliyviznyuk\popp5rus\ch03\batch03;
 
@@ -10,6 +10,7 @@ class Runner
     public static function run(): void
     {
         /* Листинг 03.11 */
+
         $product1 = new ShopProduct();
 
         $product1->title = 'Собачье сердце';
@@ -18,6 +19,7 @@ class Runner
         $product1->price = 5.99;
 
         print "Автор: {$product1->getProducer()}\n";
+
         /* /Листинг 03.11 */
     }
 }
