@@ -6,15 +6,12 @@ namespace vitaliyviznyuk\popp5rus\ch03\batch03;
 
 class ShopProduct
 {
-    public string $title = 'Стандартный товар';
-    public string $producerMainName = 'Фамилия автора';
-    public string $producerFirstName = 'Имя автора';
-    public float $price = 0;
+    public $title = 'Стандартный товар';
+    public $producerMainName = 'Фамилия автора';
+    public $producerFirstName = 'Имя автора';
+    public $price = 0;
 
-    /**
-     * @return string
-     */
-    public function getProducer(): string
+    public function getProducer()
     {
         return $this->producerFirstName . ' ' . $this->producerMainName;
     }

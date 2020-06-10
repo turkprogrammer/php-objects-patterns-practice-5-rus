@@ -4,12 +4,13 @@ namespace vitaliyviznyuk\popp5rus\ch03\batch09;
 
 class AddressManager
 {
-    private $addresses = ['209.131.36.159', '216.58.213.174'];
+    private $addresses = array('209.131.36.159', '216.58.213.174');
 
     /* Листинг 03.25 */
 
     public function outputAddresses(bool $resolve)
     {
+
         // ...
         /* /Листинг 03.25 */
 
@@ -22,6 +23,8 @@ class AddressManager
         }
 
         /* Листинг 03.25 */
+
     }
+
     /* /Листинг 03.25 */
 }

@@ -4,12 +4,15 @@ namespace vitaliyviznyuk\popp5rus\ch03\batch09;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         /* Листинг 03.23 */
 
         // Не сработает!
-        $product = new ShopProduct('Название', 'Имя', 'Фамилия', []);
+        //$product = new ShopProduct('Название', 'Имя', 'Фамилия', []);
 
         /* /Листинг 03.23 */
 
@@ -20,6 +23,8 @@ class Runner
         /* /Листинг 03.24 */
 
         print $product->getPrice();
+
+        echo PHP_EOL;
 
         $manager = new AddressManager();
 

@@ -6,19 +6,11 @@ namespace vitaliyviznyuk\popp5rus\ch03\batch04;
 
 class ShopProduct
 {
-    public string $title;
-    public string $producerMainName;
-    public string $producerFirstName;
-    public float $price = 0;
+    public $title;
+    public $producerMainName;
+    public $producerFirstName;
+    public $price = 0;
 
-    /**
-     * ShopProduct constructor.
-     *
-     * @param string $title
-     * @param string $firstName
-     * @param string $mainName
-     * @param float $price
-     */
     public function __construct($title, $firstName, $mainName, $price)
     {
         $this->title = $title;
@@ -27,10 +19,7 @@ class ShopProduct
         $this->price = $price;
     }
 
-    /**
-     * @return string
-     */
-    public function getProducer(): string
+    public function getProducer()
     {
         return $this->producerFirstName . ' ' . $this->producerMainName;
     }

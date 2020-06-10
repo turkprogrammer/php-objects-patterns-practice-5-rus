@@ -2,6 +2,8 @@
 
 namespace vitaliyviznyuk\popp5rus\ch03\batch07;
 
+use vitaliyviznyuk\popp5rus\ch03\batch04\ShopProduct;
+
 class Runner
 {
     /**

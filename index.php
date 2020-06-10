@@ -3,10 +3,8 @@
 require __DIR__ . '/vendor/autoload.php';
 
 if (!empty($argv[1])) {
-    $path = $argv[1];
-
     try {
-        $runnerClassName = 'vitaliyviznyuk\popp5rus\\' . $path . '\Runner';
+        $runnerClassName = 'vitaliyviznyuk\popp5rus\\' . $argv[1] . '\Runner';
         $runner = new $runnerClassName();
         $runner->run();
     } catch (Throwable $exception) {

@@ -6,21 +6,17 @@ namespace vitaliyviznyuk\popp5rus\ch03\batch05;
 
 class AddressManager
 {
-    /**
-     * @var array
-     */
-    private array $addresses = ['209.131.36.159', '216.58.213.174'];
+    private $addresses = ['209.131.36.159', '216.58.213.174'];
 
-    /**
-     * @param bool $resolve
-     */
-    public function outputAddresses($resolve): void
+    public function outputAddresses($resolve)
     {
         foreach ($this->addresses as $address) {
             print $address;
+
             if ($resolve) {
                 print ' (' . gethostbyaddr($address) . ')';
             }
+
             print "\n";
         }
     }

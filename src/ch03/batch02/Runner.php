@@ -28,6 +28,8 @@ class Runner
 
         /* /Листинг 03.06 */
 
+        $product1 = new ShopProduct();
+
         /* Листинг 03.07 */
 
         $product1->arbitraryAddition = 'Дополнительный параметр';
@@ -46,8 +48,7 @@ class Runner
 
         /* Листинг 03.09 */
 
-        print "Автор: {$product1->producerFirstName} "
-            . "{$product1->producerMainName}\n";
+        print "Автор: {$product1->producerFirstName} " . "{$product1->producerMainName}\n";
 
         /* /Листинг 03.09 */
     }

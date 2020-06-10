@@ -26,6 +26,14 @@ class ShopProduct
     {
         return "{$this->producerFirstName}" . " {$this->producerMainName}";
     }
+
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
     /* Листинг 03.22 */
+
 }
+
 /* /Листинг 03.22 */

@@ -2,25 +2,18 @@
 
 namespace vitaliyviznyuk\popp5rus\ch03\batch06;
 
-/* Листинг 03.15 */
-
 class AddressManager
 {
-    /**
-     * @var array
-     */
-    private array $addresses = ['209.131.36.159', '216.58.213.174'];
+    private $addresses = ['209.131.36.159', '216.58.213.174'];
 
     /* Листинг 03.17 */
 
-    /**
-     * @param mixed $resolve
-     */
-    public function outputAddresses($resolve): void
+    public function outputAddresses($resolve)
     {
         if (is_string($resolve)) {
             $resolve = (preg_match('/^(false|no|off)$/i', $resolve)) ? false : true;
         }
+
         // ...
         /* /Листинг 03.17 */
 
@@ -33,9 +26,8 @@ class AddressManager
         }
 
         /* Листинг 03.17 */
+
     }
 
     /* /Листинг 03.17 */
 }
-
-/* /Листинг 03.15 */
