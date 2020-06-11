@@ -11,7 +11,9 @@
     }
   ],
   "require": {
-    "php": "^7.4"
+    "php": "^7.4",
+    "ext-pdo": "*",
+    "ext-xmlwriter": "*"
   },
   "autoload": {
     "psr-4": { "vitaliyviznyuk\\popp5rus\\": "src/" }
