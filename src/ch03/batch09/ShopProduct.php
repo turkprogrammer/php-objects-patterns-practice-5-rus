@@ -25,7 +25,9 @@ class ShopProduct
     }
 
     // ...
+
     /* /Листинг 03.22 */
+
     public function getProducer()
     {
         return "{$this->producerFirstName}" .
@@ -36,6 +38,9 @@ class ShopProduct
     {
         return $this->price;
     }
+
     /* Листинг 03.22 */
+
 }
+
 /* /Листинг 03.22 */

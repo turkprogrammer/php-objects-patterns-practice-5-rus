@@ -2,8 +2,6 @@
 
 namespace vitaliyviznyuk\popp5rus\ch03\batch09;
 
-use popp\ch03\batch09\ShopProduct;
-use popp\ch03\batch09\AddressManager;
 
 class Runner
 {
@@ -14,25 +12,30 @@ class Runner
     public static function run(): void
     {
         /* Листинг 03.23 */
-// will fail
-        $product = new ShopProduct("title", "first", "main", []);
+
+        // Не сработает!
+        //$product = new ShopProduct("Названи", "Имя", "Фамилия", []);
+
         /* /Листинг 03.23 */
-    }
 
-    public static function run2()
-    {
+        echo PHP_EOL;
+
         /* Листинг 03.24 */
-        $product = new ShopProduct("title", "first", "main", "4.22");
+
+        $product = new ShopProduct("Названи", "Имя", "Фамилия", "4.22");
+
         /* /Листинг 03.24 */
+
         print $product->getPrice();
-    }
 
+        echo PHP_EOL;
 
-    public static function run3()
-    {
         $manager = new AddressManager();
+
         /* Листинг 03.26 */
+
         $manager->outputAddresses("false");
+
         /* /Листинг 03.26 */
     }
 }

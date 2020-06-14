@@ -17,14 +17,14 @@ class Runner
     {
         /* Листинг 03.42 */
         $product2 = new CdProduct(
-            "Exile on Coldharbour Lane",
-            "The",
-            "Alabama 3",
+            "Классическая музыка. Лучше",
+            "Антонио",
+            "Вивальди",
             10.99,
             0,
             60.33
         );
-        print "artist: {$product2->getProducer()}\n";
+        print "Исполнитель: {$product2->getProducer()}\n";
         /* /Листинг 03.42 */
     }
 }

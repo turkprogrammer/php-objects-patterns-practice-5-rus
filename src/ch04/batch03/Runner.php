@@ -27,9 +27,9 @@ class Runner
 
         $product1 = new BookProduct("Собачье сердце", "Михаил", "Булгаков", 5.99, 300);
         $product2 = new CdProduct(
-            "Exile on Coldharbour Lane",
-            "The",
-            "Alabama 3",
+            "Классическая музыка. Лучше",
+            "Антонио",
+            "Вивальди",
             10.99,
             60
         );

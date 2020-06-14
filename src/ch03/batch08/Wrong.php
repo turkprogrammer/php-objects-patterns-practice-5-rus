@@ -7,4 +7,5 @@ namespace vitaliyviznyuk\popp5rus\ch03\batch08;
 class Wrong
 {
 }
+
 /* /Листинг 03.21 */

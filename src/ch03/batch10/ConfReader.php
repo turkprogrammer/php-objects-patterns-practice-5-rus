@@ -11,14 +11,19 @@ class ConfReader
     {
         $values = [];
 
-        // do something to get values
+        // Выполнить действия для получения новых значений
 
         /* /Листинг 03.28 */
+
         $values = ["name" => "mary"];
+
         /* Листинг 03.28 */
-        // merge the provided defaults (it will always be an array)
+
+        // Объединить полученные значения со стандартными
+        // (результат всегда будет находиться в массиве)
         $values = array_merge($default, $values);
         return $values;
     }
 }
+
 /* /Листинг 03.28 */

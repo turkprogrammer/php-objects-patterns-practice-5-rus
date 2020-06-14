@@ -46,9 +46,9 @@ class Runner
     public static function getProduct()
     {
         return new CdProduct(
-            "Exile on Coldharbour Lane",
-            "The",
-            "Alabama 3",
+            "Классическая музыка. Лучше",
+            "Антонио",
+            "Вивальди",
             10.99,
             60.33
         );
