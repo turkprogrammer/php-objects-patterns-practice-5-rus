@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch04\batch22;
 
 /* Листинг 04.86 */
+
 class StringThing
 {
 }

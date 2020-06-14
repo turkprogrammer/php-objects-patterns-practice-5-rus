@@ -16,51 +16,57 @@
 /**
  * An abstraction allowing the driver to manipulate the javascript alerts
  */
-class WebDriverAlert {
+class WebDriverAlert
+{
 
-  protected $executor;
+    protected $executor;
 
-  public function __construct($executor) {
-    $this->executor = $executor;
-  }
+    public function __construct($executor)
+    {
+        $this->executor = $executor;
+    }
 
-  /**
-   * Accept alert
-   *
-   * @return WebDriverAlert The instance.
-   */
-  public function accept() {
-    $this->executor->execute('acceptAlert');
-    return $this;
-  }
+    /**
+     * Accept alert
+     *
+     * @return WebDriverAlert The instance.
+     */
+    public function accept()
+    {
+        $this->executor->execute('acceptAlert');
+        return $this;
+    }
 
-  /**
-   * Dismiss alert
-   *
-   * @return WebDriverAlert The instance.
-   */
-  public function dismiss() {
-    $this->executor->execute('dismissAlert');
-    return $this;
-  }
+    /**
+     * Dismiss alert
+     *
+     * @return WebDriverAlert The instance.
+     */
+    public function dismiss()
+    {
+        $this->executor->execute('dismissAlert');
+        return $this;
+    }
 
-  /**
-   * Get alert text
-   *
-   * @return string
-   */
-  public function getText() {
-    return $this->executor->execute('getAlertText');
-  }
+    /**
+     * Get alert text
+     *
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->executor->execute('getAlertText');
+    }
 
-  /**
-   * Send keystrokes to javascript prompt() dialog
-   *
-   * @return WebDriverAlert
-   */
-  public function sendKeys($value) {
-    $this->executor->execute('sendKeysToAlert', array('text' => $value));
-    return $this;
-  }
+    /**
+     * Send keystrokes to javascript prompt() dialog
+     *
+     * @return WebDriverAlert
+     */
+    public function sendKeys($value)
+    {
+        $this->executor->execute('sendKeysToAlert', array('text' => $value));
+        return $this;
+    }
 
 }

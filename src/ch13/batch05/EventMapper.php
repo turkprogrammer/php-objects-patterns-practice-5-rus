@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch05;
 
@@ -50,7 +50,7 @@ class EventMapper extends Mapper
     {
         $space = $object->getSpace();
 
-        if (! $space) {
+        if (!$space) {
             throw new \AppException("cannot save without Space");
         }
 

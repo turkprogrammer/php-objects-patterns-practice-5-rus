@@ -4,13 +4,13 @@ namespace vitaliyviznyuk\popp5rus\ch11\parse;
 
 class Scanner
 {
-    const WORD         = 1;
-    const QUOTE        = 2;
-    const APOS         = 3;
-    const WHITESPACE   = 6;
-    const EOL          = 8;
-    const CHAR         = 99;
-    const EOF          = 0;
+    const WORD = 1;
+    const QUOTE = 2;
+    const APOS = 3;
+    const WHITESPACE = 6;
+    const EOL = 8;
+    const CHAR = 99;
+    const EOF = 0;
 
     protected $in;
     protected $line_no = 1;
@@ -53,28 +53,28 @@ class Scanner
         if (empty($this->resultstack)) {
             throw new Exception("empty resultstack");
         }
-        return $this->resultstack[count($this->resultstack) -1 ];
+        return $this->resultstack[count($this->resultstack) - 1];
     }
 
     // set up regular expressions for tokens
     private function setRegexps()
     {
         $this->regexps = array(
-                      self::WHITESPACE => '[ \t]',
-                      self::EOL => '\n',
-                      self::WORD => '[a-zA-Z0-9_-]+\b',
-                      self::QUOTE => '"',
-                      self::APOS => "'",
+            self::WHITESPACE => '[ \t]',
+            self::EOL => '\n',
+            self::WORD => '[a-zA-Z0-9_-]+\b',
+            self::QUOTE => '"',
+            self::APOS => "'",
         );
 
         $this->typestrings = array(
-                      self::WHITESPACE => 'WHITESPACE',
-                      self::EOL => 'EOL',
-                      self::WORD => 'WORD',
-                      self::QUOTE => 'QUOTE',
-                      self::APOS => "APOS",
-                      self::CHAR  => 'CHAR',
-                      self::EOF => 'EOF'
+            self::WHITESPACE => 'WHITESPACE',
+            self::EOL => 'EOL',
+            self::WORD => 'WORD',
+            self::QUOTE => 'QUOTE',
+            self::APOS => "APOS",
+            self::CHAR => 'CHAR',
+            self::EOF => 'EOF'
         );
     }
 
@@ -83,11 +83,11 @@ class Scanner
     {
         $ret = 0;
         if ($this->token_type != self::WHITESPACE &&
-             $this->token_type != self::EOL ) {
+            $this->token_type != self::EOL) {
             return $ret;
         }
         while ($this->nextToken() == self::WHITESPACE ||
-                $this->token_type == self::EOL ) {
+            $this->token_type == self::EOL) {
             $ret++;
         }
         return $ret;
@@ -98,8 +98,8 @@ class Scanner
     // eg 1 => 'WORD',
     public function getTypeString(int $int = -1): string
     {
-        if ($int<0) {
-            $int=$this->token_type();
+        if ($int < 0) {
+            $int = $this->token_type();
         }
         return $this->typestrings[$int];
     }
@@ -141,8 +141,8 @@ class Scanner
     // it's a character token
     public function nextToken(): int
     {
-        if (! strlen($this->in)) {
-            return ( $this->token_type = self::EOF );
+        if (!strlen($this->in)) {
+            return ($this->token_type = self::EOF);
         }
 
         $ret = 0;
@@ -158,9 +158,9 @@ class Scanner
             }
         }
         $this->token = substr($this->in, 0, 1);
-        $this->in    = substr($this->in, 1);
+        $this->in = substr($this->in, 1);
         $this->char_no += 1;
-        return ( $this->token_type = self::CHAR );
+        return ($this->token_type = self::CHAR);
     }
 
     // given a regular expression check for a match
@@ -169,8 +169,8 @@ class Scanner
         $matches = array();
         if (preg_match("/^($regex)(.*)/s", $this->in, $matches)) {
             $this->token = $matches[1];
-            $this->in    = $matches[2];
-            return ( $this->token_type  = $type );
+            $this->in = $matches[2];
+            return ($this->token_type = $type);
         }
         return 0;
     }

@@ -1,11 +1,12 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch07;
 
 use popp\ch13\batch04\DomainObject;
 
 /* Листинг 13.41 */
+
 abstract class UpdateFactory
 {
     abstract public function newUpdate(DomainObject $obj): array;
@@ -14,11 +15,11 @@ abstract class UpdateFactory
     {
         $terms = array();
 
-        if (! is_null($conditions)) {
-            $query  = "UPDATE {$table} SET ";
+        if (!is_null($conditions)) {
+            $query = "UPDATE {$table} SET ";
             $query .= implode(" = ?,", array_keys($fields)) . " = ?";
-            $terms  = array_values($fields);
-            $cond   = [];
+            $terms = array_values($fields);
+            $cond = [];
             $query .= " WHERE ";
 
             foreach ($conditions as $key => $val) {
@@ -28,7 +29,7 @@ abstract class UpdateFactory
 
             $query .= implode(" AND ", $cond);
         } else {
-            $query  = "INSERT INTO {$table} (";
+            $query = "INSERT INTO {$table} (";
             $query .= implode(",", array_keys($fields));
             $query .= ") VALUES (";
 

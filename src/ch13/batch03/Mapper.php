@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch03;
 
@@ -17,7 +17,7 @@ abstract class Mapper
         $this->pdo = $reg->getPdo();
     }
 
-/* Листинг 13.20 */
+    /* Листинг 13.20 */
 
     // Mapper
 
@@ -25,27 +25,27 @@ abstract class Mapper
     {
         $old = $this->getFromMap($id);
 
-        if (! is_null($old)) {
+        if (!is_null($old)) {
             return $old;
         }
 
         // work with db
-/* /Листинг 13.20 */
+        /* /Листинг 13.20 */
         $this->selectstmt()->execute([$id]);
         $raw = $this->selectstmt()->fetch();
         $this->selectstmt()->closeCursor();
 
-        if (! is_array($raw)) {
+        if (!is_array($raw)) {
             return null;
         }
 
-        if (! isset($raw['id'])) {
+        if (!isset($raw['id'])) {
             return null;
         }
 
         $object = $this->createObject($raw);
 
-/* Листинг 13.20 */
+        /* Листинг 13.20 */
         return $object;
     }
 
@@ -68,7 +68,7 @@ abstract class Mapper
     {
         $old = $this->getFromMap($raw['id']);
 
-        if (! is_null($old)) {
+        if (!is_null($old)) {
             return $old;
         }
 
@@ -84,7 +84,7 @@ abstract class Mapper
         $this->addToMap($obj);
     }
 
-/* /Листинг 13.20 */
+    /* /Листинг 13.20 */
     public function findAll(): Collection
     {
         $this->selectAllStmt()->execute([]);
@@ -96,9 +96,14 @@ abstract class Mapper
 
 
     abstract protected function selectAllStmt(): \PDOStatement;
+
     abstract protected function getCollection(array $raw): Collection;
+
     abstract protected function update(DomainObject $object);
+
     abstract protected function doCreateObject(array $raw): DomainObject;
+
     abstract protected function doInsert(DomainObject $object);
+
     abstract protected function selectStmt(): \PDOStatement;
 }

@@ -24,9 +24,9 @@ abstract class Parser
 
     public function invokeHandler(Scanner $scanner)
     {
-        if (! empty($this->handler)) {
+        if (!empty($this->handler)) {
             if ($this->debug) {
-                $this->report("calling handler: ".get_class($this->handler));
+                $this->report("calling handler: " . get_class($this->handler));
             }
             $this->handler->handleMatch($this, $scanner);
         }
@@ -34,7 +34,7 @@ abstract class Parser
 
     public function report($msg)
     {
-        print "<{$this->name}> ".get_class($this).": $msg\n";
+        print "<{$this->name}> " . get_class($this) . ": $msg\n";
     }
 
     public function push(Scanner $scanner)
@@ -48,7 +48,7 @@ abstract class Parser
     public function scan(Scanner $scanner)
     {
         $ret = $this->doScan($scanner);
-        if ($ret && ! $this->discard && $this->term()) {
+        if ($ret && !$this->discard && $this->term()) {
             $this->push($scanner);
         }
         if ($ret) {

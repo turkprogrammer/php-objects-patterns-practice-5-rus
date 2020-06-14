@@ -1,15 +1,16 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch01;
 
 /* Листинг 13.02 */
+
 class VenueMapper extends Mapper
 {
     private $selectStmt;
-/* /Листинг 13.02 */
+    /* /Листинг 13.02 */
     private $selectAllStmt;
-/* Листинг 13.02 */
+    /* Листинг 13.02 */
     private $updateStmt;
     private $insertStmt;
 
@@ -20,13 +21,13 @@ class VenueMapper extends Mapper
             "SELECT * FROM venue WHERE id=?"
         );
 
-/* /Листинг 13.02 */
+        /* /Листинг 13.02 */
 
         $this->selectAllStmt = $this->pdo->prepare(
             "SELECT * FROM venue"
         );
 
-/* Листинг 13.02 */
+        /* Листинг 13.02 */
         $this->updateStmt = $this->pdo->prepare(
             "UPDATE venue SET name=?, id=? WHERE id=?"
         );
@@ -80,10 +81,10 @@ class VenueMapper extends Mapper
         return $this->selectStmt;
     }
 
-/* /Листинг 13.02 */
+    /* /Листинг 13.02 */
     public function selectAllStmt(): \PDOStatement
     {
         return $this->selectAllStmt;
     }
-/* Листинг 13.02 */
+    /* Листинг 13.02 */
 }

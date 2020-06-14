@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch04;
 
@@ -7,7 +7,7 @@ class Registry
 {
     private static $instance = null;
     private $request = null;
-/* Листинг 12.06 */
+    /* Листинг 12.06 */
 
     // class Registry
 
@@ -16,20 +16,20 @@ class Registry
 
     // ...
 
-/* /Листинг 12.06 */
-/* Листинг 12.07 */
+    /* /Листинг 12.06 */
+    /* Листинг 12.07 */
 
     // class Registry
 
     private static $testmode = false;
 
     // ...
-/* /Листинг 12.07 */
+    /* /Листинг 12.07 */
     private function __construct()
     {
     }
 
-/* Листинг 12.07 */
+    /* Листинг 12.07 */
 
     public static function testMode(bool $mode = true)
     {
@@ -49,7 +49,8 @@ class Registry
 
         return self::$instance;
     }
-/* /Листинг 12.07 */
+
+    /* /Листинг 12.07 */
 
     public function getRequest(): Request
     {
@@ -60,7 +61,7 @@ class Registry
         return $this->request;
     }
 
-/* Листинг 12.06 */
+    /* Листинг 12.06 */
     public function treeBuilder(): TreeBuilder
     {
         if (is_null($this->treeBuilder)) {
@@ -78,5 +79,5 @@ class Registry
 
         return $this->conf;
     }
-/* /Листинг 12.06 */
+    /* /Листинг 12.06 */
 }

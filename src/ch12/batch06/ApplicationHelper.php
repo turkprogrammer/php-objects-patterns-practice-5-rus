@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch06;
 
@@ -26,12 +26,12 @@ class ApplicationHelper
         $this->reg->setRequest($request);
     }
 
-/* Листинг 12.29 */
+    /* Листинг 12.29 */
     private function setupOptions()
     {
         //...
-/* /Листинг 12.29 */
-        if (! file_exists($this->config)) {
+        /* /Листинг 12.29 */
+        if (!file_exists($this->config)) {
             throw new AppException("Could not find options file");
         }
 
@@ -39,12 +39,12 @@ class ApplicationHelper
         $conf = new Conf($options['config']);
         $this->reg->setConf($conf);
 
-/* Листинг 12.29 */
+        /* Листинг 12.29 */
         $vcfile = $conf->get("viewcomponentfile");
         $cparse = new ViewComponentCompiler();
 
         $commandandviewdata = $cparse->parseFile($vcfile);
         $this->reg->setCommands($commandandviewdata);
     }
-/* /Листинг 12.29 */
+    /* /Листинг 12.29 */
 }

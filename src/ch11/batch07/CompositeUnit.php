@@ -1,13 +1,14 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch07;
 
 /* Листинг 11.38 */
+
 abstract class CompositeUnit extends Unit
 {
     // ...
-/* /Листинг 11.38 */
+    /* /Листинг 11.38 */
     private $units = [];
 
     public function getComposite(): Unit
@@ -53,7 +54,7 @@ abstract class CompositeUnit extends Unit
         return $count;
     }
 
-/* Листинг 11.38 */
+    /* Листинг 11.38 */
     public function textDump($num = 0): string
     {
         $txtout = parent::textDump($num);

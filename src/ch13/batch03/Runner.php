@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch03;
 
@@ -10,11 +10,14 @@ use popp\ch13\batch01\Venue;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         self::setUp();
 
-/* Листинг 13.18 */
+        /* Листинг 13.18 */
 
 // direct instantiation - otherwise we get the batch01
         $mapper = new VenueMapper();
@@ -28,7 +31,7 @@ class Runner
         $mapper->update($venue);
         $venue = $mapper->find($venue->getId());
         print_r($venue);
-/* /Листинг 13.18 */
+        /* /Листинг 13.18 */
     }
 
     public static function run2()
@@ -47,7 +50,7 @@ class Runner
         // from elsewhere?
         $mapper2 = new VenueMapper();
         $venue2 = $mapper2->find($venue->getId());
-        print $venue2->getName()."\n";
+        print $venue2->getName() . "\n";
     }
 
     private function setUp()

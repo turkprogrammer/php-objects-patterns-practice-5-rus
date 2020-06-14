@@ -7,8 +7,8 @@ class StringLiteralParse extends Parser
 
     public function trigger(Scanner $scanner): bool
     {
-        return ( $scanner->tokenType() == Scanner::APOS ||
-                 $scanner->tokenType() == Scanner::QUOTE );
+        return ($scanner->tokenType() == Scanner::APOS ||
+            $scanner->tokenType() == Scanner::QUOTE);
     }
 
     public function push(Scanner $scanner)
@@ -29,7 +29,7 @@ class StringLiteralParse extends Parser
             $string .= $scanner->token();
         }
 
-        if ($string && ! $this->discard) {
+        if ($string && !$this->discard) {
             $scanner->pushResult($string);
         }
 

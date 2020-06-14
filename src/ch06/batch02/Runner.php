@@ -6,9 +6,12 @@ require_once("src/ch06/batch02/paramreader.php");
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
-        $file = __DIR__."/texttest.proc.xml";
+        $file = __DIR__ . "/texttest.proc.xml";
 
         $params = [
             "key1" => "val1",

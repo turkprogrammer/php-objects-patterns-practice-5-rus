@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch18\batch01;
 
 /* Листинг 18.03 */
+
 class Validator
 {
     private $store;
@@ -15,7 +16,7 @@ class Validator
 
     public function validateUser(string $mail, string $pass): bool
     {
-        if (! is_array($user = $this->store->getUser($mail))) {
+        if (!is_array($user = $this->store->getUser($mail))) {
             return false;
         }
 

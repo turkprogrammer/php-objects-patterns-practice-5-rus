@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch04\batch23;
 
 /* Листинг 04.89 */
+
 class Product
 {
     public $name;

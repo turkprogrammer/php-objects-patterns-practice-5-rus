@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch04;
 
 /* Листинг 13.23 */
+
 abstract class DomainObject
 {
     private $id;

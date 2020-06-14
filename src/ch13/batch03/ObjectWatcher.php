@@ -1,11 +1,12 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch03;
 
 use popp\ch13\batch01\DomainObject;
 
 /* Листинг 13.19 */
+
 class ObjectWatcher
 {
     private $all = [];

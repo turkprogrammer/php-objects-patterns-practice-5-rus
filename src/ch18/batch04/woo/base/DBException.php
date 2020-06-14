@@ -5,6 +5,7 @@ namespace vitaliyviznyuk\popp5rus\ch18\batch04\woo\base;
 class DBException extends \Exception
 {
     private $error;
+
     public function __construct(DB_Error $error)
     {
         parent::__construct($error->getMessage(), $error->getCode());

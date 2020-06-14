@@ -16,61 +16,67 @@
 /**
  * Used to locate a given frame or window.
  */
-class WebDriverTargetLocator {
+class WebDriverTargetLocator
+{
 
-  protected $executor;
-  protected $driver;
+    protected $executor;
+    protected $driver;
 
-  public function __construct($executor, $driver) {
-    $this->executor = $executor;
-    $this->driver = $driver;
-  }
+    public function __construct($executor, $driver)
+    {
+        $this->executor = $executor;
+        $this->driver = $driver;
+    }
 
-  /**
-   * Switch to the main document if the page contains iframes. Otherwise, switch
-   * to the first frame on the page.
-   *
-   * @return WebDriver The driver focused on the top window or the first frame.
-   */
-  public function defaultContent() {
-    $this->executor->execute('focusFrame', array());
+    /**
+     * Switch to the main document if the page contains iframes. Otherwise, switch
+     * to the first frame on the page.
+     *
+     * @return WebDriver The driver focused on the top window or the first frame.
+     */
+    public function defaultContent()
+    {
+        $this->executor->execute('focusFrame', array());
 
-    return $this->driver;
-  }
+        return $this->driver;
+    }
 
-  /**
-   * Switch to the iframe by its id or name.
-   *
-   * @return WebDriver The driver focused on the given frame.
-   */
-  public function frame($id_or_name) {
-    $params = array('id' => (string)$id_or_name);
-    $this->executor->execute('focusFrame', $params);
+    /**
+     * Switch to the iframe by its id or name.
+     *
+     * @return WebDriver The driver focused on the given frame.
+     */
+    public function frame($id_or_name)
+    {
+        $params = array('id' => (string)$id_or_name);
+        $this->executor->execute('focusFrame', $params);
 
-    return $this->driver;
-  }
+        return $this->driver;
+    }
 
-  /**
-   * Switch the focus to another window by its handle.
-   *
-   * @param string $handle The handle of the window to be focused on.
-   * @return WebDriver Tge driver focused on the given window.
-   * @see WebDriver::getWindowHandles
-   */
-  public function window($handle) {
-    $params = array('name' => (string)$handle);
-    $this->executor->execute('focusWindow', $params);
+    /**
+     * Switch the focus to another window by its handle.
+     *
+     * @param string $handle The handle of the window to be focused on.
+     * @return WebDriver Tge driver focused on the given window.
+     * @see WebDriver::getWindowHandles
+     */
+    public function window($handle)
+    {
+        $params = array('name' => (string)$handle);
+        $this->executor->execute('focusWindow', $params);
 
-    return $this->driver;
-  }
+        return $this->driver;
+    }
 
-  /**
-   * Switch to the currently active modal dialog for this particular driver
-   * instance.
-   *
-   * @return WebDriverAlert
-   */
-  public function alert() {
-    return new WebDriverAlert($this->executor);
-  }
+    /**
+     * Switch to the currently active modal dialog for this particular driver
+     * instance.
+     *
+     * @return WebDriverAlert
+     */
+    public function alert()
+    {
+        return new WebDriverAlert($this->executor);
+    }
 }

@@ -12,7 +12,10 @@ class Controller
     {
     }
 
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         $instance = new Controller();
         $instance->init();
@@ -26,7 +29,7 @@ class Controller
         $applicationHelper->init();
     }
 
-/* Листинг 18.15 */
+    /* Листинг 18.15 */
 
 // Controller
 
@@ -41,7 +44,8 @@ class Controller
 
         $this->invokeView($app_c->getView($request));
     }
-/* /Листинг 18.15 */
+
+    /* /Листинг 18.15 */
 
     public function invokeView($target)
     {

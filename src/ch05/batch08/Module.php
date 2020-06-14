@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch05\batch08;
 
 /* Листинг 05.47 */
+
 interface Module
 {
     public function execute();

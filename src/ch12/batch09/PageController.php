@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch09;
 
@@ -31,14 +31,15 @@ abstract class PageController
         $request->forward($resource);
     }
 
-/* Листинг 12.38 */
+    /* Листинг 12.38 */
     public function render(string $resource, Request $request)
     {
         $vh = new ViewHelper();
         // now the template will have the $vh variable
         include($resource);
     }
-/* /Листинг 12.38 */
+
+    /* /Листинг 12.38 */
 
     public function getRequest()
     {

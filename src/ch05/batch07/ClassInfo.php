@@ -5,7 +5,7 @@ namespace vitaliyviznyuk\popp5rus\ch05\batch07;
 class ClassInfo
 {
 
-/* Листинг 05.36 */
+    /* Листинг 05.36 */
     // class ClassInfo
 
     public static function getData(\ReflectionClass $class)
@@ -40,10 +40,10 @@ class ClassInfo
         }
         return $details;
     }
-/* /Листинг 05.36 */
+    /* /Листинг 05.36 */
 
 
-/* Листинг 05.41 */
+    /* Листинг 05.41 */
 
     // class ClassInfo
     public static function methodData(\ReflectionMethod $method)
@@ -82,24 +82,24 @@ class ClassInfo
         }
         return $details;
     }
-/* /Листинг 05.41 */
+    /* /Листинг 05.41 */
 
-/* Листинг 05.45 */
+    /* Листинг 05.45 */
 
     // class ClassInfo
     public function argData(\ReflectionParameter $arg)
     {
         $details = "";
         $declaringclass = $arg->getDeclaringClass();
-        $name  = $arg->getName();
+        $name = $arg->getName();
         $class = $arg->getClass();
         $position = $arg->getPosition();
         $details .= "\$$name has position $position\n";
-        if (! empty($class)) {
+        if (!empty($class)) {
             $classname = $class->getName();
             $details .= "\$$name must be a $classname object\n";
         }
-      
+
         if ($arg->isPassedByReference()) {
             $details .= "\$$name is passed by reference\n";
         }
@@ -115,5 +115,5 @@ class ClassInfo
 
         return $details;
     }
-/* /Листинг 05.45 */
+    /* /Листинг 05.45 */
 }

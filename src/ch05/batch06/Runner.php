@@ -4,7 +4,10 @@ namespace vitaliyviznyuk\popp5rus\ch05\batch06;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         $d = new Delegator();
         $d->thing();

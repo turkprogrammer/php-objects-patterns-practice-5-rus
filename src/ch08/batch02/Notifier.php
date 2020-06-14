@@ -1,10 +1,12 @@
 <?php declare(strict_types=1);
+
 namespace vitaliyviznyuk\popp5rus\ch08\batch02;
 
 /* Листинг 08.13 */
+
 abstract class Notifier
 {
-    
+
     public static function getNotifier(): Notifier
     {
         // acquire concrete class according to

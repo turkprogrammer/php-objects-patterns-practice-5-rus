@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch10;
 
@@ -8,6 +8,7 @@ use popp\ch12\batch06\Registry;
 use popp\ch12\batch06\Conf;
 
 /* Листинг 12.40 */
+
 abstract class Base
 {
     private $pdo;

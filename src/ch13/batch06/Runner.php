@@ -1,11 +1,14 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch06;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         $idobj = new EventIdentityObject();
         $idobj->setMinimumStart(time());
@@ -13,19 +16,19 @@ class Runner
         $comps = array();
         $name = $idobj->getName();
 
-        if (! is_null($name)) {
+        if (!is_null($name)) {
             $comps[] = "name = '{$name}'";
         }
 
         $minstart = $idobj->getMinimumStart();
 
-        if (! is_null($minstart)) {
+        if (!is_null($minstart)) {
             $comps[] = "start > {$minstart}";
         }
 
         $start = $idobj->getStart();
 
-        if (! is_null($start)) {
+        if (!is_null($start)) {
             $comps[] = "start = '{$start}'";
         }
 

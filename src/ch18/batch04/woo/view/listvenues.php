@@ -7,16 +7,16 @@ $venues = $request->getObject('venues');
 ?>
 <html>
 <head>
-<title>Here are the venues</title>
+    <title>Here are the venues</title>
 </head>
 <body>
 
 <table>
-<tr>
-<td>
-<?php print $request->getFeedbackString("</td></tr><tr><td>"); ?>
-</td>
-</tr>
+    <tr>
+        <td>
+            <?php print $request->getFeedbackString("</td></tr><tr><td>"); ?>
+        </td>
+    </tr>
 </table>
 <?php
 foreach ($venues as $venue) {

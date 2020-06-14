@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch06;
 
@@ -14,7 +14,7 @@ class HttpRequest extends Request
         $this->path = (empty($this->path)) ? "/" : $this->path;
     }
 
-/* Листинг 12.27 */
+    /* Листинг 12.27 */
 
     // HttpRequest
 
@@ -23,5 +23,5 @@ class HttpRequest extends Request
         header("Location: {$path}");
         exit;
     }
-/* /Листинг 12.27 */
+    /* /Листинг 12.27 */
 }

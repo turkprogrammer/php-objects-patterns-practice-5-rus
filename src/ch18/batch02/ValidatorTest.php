@@ -1,7 +1,8 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 /* Листинг 18.07 */
+
 namespace vitaliyviznyuk\popp5rus\ch18\batch02;
 
 class ValidatorTest extends \PHPUnit_Framework_TestCase
@@ -27,7 +28,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-/* /Листинг 18.07 */
+    /* /Листинг 18.07 */
     public function testValidateFalsePassFirst()
     {
         $store = $this->getMock(__NAMESPACE__ . "\\UserStore");
@@ -47,7 +48,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $this->validator->validateUser("bob@example.com", "wrong");
     }
 
-/* Листинг 18.09 */
+    /* Листинг 18.09 */
 
 // ValidatorTest
 
@@ -70,7 +71,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
         $this->validator->validateUser("bob@example.com", "wrong");
     }
-/* /Листинг 18.09 */
-/* Листинг 18.07 */
+    /* /Листинг 18.09 */
+    /* Листинг 18.07 */
 }
 /* /Листинг 18.07 */

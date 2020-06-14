@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch05;
 
@@ -27,7 +27,7 @@ class Registry
         return self::$instance;
     }
 
-/* Листинг 12.12 */
+    /* Листинг 12.12 */
     // must be initialized by some smarter component
     public function setRequest(Request $request)
     {
@@ -76,7 +76,7 @@ class Registry
         return $this->commands;
     }
 
-/* /Листинг 12.12 */
+    /* /Листинг 12.12 */
     public function getDSN()
     {
         $conf = $this->getConf();

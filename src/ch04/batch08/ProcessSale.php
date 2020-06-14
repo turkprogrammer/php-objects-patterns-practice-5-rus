@@ -8,7 +8,7 @@ class ProcessSale
 
     public function registerCallback($callback)
     {
-        if (! is_callable($callback)) {
+        if (!is_callable($callback)) {
             throw new Exception("callback not callable");
         }
         $this->callbacks[] = $callback;

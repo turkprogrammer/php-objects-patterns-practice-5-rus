@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch06;
 
 /* Листинг 12.21 */
+
 class ViewComponentCompiler
 {
     private static $defaultcmd = DefaultCommand::class;
@@ -20,8 +21,8 @@ class ViewComponentCompiler
         $conf = new Conf();
 
         foreach ($options->control->command as $command) {
-            $path = (string) $command['path'];
-            $cmdstr = (string) $command['class'];
+            $path = (string)$command['path'];
+            $cmdstr = (string)$command['class'];
             $path = (empty($path)) ? "/" : $path;
             $cmdstr = (empty($cmdstr)) ? self::$defaultcmd : $cmdstr;
             $pathobj = new ComponentDescriptor($path, $cmdstr);

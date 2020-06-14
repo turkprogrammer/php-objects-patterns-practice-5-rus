@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch03\batch11;
 
 /* Листинг 03.33 */
+
 class BookProduct
 {
     public $numPages;
@@ -15,14 +16,15 @@ class BookProduct
         string $title,
         string $firstName,
         string $mainName,
-        float  $price,
-        int    $numPages
-    ) {
-        $this->title             = $title;
+        float $price,
+        int $numPages
+    )
+    {
+        $this->title = $title;
         $this->producerFirstName = $firstName;
-        $this->producerMainName  = $mainName;
-        $this->price             = $price;
-        $this->numPages          = $numPages;
+        $this->producerMainName = $mainName;
+        $this->price = $price;
+        $this->numPages = $numPages;
     }
 
     public function getNumberOfPages()
@@ -32,7 +34,7 @@ class BookProduct
 
     public function getSummaryLine()
     {
-        $base  = "{$this->title} ( {$this->producerMainName}, ";
+        $base = "{$this->title} ( {$this->producerMainName}, ";
         $base .= "{$this->producerFirstName} )";
         $base .= ": page count - {$this->numPages}";
         return $base;

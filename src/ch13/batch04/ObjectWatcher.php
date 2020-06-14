@@ -1,11 +1,11 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch04;
 
 class ObjectWatcher
 {
-/* Листинг 13.22 */
+    /* Листинг 13.22 */
 
     // ObjectWatcher
 
@@ -15,7 +15,7 @@ class ObjectWatcher
     private $delete = []; // unused in this example
     private static $instance = null;
 
-/* /Листинг 13.22 */
+    /* /Листинг 13.22 */
 
     private function __construct()
     {
@@ -62,7 +62,7 @@ class ObjectWatcher
         return null;
     }
 
-/* Листинг 13.22 */
+    /* Листинг 13.22 */
     public static function addDelete(DomainObject $obj)
     {
         $inst = self::instance();
@@ -73,7 +73,7 @@ class ObjectWatcher
     {
         $inst = self::instance();
 
-        if (! in_array($obj, $inst->new, true)) {
+        if (!in_array($obj, $inst->new, true)) {
             $inst->dirty[$inst->globalKey($obj)] = $obj;
         }
     }
@@ -113,5 +113,5 @@ class ObjectWatcher
         $this->dirty = [];
         $this->new = [];
     }
-/* /Листинг 13.22 */
+    /* /Листинг 13.22 */
 }

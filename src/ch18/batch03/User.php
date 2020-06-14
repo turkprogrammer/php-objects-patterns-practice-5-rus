@@ -1,7 +1,8 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 /* Листинг 18.11 */
+
 namespace vitaliyviznyuk\popp5rus\ch18\batch03;
 
 class User

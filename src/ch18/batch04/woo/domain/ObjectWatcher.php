@@ -16,7 +16,7 @@ class ObjectWatcher
 
     public static function instance()
     {
-        if (! self::$instance) {
+        if (!self::$instance) {
             self::$instance = new ObjectWatcher();
         }
 
@@ -25,7 +25,7 @@ class ObjectWatcher
 
     public function globalKey(DomainObject $obj)
     {
-        $key = get_class($obj).".".$obj->getId();
+        $key = get_class($obj) . "." . $obj->getId();
         return $key;
     }
 
@@ -58,7 +58,7 @@ class ObjectWatcher
     {
         $inst = self::instance();
 
-        if (! in_array($obj, $inst->new, true)) {
+        if (!in_array($obj, $inst->new, true)) {
             $inst->dirty[$inst->globalKey($obj)] = $obj;
         }
     }
@@ -79,7 +79,7 @@ class ObjectWatcher
         $self->new = array_filter(
             $self->new,
             function ($a) use ($obj) {
-                return !( $a === $obj );
+                return !($a === $obj);
             }
         );
     }

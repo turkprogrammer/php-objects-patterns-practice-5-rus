@@ -10,9 +10,12 @@ use popp\ch03\batch09\AddressManager;
 class Runner
 {
 
-    public static function run1()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
-/* Листинг 03.38 */
+        /* Листинг 03.38 */
         $product2 = new CdProduct(
             "Exile on Coldharbour Lane",
             "The",
@@ -22,6 +25,6 @@ class Runner
             60.33
         );
         print "artist: {$product2->getProducer()}\n";
-/* /Листинг 03.38 */
+        /* /Листинг 03.38 */
     }
 }

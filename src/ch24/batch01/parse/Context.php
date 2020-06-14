@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch24\batch01\parse;
 
 /* Листинг 24.03 */
+
 class Context
 {
     public $resultstack = [];
@@ -29,14 +30,14 @@ class Context
             throw new Exception("empty resultstack");
         }
 
-        return $this->resultstack[count($this->resultstack) -1];
+        return $this->resultstack[count($this->resultstack) - 1];
     }
-/**
- * Get the stack as an array
- *
- * @return array mixed
-    function resultArray() {
-        return $this->resultstack;
-    }
- */
+    /**
+     * Get the stack as an array
+     *
+     * @return array mixed
+     * function resultArray() {
+     * return $this->resultstack;
+     * }
+     */
 }

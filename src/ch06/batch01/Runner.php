@@ -6,10 +6,13 @@ require_once("src/ch06/batch01/paramreader.php");
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
-/* Листинг 06.02 */
-        $file = __DIR__."/params.txt";
+        /* Листинг 06.02 */
+        $file = __DIR__ . "/params.txt";
         $params = [
             "key1" => "val1",
             "key2" => "val2",
@@ -18,6 +21,6 @@ class Runner
         writeParams($params, $file);
         $output = readParams($file);
         print_r($output);
-/* /Листинг 06.02 */
+        /* /Листинг 06.02 */
     }
 }

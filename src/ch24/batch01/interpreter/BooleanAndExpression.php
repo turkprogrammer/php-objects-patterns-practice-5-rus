@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch24\batch01\interpreter;
 
@@ -9,7 +9,8 @@ class BooleanAndExpression extends OperatorExpression
         InterpreterContext $context,
         $result_l,
         $result_r
-    ) {
+    )
+    {
         $context->replace($this, $result_l && $result_r);
     }
 }

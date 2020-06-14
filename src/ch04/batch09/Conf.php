@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch04\batch09;
 
 /* Листинг 04.57 */
+
 class Conf
 {
     private $file;
@@ -32,8 +33,8 @@ class Conf
 
     public function set(string $key, string $value)
     {
-        if (! is_null($this->get($key))) {
-            $this->lastmatch[0]=$value;
+        if (!is_null($this->get($key))) {
+            $this->lastmatch[0] = $value;
             return;
         }
         $conf = $this->xml->conf;

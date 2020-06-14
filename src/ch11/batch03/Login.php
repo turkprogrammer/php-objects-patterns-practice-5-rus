@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch03;
 
 /* Листинг 11.21 */
+
 class Login
 {
     const LOGIN_USER_UNKNOWN = 1;
@@ -14,7 +15,7 @@ class Login
 
     public function handleLogin(string $user, string $pass, string $ip): bool
     {
-        $isvalid=false;
+        $isvalid = false;
         switch (rand(1, 3)) {
             case 1:
                 $this->setStatus(self::LOGIN_ACCESS, $user, $ip);
@@ -30,7 +31,7 @@ class Login
                 break;
         }
 
-        print "returning ".(($isvalid)?"true":"false")."\n";
+        print "returning " . (($isvalid) ? "true" : "false") . "\n";
 
         return $isvalid;
     }

@@ -8,12 +8,12 @@ use popp\ch18\batch04\woo\controller\ControllerMap;
 
 class ApplicationRegistry extends Registry
 {
-    private static $instance=null;
-    private $freezedir = __DIR__."/../../data";
+    private static $instance = null;
+    private $freezedir = __DIR__ . "/../../data";
     private $values = array();
     private $mtimes = array();
 
-    private $request=null;
+    private $request = null;
 
     private function __construct()
     {
@@ -21,7 +21,7 @@ class ApplicationRegistry extends Registry
 
     public static function clean()
     {
-        self::$instance=null;
+        self::$instance = null;
     }
 
     public static function instance()
@@ -37,14 +37,14 @@ class ApplicationRegistry extends Registry
         $path = $this->freezedir . DIRECTORY_SEPARATOR . $key;
         if (file_exists($path)) {
             clearstatcache();
-            $mtime=filemtime($path);
-            if (! isset($this->mtimes[$key])) {
-                $this->mtimes[$key]=0;
+            $mtime = filemtime($path);
+            if (!isset($this->mtimes[$key])) {
+                $this->mtimes[$key] = 0;
             }
             if ($mtime > $this->mtimes[$key]) {
                 $data = file_get_contents($path);
-                $this->mtimes[$key]=$mtime;
-                return ($this->values[$key]=unserialize($data));
+                $this->mtimes[$key] = $mtime;
+                return ($this->values[$key] = unserialize($data));
             }
         }
         if (isset($this->values[$key])) {
@@ -58,7 +58,7 @@ class ApplicationRegistry extends Registry
         $this->values[$key] = $val;
         $path = $this->freezedir . DIRECTORY_SEPARATOR . $key;
         file_put_contents($path, serialize($val));
-        $this->mtimes[$key]=time();
+        $this->mtimes[$key] = time();
     }
 
     public static function getDSN()
@@ -84,7 +84,7 @@ class ApplicationRegistry extends Registry
     public static function appController()
     {
         $obj = self::instance();
-        if (! isset($obj->appController)) {
+        if (!isset($obj->appController)) {
             $cmap = $obj->getControllerMap();
             $obj->appController = new AppController($cmap);
         }

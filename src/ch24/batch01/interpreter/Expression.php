@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch24\batch01\interpreter;
 
@@ -12,7 +12,7 @@ abstract class Expression
 
     public function getKey()
     {
-        if (! isset($this->key)) {
+        if (!isset($this->key)) {
             self::$keycount++;
             $this->key = self::$keycount;
         }

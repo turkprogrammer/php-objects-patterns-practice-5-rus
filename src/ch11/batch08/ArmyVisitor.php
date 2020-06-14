@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch08;
 
 /* Листинг 11.41 */
+
 abstract class ArmyVisitor
 {
     abstract public function visit(Unit $node);
@@ -12,6 +13,7 @@ abstract class ArmyVisitor
     {
         $this->visit($node);
     }
+
     public function visitCavalry(Cavalry $node)
     {
         $this->visit($node);

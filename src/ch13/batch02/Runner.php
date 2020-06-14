@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch02;
 
@@ -14,7 +14,10 @@ class Runner
 {
 
 
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         $venue1id = self::forRun1and3();
         $mapper = new VenueMapper();
@@ -26,7 +29,7 @@ class Runner
         $spaces = $acquiredvenue1->getSpaces();
 
         foreach ($spaces as $space) {
-            print "    ".$space->getName() . "\n";
+            print "    " . $space->getName() . "\n";
         }
     }
 

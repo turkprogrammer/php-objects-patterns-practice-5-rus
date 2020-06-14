@@ -1,6 +1,7 @@
 <?php
 
 /* Листинг 18.20 */
+
 namespace vitaliyviznyuk\popp5rus\ch18\batch04;
 
 use Facebook\WebDriver\Remote\DesiredCapabilities;

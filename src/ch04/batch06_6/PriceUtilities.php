@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch04\batch06_6;
 
 /* Листинг 04.33 */
+
 trait PriceUtilities
 {
     private static $taxrate = 17;

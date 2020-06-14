@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch07;
 
@@ -8,6 +8,7 @@ use popp\ch13\batch04\DomainObject;
 use popp\ch13\batch05\Collection;
 
 /* Листинг 13.47 */
+
 class DomainObjectAssembler
 {
     protected $pdo = null;
@@ -21,7 +22,7 @@ class DomainObjectAssembler
 
     public function getStatement(string $str): \PDOStatement
     {
-        if (! isset($this->statements[$str])) {
+        if (!isset($this->statements[$str])) {
             $this->statements[$str] = $this->pdo->prepare($str);
         }
 

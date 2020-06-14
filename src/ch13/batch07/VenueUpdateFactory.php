@@ -1,11 +1,12 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch07;
 
 use popp\ch13\batch04\DomainObject;
 
 /* Листинг 13.42 */
+
 class VenueUpdateFactory extends UpdateFactory
 {
     public function newUpdate(DomainObject $obj): array

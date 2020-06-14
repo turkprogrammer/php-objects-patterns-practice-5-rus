@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch06;
 
 /* Листинг 12.25 */
+
 class TemplateViewComponent implements ViewComponent
 {
     private $name = null;
@@ -25,7 +26,7 @@ class TemplateViewComponent implements ViewComponent
 
         $fullpath = "{$path}/{$this->name}.php";
 
-        if (! file_exists($fullpath)) {
+        if (!file_exists($fullpath)) {
             throw new AppException("no template at {$fullpath}");
         }
 

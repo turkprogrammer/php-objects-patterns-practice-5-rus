@@ -1,7 +1,9 @@
 <?php declare(strict_types=1);
+
 namespace vitaliyviznyuk\popp5rus\ch03\batch12;
 
 /* Листинг 03.37 */
+
 class BookProduct extends ShopProduct
 {
     public function getNumberOfPages()
@@ -11,7 +13,7 @@ class BookProduct extends ShopProduct
 
     public function getSummaryLine()
     {
-        $base  = "{$this->title} ( {$this->producerMainName}, ";
+        $base = "{$this->title} ( {$this->producerMainName}, ";
         $base .= "{$this->producerFirstName} )";
         $base .= ": page count - {$this->numPages}";
         return $base;

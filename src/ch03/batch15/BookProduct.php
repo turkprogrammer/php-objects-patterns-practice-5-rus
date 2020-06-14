@@ -1,9 +1,11 @@
 <?php declare(strict_types=1);
+
 namespace vitaliyviznyuk\popp5rus\ch03\batch15;
 
 use popp\ch03\batch15\ShopProduct;
 
 /* Листинг 03.50 */
+
 class BookProduct extends ShopProduct
 {
     private $numPages;
@@ -12,9 +14,10 @@ class BookProduct extends ShopProduct
         string $title,
         string $firstName,
         string $mainName,
-        float  $price,
-        int    $numPages
-    ) {
+        float $price,
+        int $numPages
+    )
+    {
         parent::__construct(
             $title,
             $firstName,
@@ -31,7 +34,7 @@ class BookProduct extends ShopProduct
 
     public function getSummaryLine()
     {
-        $base  = parent::getSummaryLine();
+        $base = parent::getSummaryLine();
         $base .= ": page count - $this->numPages";
         return $base;
     }

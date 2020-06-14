@@ -11,7 +11,7 @@ abstract class CollectionParse extends Parser
         if (is_null($p)) {
             throw new Exception("argument is null");
         }
-        $this->parsers[]= $p;
+        $this->parsers[] = $p;
         return $p;
     }
 

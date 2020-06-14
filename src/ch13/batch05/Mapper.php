@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch05;
 
@@ -40,11 +40,11 @@ abstract class Mapper
         $raw = $this->selectstmt()->fetch();
         $this->selectstmt()->closeCursor();
 
-        if (! is_array($raw)) {
+        if (!is_array($raw)) {
             return null;
         }
 
-        if (! isset($raw['id'])) {
+        if (!isset($raw['id'])) {
             return null;
         }
 
@@ -87,7 +87,10 @@ abstract class Mapper
 
 //  abstract function update( DomainObject $object );
     abstract protected function doInsert(DomainObject $object);
+
     abstract protected function targetClass(): string;
+
     abstract protected function selectStmt(): \PDOStatement;
+
     abstract protected function selectAllStmt(): \PDOStatement;
 }

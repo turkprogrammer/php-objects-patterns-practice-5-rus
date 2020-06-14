@@ -17,7 +17,7 @@ class Request
         $this->init();
     }
 
-/* Листинг 18.14 */
+    /* Листинг 18.14 */
     public function init()
     {
         if (isset($_SERVER['REQUEST_METHOD'])) {
@@ -34,7 +34,8 @@ class Request
             }
         }
     }
-/* /Листинг 18.14 */
+
+    /* /Листинг 18.14 */
 
     public function getProperty($key)
     {

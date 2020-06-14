@@ -4,9 +4,12 @@ namespace vitaliyviznyuk\popp5rus\ch04\batch23;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
-/* Листинг 04.90 */
+        /* Листинг 04.90 */
         $logger = create_function(
             '$product',
             'print "    logging ({$product->name})\n";'
@@ -18,12 +21,12 @@ class Runner
         $processor->sale(new Product("shoes", 6));
         print "\n";
         $processor->sale(new Product("coffee", 6));
-/* /Листинг 04.90 */
+        /* /Листинг 04.90 */
     }
 
     public static function run2()
     {
-/* Листинг 04.91 */
+        /* Листинг 04.91 */
         $logger2 = function ($product) {
             print "    logging ({$product->name})\n";
         };
@@ -34,7 +37,7 @@ class Runner
         $processor->sale(new Product("shoes", 6));
         print "\n";
         $processor->sale(new Product("coffee", 6));
-/* /Листинг 04.91 */
+        /* /Листинг 04.91 */
     }
 }
 //done

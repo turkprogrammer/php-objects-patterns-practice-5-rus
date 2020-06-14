@@ -16,7 +16,7 @@ abstract class Collection implements \Iterator
 
     public function __construct(array $raw = null, Mapper $mapper = null)
     {
-        if (! is_null($raw) && ! is_null($mapper)) {
+        if (!is_null($raw) && !is_null($mapper)) {
             $this->raw = $raw;
             $this->total = count($raw);
         }
@@ -28,7 +28,7 @@ abstract class Collection implements \Iterator
     {
         $class = $this->targetClass();
 
-        if (! ($object instanceof $class )) {
+        if (!($object instanceof $class)) {
             throw new \Exception("This is a {$class} collection");
         }
 
@@ -57,7 +57,7 @@ abstract class Collection implements \Iterator
         }
 
         if (isset($this->raw[$num])) {
-            $this->objects[$num]=$this->mapper->createObject($this->raw[$num]);
+            $this->objects[$num] = $this->mapper->createObject($this->raw[$num]);
 
             return $this->objects[$num];
         }
@@ -91,6 +91,6 @@ abstract class Collection implements \Iterator
 
     public function valid()
     {
-        return (! is_null($this->current()));
+        return (!is_null($this->current()));
     }
 }

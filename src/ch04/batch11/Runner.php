@@ -4,7 +4,10 @@ namespace vitaliyviznyuk\popp5rus\ch04\batch11;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         self::init();
     }
@@ -14,7 +17,7 @@ class Runner
         self::init2();
     }
 
-/* Листинг 04.66 */
+    /* Листинг 04.66 */
     public static function init()
     {
         try {
@@ -42,7 +45,8 @@ class Runner
             // backstop: should not be called
         }
     }
-/* /Листинг 04.66 */
+
+    /* /Листинг 04.66 */
 
     public static function init2()
     {

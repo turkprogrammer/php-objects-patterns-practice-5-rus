@@ -65,11 +65,11 @@ class EventMapper extends Mapper implements \woo\domain\EventFinder
     {
         $space = $object->getSpace();
 
-        if (! $space) {
+        if (!$space) {
             throw new AppException("cannot save without space");
         }
 
-        $values = array( $object->getstart(), $object->getduration(), $space->getId(), $object->getname() );
+        $values = array($object->getstart(), $object->getduration(), $space->getId(), $object->getname());
         $this->insertStmt->execute($values);
     }
 

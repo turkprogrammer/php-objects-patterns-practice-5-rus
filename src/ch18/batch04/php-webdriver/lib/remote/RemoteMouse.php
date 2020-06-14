@@ -16,65 +16,74 @@
 /**
  * Execute mouse commands for RemoteWebDriver.
  */
-class RemoteMouse implements WebDriverMouse {
+class RemoteMouse implements WebDriverMouse
+{
 
-  private $executor;
+    private $executor;
 
-  public function __construct($executor) {
-    $this->executor = $executor;
-  }
-
-  public function click(WebDriverCoordinates $where = null) {
-    $this->moveIfNeeded($where);
-    $this->executor->execute('mouseClick', array(
-      'button' => 0,
-    ));
-    return $this;
-  }
-
-  public function contextClick(WebDriverCoordinates $where = null) {
-    $this->moveIfNeeded($where);
-    $this->executor->execute('mouseClick', array(
-      'button' => 2,
-    ));
-    return $this;
-  }
-
-  public function doubleClick(WebDriverCoordinates $where = null) {
-    $this->moveIfNeeded($where);
-    $this->executor->execute('mouseDoubleClick');
-    return $this;
-  }
-
-  public function mouseDown(WebDriverCoordinates $where = null) {
-    $this->moveIfNeeded($where);
-    $this->executor->execute('mouseButtonDown');
-    return $this;
-  }
-
-  public function mouseMove(WebDriverCoordinates $where,
-                            $x_offset = null,
-                            $y_offset = null) {
-    $params = array('element' => $where->getAuxiliary());
-    if ($x_offset !== null) {
-      $params['xoffset'] = $x_offset;
+    public function __construct($executor)
+    {
+        $this->executor = $executor;
     }
-    if ($y_offset !== null) {
-      $params['yoffset'] = $y_offset;
-    }
-    $this->executor->execute('mouseMoveTo', $params);
-    return $this;
-  }
 
-  public function mouseUp(WebDriverCoordinates $where = null) {
-    $this->moveIfNeeded($where);
-    $this->executor->execute('mouseButtonUp');
-    return $this;
-  }
-
-  protected function moveIfNeeded(WebDriverCoordinates $where = null) {
-    if ($where) {
-      $this->mouseMove($where);
+    public function click(WebDriverCoordinates $where = null)
+    {
+        $this->moveIfNeeded($where);
+        $this->executor->execute('mouseClick', array(
+            'button' => 0,
+        ));
+        return $this;
     }
-  }
+
+    public function contextClick(WebDriverCoordinates $where = null)
+    {
+        $this->moveIfNeeded($where);
+        $this->executor->execute('mouseClick', array(
+            'button' => 2,
+        ));
+        return $this;
+    }
+
+    public function doubleClick(WebDriverCoordinates $where = null)
+    {
+        $this->moveIfNeeded($where);
+        $this->executor->execute('mouseDoubleClick');
+        return $this;
+    }
+
+    public function mouseDown(WebDriverCoordinates $where = null)
+    {
+        $this->moveIfNeeded($where);
+        $this->executor->execute('mouseButtonDown');
+        return $this;
+    }
+
+    public function mouseMove(WebDriverCoordinates $where,
+                              $x_offset = null,
+                              $y_offset = null)
+    {
+        $params = array('element' => $where->getAuxiliary());
+        if ($x_offset !== null) {
+            $params['xoffset'] = $x_offset;
+        }
+        if ($y_offset !== null) {
+            $params['yoffset'] = $y_offset;
+        }
+        $this->executor->execute('mouseMoveTo', $params);
+        return $this;
+    }
+
+    public function mouseUp(WebDriverCoordinates $where = null)
+    {
+        $this->moveIfNeeded($where);
+        $this->executor->execute('mouseButtonUp');
+        return $this;
+    }
+
+    protected function moveIfNeeded(WebDriverCoordinates $where = null)
+    {
+        if ($where) {
+            $this->mouseMove($where);
+        }
+    }
 }

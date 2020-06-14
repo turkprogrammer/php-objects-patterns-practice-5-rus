@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch04\batch08;
 
 /* Листинг 04.94 */
+
 class Totalizer
 {
     public static function warnAmount()

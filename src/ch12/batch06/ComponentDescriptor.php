@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch06;
 
 /* Листинг 12.22 */
+
 class ComponentDescriptor
 {
     private $path;
@@ -49,13 +50,13 @@ class ComponentDescriptor
             throw new AppException("unknown class '$class'");
         }
 
-        if (! class_exists($class)) {
+        if (!class_exists($class)) {
             throw new AppException("class '$class' not found");
         }
 
         $refclass = new \ReflectionClass($class);
 
-        if (! $refclass->isSubClassOf(self::$refcmd)) {
+        if (!$refclass->isSubClassOf(self::$refcmd)) {
             throw new AppException("command '$class' is not a Command");
         }
 

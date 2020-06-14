@@ -8,8 +8,8 @@ use popp\ch18\batch04\woo\controller\Request;
 abstract class Command
 {
 
-    private static $STATUS_STRINGS = array (
-        'CMD_DEFAULT'=>0,
+    private static $STATUS_STRINGS = array(
+        'CMD_DEFAULT' => 0,
         'CMD_OK' => 1,
         'CMD_ERROR' => 2,
         'CMD_INSUFFICIENT_DATA' => 3

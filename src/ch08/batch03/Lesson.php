@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 namespace vitaliyviznyuk\popp5rus\ch08\batch03;
 
 use popp\ch08\batch02\Lecture;
@@ -12,13 +13,14 @@ abstract class Lesson
     private $duration;
     private $costStrategy;
 
-/* Листинг 08.17 */
+    /* Листинг 08.17 */
     public function __construct(int $duration, FixedCostStrategy $strategy)
     {
         $this->duration = $duration;
         $this->costStrategy = $strategy;
     }
-/* /Листинг 08.17 */
+
+    /* /Листинг 08.17 */
 
     public function cost(): int
     {

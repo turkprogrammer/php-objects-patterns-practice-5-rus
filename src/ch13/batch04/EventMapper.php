@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch04;
 
@@ -85,7 +85,7 @@ class EventMapper extends Mapper
     {
         $space = $object->getSpace();
 
-        if (! $space) {
+        if (!$space) {
             throw new AppException("cannot save without space");
         }
 
@@ -111,7 +111,7 @@ class EventMapper extends Mapper
         return $this->selectAllStmt;
     }
 
-/* Листинг 13.30 */
+    /* Листинг 13.30 */
 
     // EventMapper
 
@@ -123,5 +123,5 @@ class EventMapper extends Mapper
             [$sid]
         );
     }
-/* /Листинг 13.30 */
+    /* /Листинг 13.30 */
 }

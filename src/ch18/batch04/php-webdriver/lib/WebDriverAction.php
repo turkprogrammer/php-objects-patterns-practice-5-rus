@@ -16,7 +16,8 @@
 /**
  * Interface representing a single user-interaction action.
  */
-interface WebDriverAction {
+interface WebDriverAction
+{
 
-  public function perform();
+    public function perform();
 }

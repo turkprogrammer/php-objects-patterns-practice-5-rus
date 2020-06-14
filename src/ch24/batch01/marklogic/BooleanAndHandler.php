@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch24\batch01\marklogic;
 
@@ -10,6 +10,7 @@ use popp\ch24\batch01\parse\Scanner;
 use popp\ch24\batch01\interpreter\BooleanAndExpression;
 
 /* Листинг 24.21 */
+
 class BooleanAndHandler implements Handler
 {
     public function handleMatch(Parser $parser, Scanner $scanner)

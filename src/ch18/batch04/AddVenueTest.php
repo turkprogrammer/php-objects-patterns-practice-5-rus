@@ -1,7 +1,8 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 /* Листинг 18.16 */
+
 namespace vitaliyviznyuk\popp5rus\ch18\batch04;
 
 use popp\ch18\batch04\woo\controller\Controller;
@@ -13,7 +14,7 @@ class AddVenueTest extends \PHPUnit_Framework_TestCase
 {
     public function testAddVenueVanilla()
     {
-        $this->runCommand("AddVenue", ["venue_name"=>"bob"]);
+        $this->runCommand("AddVenue", ["venue_name" => "bob"]);
     }
 
     public function runCommand($command = null, array $args = null)
@@ -22,13 +23,13 @@ class AddVenueTest extends \PHPUnit_Framework_TestCase
         $applicationHelper->init();
         $request = ApplicationRegistry::getRequest();
 
-        if (! is_null($args)) {
+        if (!is_null($args)) {
             foreach ($args as $key => $val) {
                 $request->setProperty($key, $val);
             }
         }
 
-        if (! is_null($command)) {
+        if (!is_null($command)) {
             $request->setProperty('cmd', $command);
         }
 

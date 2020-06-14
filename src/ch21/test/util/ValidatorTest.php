@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace userthing\util;
 
@@ -35,12 +35,12 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $this->validator = new Validator($store);
 
         $store->expects($this->once())
-              ->method('notifyPasswordFailure')
-              ->with($this->equalTo('bob@example.com'));
+            ->method('notifyPasswordFailure')
+            ->with($this->equalTo('bob@example.com'));
 
         $store->expects($this->any())
-              ->method("getUser")
-              ->will($this->returnValue(new User("bob williams", "bob@example.com", "right")));
+            ->method("getUser")
+            ->will($this->returnValue(new User("bob williams", "bob@example.com", "right")));
 
         $this->validator->validateUser("bob@example.com", "wrong");
     }

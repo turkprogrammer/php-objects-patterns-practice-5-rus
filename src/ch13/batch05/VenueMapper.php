@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch05;
 
@@ -36,7 +36,7 @@ class VenueMapper extends Mapper
 
     protected function doInsert(DomainObject $object)
     {
-        $values = array( $object->getname() );
+        $values = array($object->getname());
         $this->insertStmt->execute($values);
         $id = $this->pdo->lastInsertId();
         $object->setId($id);
@@ -44,7 +44,7 @@ class VenueMapper extends Mapper
 
     public function update(DomainObject $object)
     {
-        $values = array( $object->getname(), $object->getid(), $object->getId() );
+        $values = array($object->getname(), $object->getid(), $object->getId());
         $this->updateStmt->execute($values);
     }
 

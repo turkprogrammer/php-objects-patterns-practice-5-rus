@@ -8,7 +8,10 @@ use popp\ch04\batch02\CdProduct;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         // runner code here
         print ShopProduct::AVAILABLE;
@@ -22,8 +25,8 @@ class Runner
         // commented out so that tests run!
         // $writer = new ShopProductWriter();
 
-        $product1 = new BookProduct("My Antonia", "Willa", "Cather", 5.99, 300);
-        $product2 =   new CdProduct(
+        $product1 = new BookProduct("Собачье сердце", "Михаил", "Булгаков", 5.99, 300);
+        $product2 = new CdProduct(
             "Exile on Coldharbour Lane",
             "The",
             "Alabama 3",

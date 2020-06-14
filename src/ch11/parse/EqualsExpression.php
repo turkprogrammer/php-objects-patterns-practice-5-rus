@@ -8,7 +8,8 @@ class EqualsExpression extends OperatorExpression
         Context $context,
         $result_l,
         $result_r
-    ) {
-            $context->replace($this, $result_l == $result_r);
+    )
+    {
+        $context->replace($this, $result_l == $result_r);
     }
 }

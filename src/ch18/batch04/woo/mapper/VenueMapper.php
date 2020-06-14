@@ -51,7 +51,7 @@ class VenueMapper extends Mapper implements VenueFinder
 
     protected function doInsert(DomainObject $object)
     {
-        $values = array( $object->getname() );
+        $values = array($object->getname());
         $this->insertStmt->execute($values);
         $id = self::$PDO->lastInsertId();
         $object->setId($id);
@@ -59,7 +59,7 @@ class VenueMapper extends Mapper implements VenueFinder
 
     public function update(DomainObject $object)
     {
-        $values = array( $object->getname(), $object->getid(), $object->getId() );
+        $values = array($object->getname(), $object->getid(), $object->getId());
         $this->updateStmt->execute($values);
     }
 

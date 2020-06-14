@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch05;
 
@@ -10,7 +10,9 @@ abstract class PersistenceFactory
 {
 
     abstract public function getMapper(): Mapper;
+
     abstract public function getDomainObjectFactory(): DomainObjectFactory;
+
     abstract public function getCollection(array $raw): Collection;
 
     public static function getFactory($targetclass): PersistenceFactory

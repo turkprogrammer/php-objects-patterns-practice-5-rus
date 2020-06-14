@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch04\batch17;
 
 /* Листинг 04.73 */
+
 class Person
 {
     private $myname;
@@ -15,8 +16,8 @@ class Person
             return $this->$method($value);
         }
     }
-/* /Листинг 04.73 */
-/* Листинг 04.74 */
+    /* /Листинг 04.73 */
+    /* Листинг 04.74 */
     public function __unset(string $property)
     {
         $method = "set{$property}";
@@ -24,13 +25,13 @@ class Person
             $this->$method(null);
         }
     }
-/* /Листинг 04.74 */
-/* Листинг 04.73 */
+    /* /Листинг 04.74 */
+    /* Листинг 04.73 */
 
     public function setName(string $name)
     {
         $this->myname = $name;
-        if (! is_null($name)) {
+        if (!is_null($name)) {
             $this->myname = strtoupper($this->myname);
         }
     }

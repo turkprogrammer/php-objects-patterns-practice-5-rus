@@ -1,7 +1,8 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 /* Листинг 18.06 */
+
 namespace vitaliyviznyuk\popp5rus\ch18\batch02;
 
 class UserStoreTest extends \PHPUnit_Framework_TestCase
@@ -12,7 +13,8 @@ class UserStoreTest extends \PHPUnit_Framework_TestCase
     {
         $this->store = new UserStore();
     }
-/* /Листинг 18.06 */
+
+    /* /Листинг 18.06 */
 
     public function testAddUserShortPass2()
     {
@@ -24,7 +26,7 @@ class UserStoreTest extends \PHPUnit_Framework_TestCase
         // ...
     }
 
-/* Листинг 18.06 */
+    /* Листинг 18.06 */
 
     public function testAddUserShortPass()
     {
@@ -34,9 +36,9 @@ class UserStoreTest extends \PHPUnit_Framework_TestCase
         //$this->store->addUser("bob williams", "a@b.com", "ff");
         //$this->fail("Short password exception expected");
     }
-/* /Листинг 18.06 */
+    /* /Листинг 18.06 */
 
-/* Листинг 18.08 */
+    /* Листинг 18.08 */
 
     // UserStoreTest
 
@@ -54,7 +56,8 @@ class UserStoreTest extends \PHPUnit_Framework_TestCase
             self::AssertThat($this->store->getUser("a@b.com"), $const);
         }
     }
-/* /Листинг 18.08 */
+
+    /* /Листинг 18.08 */
 
     public function testGetUser()
     {
@@ -64,6 +67,6 @@ class UserStoreTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($user['name'], "bob williams");
         $this->assertEquals($user['pass'], "12345");
     }
-/* Листинг 18.06 */
+    /* Листинг 18.06 */
 }
 /* /Листинг 18.06 */

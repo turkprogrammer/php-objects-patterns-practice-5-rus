@@ -1,6 +1,7 @@
 <?php
 
 /* Листинг 05.20 */
+
 namespace tasks;
 
 class Task

@@ -1,13 +1,16 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch10\batch04;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
-/* Листинг 10.12 */
+        /* Листинг 10.12 */
         // create an army
         $main_army = new Army();
 
@@ -28,6 +31,6 @@ class Runner
 
         // all the calculations handled behind the scenes
         print "attacking with strength: {$main_army->bombardStrength()}\n";
-/* /Листинг 10.12 */
+        /* /Листинг 10.12 */
     }
 }

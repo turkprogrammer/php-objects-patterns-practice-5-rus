@@ -15,9 +15,11 @@
 
 class WebDriverClickAction
     extends WebDriverMouseAction
-    implements WebDriverAction {
+    implements WebDriverAction
+{
 
-  public function perform() {
-    $this->mouse->click($this->getActionLocation());
-  }
+    public function perform()
+    {
+        $this->mouse->click($this->getActionLocation());
+    }
 }

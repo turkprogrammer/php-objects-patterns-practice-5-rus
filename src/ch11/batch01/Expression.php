@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch01;
 
 /* Листинг 11.01 */
+
 abstract class Expression
 {
     private static $keycount = 0;
@@ -13,7 +14,7 @@ abstract class Expression
 
     public function getKey()
     {
-        if (! isset($this->key)) {
+        if (!isset($this->key)) {
             self::$keycount++;
             $this->key = self::$keycount;
         }

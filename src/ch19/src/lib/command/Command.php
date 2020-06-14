@@ -16,16 +16,16 @@
 abstract class Command
 {
 
-/**
- * Perform the key operation encapsulated by the class.
- * Command classes encapsulate a single operation. They
- * are easy to add to and remove from a project, can be
- * stored after instantiation and execute() can then be
- * invoked at leisure.
- * @param  $context {@link CommandContext} Shared contextual data
- * @return bool     false on failure, true on success
- * @uses CommandContext
- * @link http://www.example.com More info
- */
+    /**
+     * Perform the key operation encapsulated by the class.
+     * Command classes encapsulate a single operation. They
+     * are easy to add to and remove from a project, can be
+     * stored after instantiation and execute() can then be
+     * invoked at leisure.
+     * @param  $context {@link CommandContext} Shared contextual data
+     * @return bool     false on failure, true on success
+     * @uses CommandContext
+     * @link http://www.example.com More info
+     */
     abstract public function execute(CommandContext $context);
 }

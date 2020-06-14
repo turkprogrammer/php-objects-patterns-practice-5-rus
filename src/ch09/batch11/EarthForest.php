@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch09\batch11;
 
 /* Листинг 09.30 */
+
 class EarthForest extends Forest
 {
 }

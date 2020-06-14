@@ -1,28 +1,29 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch10;
 
 /* Листинг 12.41 */
+
 class VenueManager extends Base
 {
     private $addvenue = "INSERT INTO venue
                           ( name )
                           VALUES( ? )";
 
-    private $addspace  = "INSERT INTO space
+    private $addspace = "INSERT INTO space
                           ( name, venue )
                           VALUES( ?, ? )";
 
-    private $addevent =  "INSERT INTO event
+    private $addevent = "INSERT INTO event
                           ( name, space, start, duration )
                           VALUES( ?, ?, ?, ? )";
 
     // ...
 
-/* /Листинг 12.41 */
+    /* /Листинг 12.41 */
 
-/* Листинг 12.42 */
+    /* Листинг 12.42 */
 
     // VenueManager
 
@@ -49,9 +50,9 @@ class VenueManager extends Base
 
         return $ret;
     }
-/* /Листинг 12.42 */
+    /* /Листинг 12.42 */
 
-/* Листинг 12.43 */
+    /* Листинг 12.43 */
 
     // VenueManager
 
@@ -61,5 +62,5 @@ class VenueManager extends Base
         $stmt = $pdo->prepare($this->addevent);
         $stmt->execute([$name, $spaceid, $time, $duration]);
     }
-/* /Листинг 12.43 */
+    /* /Листинг 12.43 */
 }

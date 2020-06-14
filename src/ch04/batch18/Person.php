@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch04\batch18;
 
 /* Листинг 04.76 */
+
 class Person
 {
     private $writer;
@@ -23,6 +24,7 @@ class Person
     {
         return "Bob";
     }
+
     public function getAge(): int
     {
         return 44;

@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch09;
 
 /* Листинг 11.48 */
+
 class CommandContext
 {
     private $params = [];

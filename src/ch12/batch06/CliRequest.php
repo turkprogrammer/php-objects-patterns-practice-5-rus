@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch06;
 
@@ -23,7 +23,7 @@ class CliRequest extends Request
         $this->path = (empty($this->path)) ? "/" : $this->path;
     }
 
-/* Листинг 12.28 */
+    /* Листинг 12.28 */
 
     // CliRequest
 
@@ -35,5 +35,5 @@ class CliRequest extends Request
         Registry::reset();
         Controller::run();
     }
-/* /Листинг 12.28 */
+    /* /Листинг 12.28 */
 }

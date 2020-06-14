@@ -19,13 +19,13 @@ class RepetitionParse extends CollectionParse
         $count = 0;
 
         while (true) {
-            if (! $parser->trigger($s_copy)) {
+            if (!$parser->trigger($s_copy)) {
                 $scanner->updateToMatch($s_copy);
                 return true;
             }
 
             $s_copy2 = clone $s_copy;
-            if (! $parser->scan($s_copy2)) {
+            if (!$parser->scan($s_copy2)) {
                 $scanner->updateToMatch($s_copy);
                 return true;
             }

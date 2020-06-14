@@ -18,9 +18,11 @@
  */
 class WebDriverClickAndHoldAction
     extends WebDriverMouseAction
-    implements WebDriverAction {
+    implements WebDriverAction
+{
 
-  public function perform() {
-    $this->mouse->mouseDown($this->getActionLocation());
-  }
+    public function perform()
+    {
+        $this->mouse->mouseDown($this->getActionLocation());
+    }
 }

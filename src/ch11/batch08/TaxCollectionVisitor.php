@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch08;
 
 /* Листинг 11.44 */
+
 class TaxCollectionVisitor extends ArmyVisitor
 {
     private $due = 0;

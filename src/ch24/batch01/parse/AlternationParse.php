@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch24\batch01\parse;
 
 /* Листинг 24.12 */
+
 class AlternationParse extends CollectionParse
 {
     public function trigger(Scanner $scanner): bool
@@ -24,7 +25,7 @@ class AlternationParse extends CollectionParse
         foreach ($this->parsers as $parser) {
             $start_state = $scanner->getState();
             if ($type == $parser->trigger($scanner) && $parser->scan($scanner)) {
-                 return true;
+                return true;
             }
         }
 

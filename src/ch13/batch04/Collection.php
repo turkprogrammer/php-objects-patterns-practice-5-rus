@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch04;
 
@@ -29,7 +29,7 @@ abstract class Collection implements \Iterator
     {
         $class = $this->targetClass();
 
-        if (! ($object instanceof $class )) {
+        if (!($object instanceof $class)) {
             throw new AppException("This is a {$class} collection");
         }
 
@@ -82,7 +82,7 @@ abstract class Collection implements \Iterator
     {
         $row = $this->getRow($this->pointer);
 
-        if (! is_null($row)) {
+        if (!is_null($row)) {
             $this->pointer++;
         }
 
@@ -91,6 +91,6 @@ abstract class Collection implements \Iterator
 
     public function valid()
     {
-        return (! is_null($this->current()));
+        return (!is_null($this->current()));
     }
 }

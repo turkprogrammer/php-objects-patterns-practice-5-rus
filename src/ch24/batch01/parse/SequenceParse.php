@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch24\batch01\parse;
 
 /* Листинг 24.10 */
+
 class SequenceParse extends CollectionParse
 {
     public function trigger(Scanner $scanner): bool
@@ -20,7 +21,7 @@ class SequenceParse extends CollectionParse
         $start_state = $scanner->getState();
 
         foreach ($this->parsers as $parser) {
-            if (! ($parser->trigger($scanner) && $parser->scan($scanner))) {
+            if (!($parser->trigger($scanner) && $parser->scan($scanner))) {
                 $scanner->setState($start_state);
 
                 return false;

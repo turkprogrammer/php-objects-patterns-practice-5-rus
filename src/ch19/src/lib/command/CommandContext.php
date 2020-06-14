@@ -16,27 +16,26 @@
  * @author  Clarrie Grundie
  * @copyright 2004 Ambridge Technologies Ltd
  */
-
 class CommandContext
 {
-/**
- * The application name.
- * Used by various clients for error messages, etc.
- * @var string
- */
+    /**
+     * The application name.
+     * Used by various clients for error messages, etc.
+     * @var string
+     */
     public $applicationName;
 
-/**
- * Encapsulated Keys/values.
- * This class is essentially a wrapper for this array
- * @var array
- */
+    /**
+     * Encapsulated Keys/values.
+     * This class is essentially a wrapper for this array
+     * @var array
+     */
     private $params = [];
 
-/**
- * An error message.
- * @var string
- */
+    /**
+     * An error message.
+     * @var string
+     */
     private $error = "";
 
     public function __construct($appname)

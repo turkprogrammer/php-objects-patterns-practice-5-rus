@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch18\batch03;
 
@@ -63,15 +63,15 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
             ]));
 
         $this->validator->validateUser("bob@example.com", "wrong");
-/*
-        $store = $this->getMock("UserStore");
-        $store->expects( $this->once() )
-              ->method('notifyPasswordFailure');
-        //$store->expects( $this->at( 1 ) ) // raise bug
-        $store->expects( $this->once( ) )
-              ->method("getUser")
-              ->with( $this->equalTo('henry') );
-*/
+        /*
+                $store = $this->getMock("UserStore");
+                $store->expects( $this->once() )
+                      ->method('notifyPasswordFailure');
+                //$store->expects( $this->at( 1 ) ) // raise bug
+                $store->expects( $this->once( ) )
+                      ->method("getUser")
+                      ->with( $this->equalTo('henry') );
+        */
         //$store->getUser("bob@bob.com");
     }
 }

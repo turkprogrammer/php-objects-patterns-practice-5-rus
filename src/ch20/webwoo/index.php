@@ -1,5 +1,5 @@
 <?php
-$cmd="default";
+$cmd = "default";
 
 if (isset($_REQUEST['cmd'])) {
     $cmd = $_REQUEST['cmd'];

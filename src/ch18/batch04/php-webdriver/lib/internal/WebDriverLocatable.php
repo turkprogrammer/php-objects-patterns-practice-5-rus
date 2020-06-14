@@ -16,10 +16,11 @@
 /**
  * Interface representing basic mouse operations.
  */
-interface WebDriverLocatable {
+interface WebDriverLocatable
+{
 
-  /**
-   * @return WebDriverCoordinates
-   */
-  public function getCoordinates();
+    /**
+     * @return WebDriverCoordinates
+     */
+    public function getCoordinates();
 }

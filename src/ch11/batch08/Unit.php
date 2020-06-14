@@ -1,13 +1,14 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch08;
 
 /* Листинг 11.39 */
+
 abstract class Unit
 {
     // ...
-/* /Листинг 11.39 */
+    /* /Листинг 11.39 */
     protected $health = 10;
     protected $depth = 0;
 
@@ -27,7 +28,8 @@ abstract class Unit
     {
         return false;
     }
-/* Листинг 11.39 */
+
+    /* Листинг 11.39 */
     public function accept(ArmyVisitor $visitor)
     {
         $refthis = new \ReflectionClass(get_class($this));

@@ -12,7 +12,8 @@ class BookProduct extends ShopProduct
         string $mainName,
         float $price,
         int $numPages
-    ) {
+    )
+    {
         parent::__construct(
             $title,
             $firstName,

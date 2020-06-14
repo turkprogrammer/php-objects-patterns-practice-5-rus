@@ -5,6 +5,7 @@ namespace vitaliyviznyuk\popp5rus\ch03\batch14;
 use popp\ch03\batch14\ShopProduct;
 
 /* Листинг 03.46 */
+
 class ShopProductWriter
 {
     public $products = [];
@@ -16,7 +17,7 @@ class ShopProductWriter
 
     public function write()
     {
-        $str =  "";
+        $str = "";
         foreach ($this->products as $shopProduct) {
             $str .= "{$shopProduct->title}: ";
             $str .= $shopProduct->getProducer();

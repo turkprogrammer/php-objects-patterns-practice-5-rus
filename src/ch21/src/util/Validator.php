@@ -4,14 +4,17 @@ namespace userthing\util;
 
 use userthing\persist\UserStore;
 
-class Validator {
+class Validator
+{
     private $store;
 
-    function __construct(UserStore $store) {
+    function __construct(UserStore $store)
+    {
         $this->store = $store;
     }
 
-    function validateUser(string $mail, string $pass): bool {
+    function validateUser(string $mail, string $pass): bool
+    {
         // make it always fail
         return false;
 

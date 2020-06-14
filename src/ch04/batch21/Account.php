@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch04\batch21;
 
 /* Листинг 04.83 */
+
 class Account
 {
     public $balance;

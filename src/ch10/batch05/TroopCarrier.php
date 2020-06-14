@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch10\batch05;
 
 /* Листинг 10.16 */
+
 class TroopCarrier extends CompositeUnit
 {
     public function addUnit(Unit $unit)

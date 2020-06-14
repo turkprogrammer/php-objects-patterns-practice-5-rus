@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch07;
 
@@ -11,16 +11,19 @@ use popp\ch13\batch04\Registry;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
-/* Листинг 13.39 */
+        /* Листинг 13.39 */
         $idobj = new IdentityObject();
         $idobj->field("name")
             ->eq("The Good Show")
             ->field("start")
             ->gt(time())
             ->lt(time() + (24 * 60 * 60));
-/* /Листинг 13.39 */
+        /* /Листинг 13.39 */
 
         print $idobj;
     }
@@ -43,31 +46,31 @@ class Runner
 
     public static function run3()
     {
-/* Листинг 13.43 */
+        /* Листинг 13.43 */
         $vuf = new VenueUpdateFactory();
         print_r($vuf->newUpdate(new Venue(334, "The Happy Hairband")));
-/* /Листинг 13.43 */
+        /* /Листинг 13.43 */
     }
 
     public static function run4()
     {
-/* Листинг 13.46 */
+        /* Листинг 13.46 */
         $vio = new VenueIdentityObject();
         $vio->field("name")->eq("The Happy Hairband");
 
         $vsf = new VenueSelectionFactory();
         print_r($vsf->newSelection($vio));
-/* /Листинг 13.46 */
+        /* /Листинг 13.46 */
     }
 
     public static function run5()
     {
         self::setUp();
 
-/* Листинг 13.48 */
+        /* Листинг 13.48 */
         $factory = PersistenceFactory::getFactory(Venue::class);
         $finder = new DomainObjectAssembler($factory);
-/* /Листинг 13.48 */
+        /* /Листинг 13.48 */
 
         $venue1 = new Venue(-1, "The Likey Lounge");
         $venue2 = new Venue(-1, "The Eyeball Inn");
@@ -79,7 +82,7 @@ class Runner
         $finder->insert($venue3);
         $finder->insert($venue4);
 
-/* Листинг 13.49 */
+        /* Листинг 13.49 */
         $idobj = $factory->getIdentityObject()
             ->field('name')
             ->eq('The Eyeball Inn');
@@ -89,7 +92,7 @@ class Runner
         foreach ($collection as $venue) {
             print $venue->getName() . "\n";
         }
-/* /Листинг 13.49 */
+        /* /Листинг 13.49 */
     }
 
     private function setUp()

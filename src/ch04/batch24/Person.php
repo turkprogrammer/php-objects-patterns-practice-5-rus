@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch04\batch24;
 
 /* Листинг 04.99 */
+
 class Person
 {
     public function output(PersonWriter $writer)

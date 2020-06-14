@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch18\batch02;
 
@@ -7,7 +7,7 @@ class UserStore
 {
     private $users = [];
 
-    public function addUser(string $name, string $mail, string $pass):bool
+    public function addUser(string $name, string $mail, string $pass): bool
     {
         if (isset($this->users[$mail])) {
             throw new \Exception(
@@ -38,7 +38,7 @@ class UserStore
     }
 
 
-    public function getUser(string $mail):array
+    public function getUser(string $mail): array
     {
         return ($this->users[$mail]);
     }

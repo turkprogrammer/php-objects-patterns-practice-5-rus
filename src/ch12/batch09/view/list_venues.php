@@ -1,13 +1,13 @@
 <!-- Листинг 12.39 -->
 <html>
 <head>
-<title>Venues</title>
+    <title>Venues</title>
 </head>
 <body>
 <h1>Venues</h1>
 
 <div>
-Proudly sponsored by: <?php echo $vh->sponsorList(); ?>
+    Proudly sponsored by: <?php echo $vh->sponsorList(); ?>
 
 </div>
 

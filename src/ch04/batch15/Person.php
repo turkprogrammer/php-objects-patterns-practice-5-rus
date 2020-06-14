@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch04\batch15;
 
 /* Листинг 04.71 */
+
 class Person
 {
     public function __get(string $property)
@@ -13,15 +14,15 @@ class Person
         }
     }
 
-/* /Листинг 04.71 */
-/* Листинг 04.72 */
+    /* /Листинг 04.71 */
+    /* Листинг 04.72 */
     public function __isset(string $property)
     {
         $method = "get{$property}";
         return (method_exists($this, $method));
     }
-/* /Листинг 04.72 */
-/* Листинг 04.71 */
+    /* /Листинг 04.72 */
+    /* Листинг 04.71 */
     public function getName(): string
     {
         return "Bob";

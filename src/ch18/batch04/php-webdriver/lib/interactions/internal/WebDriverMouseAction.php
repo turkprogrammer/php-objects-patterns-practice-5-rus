@@ -16,27 +16,31 @@
 /**
  * Base class for all mouse-related actions.
  */
-class WebDriverMouseAction {
+class WebDriverMouseAction
+{
 
-  protected $mouse;
-  protected $locationProvider;
+    protected $mouse;
+    protected $locationProvider;
 
-  public function __construct(
-      WebDriverMouse $mouse,
-      WebDriverLocatable $location_provider = null) {
-    $this->mouse = $mouse;
-    $this->locationProvider = $location_provider;
-  }
-
-  protected function getActionLocation() {
-    if ($this->locationProvider !== null) {
-      return $this->locationProvider->getCoordinates();
-    } else {
-      return null;
+    public function __construct(
+        WebDriverMouse $mouse,
+        WebDriverLocatable $location_provider = null)
+    {
+        $this->mouse = $mouse;
+        $this->locationProvider = $location_provider;
     }
-  }
 
-  protected function moveToLocation() {
-    $this->mouse->mouseMove($this->locationProvider);
-  }
+    protected function getActionLocation()
+    {
+        if ($this->locationProvider !== null) {
+            return $this->locationProvider->getCoordinates();
+        } else {
+            return null;
+        }
+    }
+
+    protected function moveToLocation()
+    {
+        $this->mouse->mouseMove($this->locationProvider);
+    }
 }

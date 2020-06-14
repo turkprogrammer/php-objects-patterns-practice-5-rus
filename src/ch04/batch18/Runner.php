@@ -4,11 +4,14 @@ namespace vitaliyviznyuk\popp5rus\ch04\batch18;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         // runner code here
 
-        $person= new Person(new PersonWriter());
+        $person = new Person(new PersonWriter());
         $person->writeName();
         $person->writeAge();
     }

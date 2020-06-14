@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch04;
 
@@ -38,7 +38,7 @@ class SpaceMapper extends Mapper
         return new SpaceCollection($raw, $this);
     }
 
-/* Листинг 13.27 */
+    /* Листинг 13.27 */
 
     // SpaceMapper
 
@@ -56,7 +56,7 @@ class SpaceMapper extends Mapper
 
         return $obj;
     }
-/* /Листинг 13.27 */
+    /* /Листинг 13.27 */
 
     // SpaceMapper
 
@@ -69,11 +69,11 @@ class SpaceMapper extends Mapper
     {
         $venue = $object->getVenue();
 
-        if (! $venue) {
+        if (!$venue) {
             throw new AppException("cannot save without venue");
         }
 
-        $values = [ $object->getname(), $venue->getId() ];
+        $values = [$object->getname(), $venue->getId()];
         $this->insertStmt->execute($values);
         $id = $this->pdo->lastInsertId();
         $object->setId((int)$id);

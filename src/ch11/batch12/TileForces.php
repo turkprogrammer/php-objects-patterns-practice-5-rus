@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch12;
 
@@ -12,7 +12,7 @@ class TileForces
         $this->units = $acq->getUnits($this->x, $this->y);
     }
 
-/* Листинг 11.60 */
+    /* Листинг 11.60 */
 
     // TileForces
 
@@ -26,7 +26,8 @@ class TileForces
 
         return $power;
     }
-/* /Листинг 11.60 */
+
+    /* /Листинг 11.60 */
 
     public function health(): int
     {

@@ -1,10 +1,12 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch09\batch07;
 
 /* Листинг 09.19 */
+
 /* Листинг 09.17 */
+
 class CommsManager
 {
     const BLOGGS = 1;
@@ -26,7 +28,7 @@ class CommsManager
         }
     }
 
-/* /Листинг 09.17 */
+    /* /Листинг 09.17 */
     public function getHeaderText(): string
     {
         switch ($this->mode) {
@@ -36,5 +38,5 @@ class CommsManager
                 return "BloggsCal header\n";
         }
     }
-/* Листинг 09.17 */
+    /* Листинг 09.17 */
 }

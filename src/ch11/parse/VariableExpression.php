@@ -15,7 +15,7 @@ class VariableExpression extends Expression
 
     public function interpret(Context $context)
     {
-        if (! is_null($this->val)) {
+        if (!is_null($this->val)) {
             $context->replace($this, $this->val);
             $this->val = null;
         }

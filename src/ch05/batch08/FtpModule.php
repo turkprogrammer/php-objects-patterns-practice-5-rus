@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch05\batch08;
 
 /* Листинг 05.48 */
+
 class FtpModule implements Module
 {
     public function setHost($host)

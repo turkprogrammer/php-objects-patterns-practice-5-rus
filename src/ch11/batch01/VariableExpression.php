@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch01;
 
 /* Листинг 11.05 */
+
 class VariableExpression extends Expression
 {
     private $name;
@@ -17,7 +18,7 @@ class VariableExpression extends Expression
 
     public function interpret(InterpreterContext $context)
     {
-        if (! is_null($this->val)) {
+        if (!is_null($this->val)) {
             $context->replace($this, $this->val);
             $this->val = null;
         }

@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch04\batch20;
 
 /* Листинг 04.81 */
+
 class Person
 {
     private $name;
@@ -19,7 +20,7 @@ class Person
     {
         $this->id = $id;
     }
-    
+
     public function __clone()
     {
         $this->id = 0;

@@ -1,13 +1,16 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch09;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
-/* Листинг 11.51 */
+        /* Листинг 11.51 */
         $controller = new Controller();
         $context = $controller->getContext();
 
@@ -17,7 +20,7 @@ class Runner
         $controller->process();
 
         print $context->getError();
-/* /Листинг 11.51 */
+        /* /Листинг 11.51 */
     }
 
     public static function run2()

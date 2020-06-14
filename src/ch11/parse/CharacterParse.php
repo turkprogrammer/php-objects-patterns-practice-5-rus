@@ -14,11 +14,11 @@ class CharacterParse extends Parser
 
     public function trigger(Scanner $scanner): bool
     {
-        return ( $scanner->token() == $this->char );
+        return ($scanner->token() == $this->char);
     }
 
     protected function doScan(Scanner $scanner): bool
     {
-        return ( $this->trigger($scanner) );
+        return ($this->trigger($scanner));
     }
 }

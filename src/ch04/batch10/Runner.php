@@ -4,9 +4,12 @@ namespace vitaliyviznyuk\popp5rus\ch04\batch10;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
-/* Листинг 04.60 */
+        /* Листинг 04.60 */
         try {
             $conf = new Conf(__DIR__ . "/conf01.xml");
             //$conf = new Conf( __DIR__ . "/conf.unwriteable.xml" );
@@ -18,6 +21,6 @@ class Runner
         } catch (\Exception $e) {
             die($e->__toString());
         }
-/* /Листинг 04.60 */
+        /* /Листинг 04.60 */
     }
 }

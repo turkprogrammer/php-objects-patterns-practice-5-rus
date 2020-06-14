@@ -18,12 +18,12 @@ class WordParse extends Parser
         if (is_null($this->word)) {
             return true;
         }
-        return ( $this->word == $scanner->token() );
+        return ($this->word == $scanner->token());
     }
 
     protected function doScan(Scanner $scanner): bool
     {
-        $ret = ( $this->trigger($scanner) );
+        $ret = ($this->trigger($scanner));
         return $ret;
     }
 }

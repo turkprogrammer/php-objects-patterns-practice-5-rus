@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace userthing\persist;
 
@@ -32,7 +32,7 @@ class UserStore
     public function getUser(string $mail)
     {
         if (isset($this->users[$mail])) {
-            return ( $this->users[$mail] );
+            return ($this->users[$mail]);
         }
 
         return null;

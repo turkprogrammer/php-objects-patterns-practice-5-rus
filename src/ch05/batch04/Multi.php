@@ -1,6 +1,7 @@
 <?php
 
 /* Листинг 05.12 */
+
 namespace com\getinstance\util {
 
     class Debug

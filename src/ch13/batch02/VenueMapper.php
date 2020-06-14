@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch02;
 
@@ -46,7 +46,7 @@ class VenueMapper extends Mapper
         return new VenueCollection($raw, $this);
     }
 
-/* Листинг 13.12 */
+    /* Листинг 13.12 */
 
     // VenueMapper
 
@@ -63,7 +63,8 @@ class VenueMapper extends Mapper
 
         return $obj;
     }
-/* /Листинг 13.12 */
+
+    /* /Листинг 13.12 */
 
     protected function doInsert(DomainObject $object)
     {

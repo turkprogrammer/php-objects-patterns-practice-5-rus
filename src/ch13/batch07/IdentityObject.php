@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch07;
 
 /* Листинг 13.38 */
+
 class IdentityObject
 {
     protected $currentfield = null;
@@ -14,11 +15,11 @@ class IdentityObject
     // an identity object can start off empty, or with a field
     public function __construct(string $field = null, array $enforce = null)
     {
-        if (! is_null($enforce)) {
+        if (!is_null($enforce)) {
             $this->enforce = $enforce;
         }
 
-        if (! is_null($field)) {
+        if (!is_null($field)) {
             $this->field($field);
         }
     }
@@ -36,7 +37,7 @@ class IdentityObject
     // allowing for fluent syntax
     public function field(string $fieldname): self
     {
-        if (! $this->isVoid() && $this->currentfield->isIncomplete()) {
+        if (!$this->isVoid() && $this->currentfield->isIncomplete()) {
             throw new \Exception("Incomplete field");
         }
 
@@ -61,7 +62,7 @@ class IdentityObject
     // is the given fieldname legal?
     public function enforceField(string $fieldname)
     {
-        if (! in_array($fieldname, $this->enforce) && ! empty($this->enforce)) {
+        if (!in_array($fieldname, $this->enforce) && !empty($this->enforce)) {
             $forcelist = implode(', ', $this->enforce);
             throw new \Exception("{$fieldname} not a legal field ($forcelist)");
         }
@@ -112,7 +113,8 @@ class IdentityObject
 
         return $ret;
     }
-/* /Листинг 13.38 */
+
+    /* /Листинг 13.38 */
 
     public function __toString()
     {
@@ -124,6 +126,6 @@ class IdentityObject
 
         return implode(" AND ", $ret);
     }
-/* Листинг 13.38 */
+    /* Листинг 13.38 */
 }
 /* /Листинг 13.38 */

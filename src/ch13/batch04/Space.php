@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch04;
 
@@ -15,7 +15,7 @@ class Space extends DomainObject
         $this->venue = $venue;
     }
 
-/* Листинг 13.25 */
+    /* Листинг 13.25 */
 
     // Space
 
@@ -30,7 +30,8 @@ class Space extends DomainObject
         $this->name = $name;
         $this->markDirty();
     }
-/* /Листинг 13.25 */
+
+    /* /Листинг 13.25 */
 
     public function setEvents(EventCollection $collection)
     {
@@ -42,7 +43,7 @@ class Space extends DomainObject
         return $this->events;
     }
 
-/* Листинг 13.28 */
+    /* Листинг 13.28 */
 
     // Space
 
@@ -54,7 +55,8 @@ class Space extends DomainObject
 
         return $this->events;
     }
-/* /Листинг 13.28 */
+
+    /* /Листинг 13.28 */
 
     public function getVenue(): Venue
     {

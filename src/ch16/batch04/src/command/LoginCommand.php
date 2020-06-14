@@ -21,7 +21,7 @@ class LoginCommand extends Command
         $user = $context->get('username');
         $pass = $context->get('pass');
         $user = $manager->login($user, $pass);
-        if (! $user) {
+        if (!$user) {
             $this->context->setError($manager->getError());
             return false;
         }

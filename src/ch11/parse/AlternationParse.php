@@ -21,9 +21,9 @@ class AlternationParse extends CollectionParse
         foreach ($this->parsers as $parser) {
             $s_copy = clone $scanner;
             if ($type == $parser->trigger($s_copy) &&
-                 $parser->scan($s_copy) ) {
-                 $scanner->updateToMatch($s_copy);
-                 return true;
+                $parser->scan($s_copy)) {
+                $scanner->updateToMatch($s_copy);
+                return true;
             }
         }
         return false;

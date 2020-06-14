@@ -1,6 +1,7 @@
 <?php
 
 /* Листинг 05.17 */
+
 namespace util;
 
 class LocalPath
@@ -8,6 +9,6 @@ class LocalPath
 
     public function wave()
     {
-        print "hello from ".get_class();
+        print "hello from " . get_class();
     }
 }

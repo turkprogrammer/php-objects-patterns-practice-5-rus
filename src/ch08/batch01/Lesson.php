@@ -1,13 +1,15 @@
 <?php declare(strict_types=1);
+
 namespace vitaliyviznyuk\popp5rus\ch08\batch01;
 
 /* Листинг 08.01 */
+
 abstract class Lesson
 {
     protected $duration;
     const     FIXED = 1;
     const     TIMED = 2;
-    private   $costtype;
+    private $costtype;
 
     public function __construct(int $duration, int $costtype = 1)
     {

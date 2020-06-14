@@ -15,9 +15,11 @@
 
 class WebDriverDoubleClickAction
     extends WebDriverMouseAction
-    implements WebDriverAction {
+    implements WebDriverAction
+{
 
-  public function perform() {
-    $this->mouse->doubleClick($this->getActionLocation());
-  }
+    public function perform()
+    {
+        $this->mouse->doubleClick($this->getActionLocation());
+    }
 }

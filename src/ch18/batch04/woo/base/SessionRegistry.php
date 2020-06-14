@@ -4,7 +4,8 @@ namespace \popp\ch18\batch04\base;
 
 class SessionRegistry extends Registry
 {
-    private static $instance=null;
+    private static $instance = null;
+
     private function __construct()
     {
         session_start();

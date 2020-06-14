@@ -12,7 +12,8 @@ class CdProduct extends ShopProduct
         string $mainName,
         float $price,
         int $playLength
-    ) {
+    )
+    {
         parent::__construct(
             $title,
             $firstName,

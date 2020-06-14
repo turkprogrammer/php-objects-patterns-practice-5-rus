@@ -1,7 +1,10 @@
 {
-    "autoload": {
-        "psr-4": { 
-            "popp\\library\\": ["mylib", "additional"]
-        }
+  "autoload": {
+    "psr-4": {
+      "popp\\library\\": [
+        "mylib",
+        "additional"
+      ]
     }
+  }
 }

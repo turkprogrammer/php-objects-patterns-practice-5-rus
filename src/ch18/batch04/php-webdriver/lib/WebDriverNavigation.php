@@ -22,52 +22,58 @@
  * FirefoxProfile preferences.
  * https://code.google.com/p/selenium/wiki/DesiredCapabilities#settings
  */
-class WebDriverNavigation {
+class WebDriverNavigation
+{
 
-  protected $executor;
+    protected $executor;
 
-  public function __construct(WebDriverCommandExecutor $executor) {
-    $this->executor = $executor;
-  }
+    public function __construct(WebDriverCommandExecutor $executor)
+    {
+        $this->executor = $executor;
+    }
 
-  /**
-   * Move back a single entry in the browser's history, if possible.
-   *
-   * @return WebDriverNavigation The instance.
-   */
-  public function back() {
-    $this->executor->execute('goBack');
-    return $this;
-  }
+    /**
+     * Move back a single entry in the browser's history, if possible.
+     *
+     * @return WebDriverNavigation The instance.
+     */
+    public function back()
+    {
+        $this->executor->execute('goBack');
+        return $this;
+    }
 
-  /**
-   * Move forward a single entry in the browser's history, if possible.
-   *
-   * @return WebDriverNavigation The instance.
-   */
-  public function forward() {
-    $this->executor->execute('goForward');
-    return $this;
-  }
+    /**
+     * Move forward a single entry in the browser's history, if possible.
+     *
+     * @return WebDriverNavigation The instance.
+     */
+    public function forward()
+    {
+        $this->executor->execute('goForward');
+        return $this;
+    }
 
-  /**
-   * Refresh the current page.
-   *
-   * @return WebDriverNavigation The instance.
-   */
-  public function refresh() {
-    $this->executor->execute('refreshPage');
-    return $this;
-  }
+    /**
+     * Refresh the current page.
+     *
+     * @return WebDriverNavigation The instance.
+     */
+    public function refresh()
+    {
+        $this->executor->execute('refreshPage');
+        return $this;
+    }
 
-  /**
-   * Navigate to the given URL.
-   *
-   * @return WebDriverNavigation The instance.
-   */
-  public function to($url) {
-    $params = array('url' => (string)$url);
-    $this->executor->execute('get', $params);
-    return $this;
-  }
+    /**
+     * Navigate to the given URL.
+     *
+     * @return WebDriverNavigation The instance.
+     */
+    public function to($url)
+    {
+        $params = array('url' => (string)$url);
+        $this->executor->execute('get', $params);
+        return $this;
+    }
 }

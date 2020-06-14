@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch07;
 
 /* Листинг 11.35 */
+
 class Army extends CompositeUnit
 {
     public function bombardStrength(): int

@@ -6,6 +6,7 @@ namespace vitaliyviznyuk\popp5rus\ch03\batch01;
 
 class ShopProduct
 {
-    // class body
+    // Тело класса
 }
+
 /* /Листинг 03.01 */

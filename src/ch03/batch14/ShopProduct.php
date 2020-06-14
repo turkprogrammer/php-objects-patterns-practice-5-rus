@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 namespace vitaliyviznyuk\popp5rus\ch03\batch14;
 
 class ShopProduct
@@ -7,27 +8,28 @@ class ShopProduct
     public $producerMainName;
     public $producerFirstName;
     public $price;
-/* Листинг 03.44 */
+    /* Листинг 03.44 */
 
 // ShopProduct class
 
     public $discount = 0;
 
-/* /Листинг 03.44 */
+    /* /Листинг 03.44 */
 
     public function __construct(
         string $title,
         string $firstName,
         string $mainName,
         float $price
-    ) {
-        $this->title             = $title;
+    )
+    {
+        $this->title = $title;
         $this->producerFirstName = $firstName;
-        $this->producerMainName  = $mainName;
-        $this->price             = $price;
+        $this->producerMainName = $mainName;
+        $this->price = $price;
     }
 
-/* Листинг 03.44 */
+    /* Листинг 03.44 */
 //...
 
     public function setDiscount(int $num)
@@ -39,17 +41,18 @@ class ShopProduct
     {
         return ($this->price - $this->discount);
     }
-/* /Листинг 03.44 */
+
+    /* /Листинг 03.44 */
 
     public function getProducer()
     {
-        return "{$this->producerFirstName}".
-               " {$this->producerMainName}";
+        return "{$this->producerFirstName}" .
+            " {$this->producerMainName}";
     }
 
     public function getSummaryLine()
     {
-        $base  = "{$this->title} ( {$this->producerMainName}, ";
+        $base = "{$this->title} ( {$this->producerMainName}, ";
         $base .= "{$this->producerFirstName} )";
         return $base;
     }

@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch04\batch18;
 
 /* Листинг 04.75 */
+
 class PersonWriter
 {
 

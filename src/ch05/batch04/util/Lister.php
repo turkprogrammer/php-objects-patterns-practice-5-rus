@@ -1,6 +1,7 @@
 <?php
 
 /* Листинг 05.10 */
+
 namespace vitaliyviznyuk\popp5rus\ch05\batch04\util;
 
 class Lister

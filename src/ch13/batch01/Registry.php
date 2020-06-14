@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch01;
 
@@ -9,7 +9,7 @@ use popp\ch12\batch06\ApplicationHelper;
 
 class Registry
 {
-    private static $instance=null;
+    private static $instance = null;
     private $request = null;
     private $conf = null;
     private $commands = null;
@@ -104,7 +104,7 @@ class Registry
         return $this->pdo;
     }
 
-/* Листинг 13.10 */
+    /* Листинг 13.10 */
 
     public function getVenueMapper(): VenueMapper
     {
@@ -136,5 +136,5 @@ class Registry
         return new EventCollection();
     }
 
-/* /Листинг 13.10 */
+    /* /Листинг 13.10 */
 }

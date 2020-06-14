@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch10;
 
 /* Листинг 11.53 */
+
 class TileForces
 {
     private $x;
@@ -18,8 +19,8 @@ class TileForces
     }
 
     // ...
-/* /Листинг 11.53 */
-/* Листинг 11.55 */
+    /* /Листинг 11.53 */
+    /* Листинг 11.55 */
 
     // TileForces
 
@@ -30,14 +31,15 @@ class TileForces
         foreach ($this->units as $unit) {
             // this conditional is added to prevent deliberate
             // mistake shown in book copy
-            if (! is_null($unit)) {
-            $power += $unit->bombardStrength();
+            if (!is_null($unit)) {
+                $power += $unit->bombardStrength();
             }
         }
 
         return $power;
     }
-/* /Листинг 11.55 */
+
+    /* /Листинг 11.55 */
 
     public function health(): int
     {
@@ -46,13 +48,13 @@ class TileForces
         foreach ($this->units as $unit) {
             // this conditional is added to prevent deliberate
             // mistake shown in book copy
-            if (! is_null($unit)) {
-            $health += $unit->getHealth();
+            if (!is_null($unit)) {
+                $health += $unit->getHealth();
             }
         }
 
         return $health;
     }
-/* Листинг 11.53 */
+    /* Листинг 11.53 */
 }
 /* /Листинг 11.53 */

@@ -16,15 +16,16 @@
 /**
  * Interface implemented by each driver that allows access to the input devices.
  */
-interface WebDriverHasInputDevices {
+interface WebDriverHasInputDevices
+{
 
-  /**
-   * return WebDriverKeyBoard
-   */
-  public function getKeyboard();
+    /**
+     * return WebDriverKeyBoard
+     */
+    public function getKeyboard();
 
-  /**
-   * return WebDriverMouse
-   */
-  public function getMouse();
+    /**
+     * return WebDriverMouse
+     */
+    public function getMouse();
 }

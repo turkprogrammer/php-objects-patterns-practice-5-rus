@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch09\batch14;
 
 /* Листинг 09.39 */
+
 class ObjectAssembler
 {
     private $components = [];
@@ -37,7 +38,7 @@ class ObjectAssembler
 
     public function getComponent(string $class)
     {
-        if (! isset($this->components[$class])) {
+        if (!isset($this->components[$class])) {
             throw new \Exception("unknown component '$class'");
         }
         $ret = $this->components[$class]();

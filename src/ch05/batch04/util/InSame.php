@@ -4,7 +4,10 @@ namespace vitaliyviznyuk\popp5rus\ch05\batch04\util;
 
 class InSame
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         Debug::helloworld();
     }

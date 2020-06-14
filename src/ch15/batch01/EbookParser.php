@@ -1,5 +1,6 @@
 <?php
 /* Листинг 15.12 */
+
 namespace vitaliyviznyuk\popp5rus\ch15\batch01;
 
 class EbookParser

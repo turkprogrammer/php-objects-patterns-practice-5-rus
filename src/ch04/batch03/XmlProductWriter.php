@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch04\batch03;
 
 /* Листинг 04.06 */
+
 class XmlProductWriter extends ShopProductWriter
 {
 

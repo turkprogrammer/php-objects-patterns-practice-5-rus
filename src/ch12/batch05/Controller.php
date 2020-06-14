@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch05;
 
 /* Листинг 12.09 */
+
 class Controller
 {
     private $reg;
@@ -13,7 +14,10 @@ class Controller
         $this->reg = Registry::instance();
     }
 
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         $instance = new Controller();
         $instance->init();

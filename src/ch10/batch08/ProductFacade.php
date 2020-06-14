@@ -1,11 +1,12 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch10\batch08;
 
 require_once("src/ch10/batch08/legacy.php");
 
 /* Листинг 10.38 */
+
 class ProductFacade
 {
     private $products = [];

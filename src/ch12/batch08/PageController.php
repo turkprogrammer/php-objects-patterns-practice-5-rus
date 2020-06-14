@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch08;
 
@@ -9,6 +9,7 @@ use popp\ch12\batch06\HttpRequest;
 use popp\ch12\batch08\CliRequest;
 
 /* Листинг 12.33 */
+
 abstract class PageController
 {
     private $reg;

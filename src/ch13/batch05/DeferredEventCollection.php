@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch05;
 
@@ -13,7 +13,8 @@ class DeferredEventCollection extends EventCollection
         DomainObjectFactory $dofact,
         \PDOStatement $stmt_handle,
         array $valueArray
-    ) {
+    )
+    {
         parent::__construct(null, $dofact);
         $this->stmt = $stmt_handle;
         $this->valueArray = $valueArray;
@@ -21,12 +22,12 @@ class DeferredEventCollection extends EventCollection
 
     public function notifyAccess()
     {
-        if (! $this->run) {
+        if (!$this->run) {
             $this->stmt->execute($this->valueArray);
             $this->raw = $this->stmt->fetchAll();
             $this->total = count($this->raw);
         }
 
-        $this->run=true;
+        $this->run = true;
     }
 }

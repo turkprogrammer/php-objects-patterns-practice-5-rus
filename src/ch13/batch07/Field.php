@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch07;
 
 /* Листинг 13.37 */
+
 class Field
 {
     protected $name = null;
@@ -12,7 +13,7 @@ class Field
     protected $incomplete = false;
 
     // sets up the field name (age, for example)
-    public function __construct(string  $name)
+    public function __construct(string $name)
     {
         $this->name = $name;
     }

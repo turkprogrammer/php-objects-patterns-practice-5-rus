@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch03\batch09;
 
 /* Листинг 03.22 */
+
 class ShopProduct
 {
     public $title;
@@ -15,7 +16,8 @@ class ShopProduct
         string $firstName,
         string $mainName,
         float $price
-    ) {
+    )
+    {
         $this->title = $title;
         $this->producerFirstName = $firstName;
         $this->producerMainName = $mainName;
@@ -23,17 +25,17 @@ class ShopProduct
     }
 
     // ...
-/* /Листинг 03.22 */
+    /* /Листинг 03.22 */
     public function getProducer()
     {
-        return "{$this->producerFirstName}".
-               " {$this->producerMainName}";
+        return "{$this->producerFirstName}" .
+            " {$this->producerMainName}";
     }
 
     public function getPrice()
     {
         return $this->price;
     }
-/* Листинг 03.22 */
+    /* Листинг 03.22 */
 }
 /* /Листинг 03.22 */

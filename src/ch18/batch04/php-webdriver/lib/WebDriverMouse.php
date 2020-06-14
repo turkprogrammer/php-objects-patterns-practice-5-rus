@@ -16,19 +16,20 @@
 /**
  * Interface representing basic mouse operations.
  */
-interface WebDriverMouse {
+interface WebDriverMouse
+{
 
-  public function click(WebDriverCoordinates $where);
+    public function click(WebDriverCoordinates $where);
 
-  public function contextClick(WebDriverCoordinates $where);
+    public function contextClick(WebDriverCoordinates $where);
 
-  public function doubleClick(WebDriverCoordinates $where);
+    public function doubleClick(WebDriverCoordinates $where);
 
-  public function mouseDown(WebDriverCoordinates $where);
+    public function mouseDown(WebDriverCoordinates $where);
 
-  public function mouseMove(WebDriverCoordinates $where,
-                            $x_offset,
-                            $y_offset);
+    public function mouseMove(WebDriverCoordinates $where,
+                              $x_offset,
+                              $y_offset);
 
-  public function mouseUp(WebDriverCoordinates $where);
+    public function mouseUp(WebDriverCoordinates $where);
 }

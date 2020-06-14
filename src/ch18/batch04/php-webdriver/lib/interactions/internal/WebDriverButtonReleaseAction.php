@@ -18,9 +18,11 @@
  */
 class WebDriverButtonReleaseAction
     extends WebDriverMouseAction
-    implements WebDriverAction {
+    implements WebDriverAction
+{
 
-  public function perform() {
-    $this->mouse->mouseUp($this->getActionLocation());
-  }
+    public function perform()
+    {
+        $this->mouse->mouseUp($this->getActionLocation());
+    }
 }

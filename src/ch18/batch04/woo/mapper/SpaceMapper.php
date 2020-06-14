@@ -57,11 +57,11 @@ class SpaceMapper extends Mapper implements \woo\domain\SpaceFinder
     {
         $venue = $object->getVenue();
 
-        if (! $venue) {
+        if (!$venue) {
             throw new AppException("cannot save without venue");
         }
 
-        $values = array( $object->getname(), $venue->getId() );
+        $values = array($object->getname(), $venue->getId());
         $this->insertStmt->execute($values);
         $id = self::$PDO->lastInsertId();
         $object->setId($id);
@@ -69,7 +69,7 @@ class SpaceMapper extends Mapper implements \woo\domain\SpaceFinder
 
     public function update(\woo\domain\DomainObject $object)
     {
-        $values = array( $object->getname(), $object->getid(), $object->getId() );
+        $values = array($object->getname(), $object->getid(), $object->getId());
         $this->updateStmt->execute($values);
     }
 
@@ -86,7 +86,7 @@ class SpaceMapper extends Mapper implements \woo\domain\SpaceFinder
     # custom
     public function findByVenue($vid)
     {
-        $this->findByVenueStmt->execute(array( $vid ));
+        $this->findByVenueStmt->execute(array($vid));
 
         return new SpaceCollection($this->findByVenueStmt->fetchAll(), $this);
     }

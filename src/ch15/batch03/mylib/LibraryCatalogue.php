@@ -1,6 +1,7 @@
 <?php
 
 /* Листинг 15.14 */
+
 // mylib/LibraryCatalogue.php
 
 namespace vitaliyviznyuk\popp5rus\library;

@@ -4,7 +4,10 @@ namespace vitaliyviznyuk\popp5rus\ch04\batch05;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         $product = new ShopProduct();
     }

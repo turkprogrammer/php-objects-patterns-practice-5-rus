@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch05;
 
@@ -19,7 +19,7 @@ abstract class Collection implements \Iterator
 
     public function __construct(array $raw = [], DomainObjectFactory $dofact = null)
     {
-        if (count($raw) && ! is_null($dofact)) {
+        if (count($raw) && !is_null($dofact)) {
             $this->raw = $raw;
             $this->total = count($raw);
         }
@@ -29,13 +29,13 @@ abstract class Collection implements \Iterator
 
     // ...
 
-/* /Листинг 13.33 */
+    /* /Листинг 13.33 */
 
     public function add(DomainObject $object)
     {
         $class = $this->targetClass();
 
-        if (! ($object instanceof $class )) {
+        if (!($object instanceof $class)) {
             throw new Exception("This is a {$class} collection");
         }
 
@@ -51,13 +51,13 @@ abstract class Collection implements \Iterator
         // deliberately left blank!
     }
 
-/* Листинг 13.34 */
+    /* Листинг 13.34 */
 
     private function getRow(int $num)
     {
         // ...
 
-/* /Листинг 13.34 */
+        /* /Листинг 13.34 */
         $this->notifyAccess();
 
         if ($num >= $this->total || $num < 0) {
@@ -68,14 +68,15 @@ abstract class Collection implements \Iterator
             return $this->objects[$num];
         }
 
-/* Листинг 13.34 */
+        /* Листинг 13.34 */
         if (isset($this->raw[$num])) {
             $this->objects[$num] = $this->dofact->createObject($this->raw[$num]);
 
             return $this->objects[$num];
         }
     }
-/* /Листинг 13.34 */
+
+    /* /Листинг 13.34 */
 
     public function rewind()
     {
@@ -105,6 +106,6 @@ abstract class Collection implements \Iterator
 
     public function valid()
     {
-        return (! is_null($this->current()));
+        return (!is_null($this->current()));
     }
 }

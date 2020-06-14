@@ -10,9 +10,9 @@ class AddSpace extends Command
     public function doExecute(Request $request)
     {
         $venue = $request->getObject("venue");
-        if (! isset($venue)) {
+        if (!isset($venue)) {
             $venue = \woo\domain\Venue::
-                        find($request->getProperty('venue_id'));
+            find($request->getProperty('venue_id'));
         }
         if (is_null($venue)) {
             $request->addFeedback("unable to find venue");
@@ -22,7 +22,7 @@ class AddSpace extends Command
 
         $name = $request->getProperty("space_name");
 
-        if (! isset($name)) {
+        if (!isset($name)) {
             $request->addFeedback("please add name for the space");
             return self::statuses('CMD_INSUFFICIENT_DATA');
         } else {

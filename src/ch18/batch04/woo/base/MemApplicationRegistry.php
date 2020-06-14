@@ -4,8 +4,8 @@ namespace \popp\ch18\batch04\base;
 
 class MemApplicationRegistry extends Registry
 {
-    private static $instance=null;
-    private $values=array();
+    private static $instance = null;
+    private $values = array();
     private $id;
 
     private function __construct()

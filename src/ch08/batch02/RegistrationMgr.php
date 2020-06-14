@@ -1,7 +1,9 @@
 <?php declare(strict_types=1);
+
 namespace vitaliyviznyuk\popp5rus\ch08\batch02;
 
 /* Листинг 08.12 */
+
 class RegistrationMgr
 {
     public function register(Lesson $lesson)

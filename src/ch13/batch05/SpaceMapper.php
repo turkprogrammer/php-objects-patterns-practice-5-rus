@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch05;
 
@@ -41,7 +41,7 @@ class SpaceMapper extends Mapper
     {
         $venue = $object->getVenue();
 
-        if (! $venue) {
+        if (!$venue) {
             throw new \woo\base\AppException("cannot save without venue");
         }
 
@@ -70,7 +70,7 @@ class SpaceMapper extends Mapper
     # custom
     protected function findByVenue($vid): SpaceCollection
     {
-        $this->findByVenueStmt->execute(array( $vid ));
+        $this->findByVenueStmt->execute(array($vid));
 
         return new SpaceCollection(
             $this->findByVenueStmt->fetchAll(),

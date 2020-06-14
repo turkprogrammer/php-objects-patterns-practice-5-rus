@@ -16,35 +16,39 @@
 /**
  * An action for aggregating actions and triggering all of them afterwards.
  */
-class WebDriverCompositeAction implements WebDriverAction {
+class WebDriverCompositeAction implements WebDriverAction
+{
 
-  private $actions = array();
+    private $actions = array();
 
-  /**
-   * Add an WebDriverAction to the sequence.
-   *
-   * @return WebDriverCompositeAction The current instance.
-   */
-  public function addAction(WebDriverAction $action) {
-    $this->actions[] = $action;
-    return $this;
-  }
-
-  /**
-   * Get the number of actions in the sequence.
-   *
-   * @return int The number of actions.
-   */
-  public function getNumberOfActions() {
-    return count($this->actions);
-  }
-
-  /**
-   * Perform the seqeunce of actions.
-   */
-  public function perform() {
-    foreach ($this->actions as $action) {
-      $action->perform();
+    /**
+     * Add an WebDriverAction to the sequence.
+     *
+     * @return WebDriverCompositeAction The current instance.
+     */
+    public function addAction(WebDriverAction $action)
+    {
+        $this->actions[] = $action;
+        return $this;
     }
-  }
+
+    /**
+     * Get the number of actions in the sequence.
+     *
+     * @return int The number of actions.
+     */
+    public function getNumberOfActions()
+    {
+        return count($this->actions);
+    }
+
+    /**
+     * Perform the seqeunce of actions.
+     */
+    public function perform()
+    {
+        foreach ($this->actions as $action) {
+            $action->perform();
+        }
+    }
 }

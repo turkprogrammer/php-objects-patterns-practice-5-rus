@@ -8,11 +8,14 @@ use popp\ch03\batch08\Wrong;
 
 class Runner
 {
-    public static function run1()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
-/* Листинг 03.21 */
+        /* Листинг 03.21 */
         $writer = new ShopProductWriter();
         $writer->write(new Wrong());
-/* /Листинг 03.21 */
+        /* /Листинг 03.21 */
     }
 }

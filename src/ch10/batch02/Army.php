@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch10\batch02;
 
@@ -13,14 +13,14 @@ class Army
         array_push($this->units, $unit);
     }
 
-/* Листинг 10.04 */
+    /* Листинг 10.04 */
     public function addArmy(Army $army)
     {
         array_push($this->armies, $army);
     }
-/* /Листинг 10.04 */
+    /* /Листинг 10.04 */
 
-/* Листинг 10.05 */
+    /* Листинг 10.05 */
     public function bombardStrength(): int
     {
         $ret = 0;
@@ -34,5 +34,5 @@ class Army
 
         return $ret;
     }
-/* /Листинг 10.05 */
+    /* /Листинг 10.05 */
 }

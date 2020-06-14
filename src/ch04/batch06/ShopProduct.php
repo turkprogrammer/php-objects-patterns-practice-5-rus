@@ -8,7 +8,7 @@ class ShopProduct
 {
     private $taxrate = 17;
 
-/* /Листинг 04.10 */
+    /* /Листинг 04.10 */
 
     private $title;
     private $producerMainName;
@@ -20,14 +20,15 @@ class ShopProduct
         string $firstName,
         string $mainName,
         float $price
-    ) {
-        $this->title             = $title;
+    )
+    {
+        $this->title = $title;
         $this->producerFirstName = $firstName;
-        $this->producerMainName  = $mainName;
-        $this->price             = $price;
+        $this->producerMainName = $mainName;
+        $this->price = $price;
     }
 
-/* Листинг 04.10 */
+    /* Листинг 04.10 */
 
 // ...
 

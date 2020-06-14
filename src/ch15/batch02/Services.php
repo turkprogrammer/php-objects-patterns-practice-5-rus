@@ -1,6 +1,7 @@
 <?php
 
 /* Листинг 15.13 */
+
 namespace popp;
 
 class Services

@@ -17,11 +17,11 @@ class DbGenerate
                                 playlength int,
                                 discount int )";
 
-        $dsn = "sqlite:/".__DIR__."/products.db";
+        $dsn = "sqlite:/" . __DIR__ . "/products.db";
         $pdo = new \PDO($dsn, null, null);
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
-        $stmt= $pdo->query("select count(*) from SQLITE_MASTER");
+        $stmt = $pdo->query("select count(*) from SQLITE_MASTER");
         $row = $stmt->fetch();
         $stmt->closeCursor();
         if ($row[0] > 0) {

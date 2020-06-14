@@ -1,24 +1,25 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch24\batch01\parse;
 
 /* Листинг 24.01 */
+
 class Scanner
 {
     // token types
-    const WORD         = 1;
-    const QUOTE        = 2;
-    const APOS         = 3;
-    const WHITESPACE   = 6;
-    const EOL          = 8;
-    const CHAR         = 9;
-    const EOF          = 0;
-    const SOF          = -1;
+    const WORD = 1;
+    const QUOTE = 2;
+    const APOS = 3;
+    const WHITESPACE = 6;
+    const EOL = 8;
+    const CHAR = 9;
+    const EOF = 0;
+    const SOF = -1;
 
-    protected $line_no    = 1;
-    protected $char_no    = 0;
-    protected $token      = null;
+    protected $line_no = 1;
+    protected $char_no = 0;
+    protected $token = null;
     protected $token_type = -1;
 
     // Reader provides access to the raw character data. Context stores
@@ -68,13 +69,13 @@ class Scanner
         }
 
         $resolve = [
-            self::WORD =>       'WORD',
-            self::QUOTE =>      'QUOTE',
-            self::APOS =>       'APOS',
+            self::WORD => 'WORD',
+            self::QUOTE => 'QUOTE',
+            self::APOS => 'APOS',
             self::WHITESPACE => 'WHITESPACE',
-            self::EOL =>        'EOL',
-            self::CHAR =>       'CHAR',
-            self::EOF =>        'EOF'
+            self::EOL => 'EOL',
+            self::CHAR => 'CHAR',
+            self::EOF => 'EOF'
         ];
 
         return $resolve[$int];
@@ -129,7 +130,7 @@ class Scanner
         $this->token = null;
         $type;
 
-        while (! is_bool($char = $this->getChar())) {
+        while (!is_bool($char = $this->getChar())) {
             if ($this->isEolChar($char)) {
                 $this->token = $this->manageEolChars($char);
                 $this->line_no++;
@@ -178,12 +179,12 @@ class Scanner
     public function getState(): ScannerState
     {
         $state = new ScannerState();
-        $state->line_no      = $this->line_no;
-        $state->char_no      = $this->char_no;
-        $state->token        = $this->token;
-        $state->token_type   = $this->token_type;
-        $state->r            = clone($this->r);
-        $state->context      = clone($this->context);
+        $state->line_no = $this->line_no;
+        $state->char_no = $this->char_no;
+        $state->token = $this->token;
+        $state->token_type = $this->token_type;
+        $state->r = clone($this->r);
+        $state->context = clone($this->context);
 
         return $state;
     }
@@ -192,12 +193,12 @@ class Scanner
     // state
     public function setState(ScannerState $state)
     {
-        $this->line_no      = $state->line_no;
-        $this->char_no      = $state->char_no;
-        $this->token        = $state->token;
-        $this->token_type   = $state->token_type;
-        $this->r            = $state->r;
-        $this->context      = $state->context;
+        $this->line_no = $state->line_no;
+        $this->char_no = $state->char_no;
+        $this->token = $state->token;
+        $this->token_type = $state->token_type;
+        $this->r = $state->r;
+        $this->context = $state->context;
     }
 
     // get the next character from source
@@ -273,7 +274,7 @@ class Scanner
     private function manageEolChars(string $char): string
     {
         if ($char == "\r") {
-            $next_char=$this->getChar();
+            $next_char = $this->getChar();
 
             if ($next_char == "\n") {
                 return "{$char}{$next_char}";

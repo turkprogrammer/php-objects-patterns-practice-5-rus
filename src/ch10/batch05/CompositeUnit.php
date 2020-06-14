@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch10\batch05;
 
 /* Листинг 10.14 */
+
 abstract class CompositeUnit extends Unit
 {
     private $units = [];

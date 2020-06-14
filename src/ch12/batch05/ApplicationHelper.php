@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch05;
 
 /* Листинг 12.11 */
+
 class ApplicationHelper
 {
     private $config = __DIR__ . "/data/woo_options.ini";
@@ -29,7 +30,7 @@ class ApplicationHelper
 
     private function setupOptions()
     {
-        if (! file_exists($this->config)) {
+        if (!file_exists($this->config)) {
             throw new AppException("Could not find options file");
         }
 

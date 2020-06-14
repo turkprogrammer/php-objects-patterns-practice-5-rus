@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 namespace vitaliyviznyuk\popp5rus\ch03\batch14;
 
 use popp\ch03\batch14\ShopProduct;
@@ -13,7 +14,8 @@ class CdProduct extends ShopProduct
         string $mainName,
         float $price,
         int $playLength
-    ) {
+    )
+    {
         parent::__construct(
             $title,
             $firstName,
@@ -30,7 +32,7 @@ class CdProduct extends ShopProduct
 
     public function getSummaryLine()
     {
-        $base  = "{$this->title} ( {$this->producerMainName}, ";
+        $base = "{$this->title} ( {$this->producerMainName}, ";
         $base .= "{$this->producerFirstName} )";
         $base .= ": playing time - {$this->playLength}";
         return $base;

@@ -11,26 +11,29 @@ use popp\ch03\batch09\ShopProduct;
 class Runner
 {
 
-    public static function run1()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         $manager = new AddressManager();
-/* Листинг 03.27 */
+        /* Листинг 03.27 */
         $manager->outputAddresses("false");
-/* /Листинг 03.27 */
+        /* /Листинг 03.27 */
     }
 
     public static function run2()
     {
-/* Листинг 03.29 */
-        $product1 = new ShopProduct("My Antonia", "Willa", "Cather", 5.99);
+        /* Листинг 03.29 */
+        $product1 = new ShopProduct("Собачье сердце", "Михаил", "Булгаков", 5.99);
         $product2 = new ShopProduct(
             "Exile on Coldharbour Lane",
             "The",
             "Alabama 3",
             10.99
         );
-        print "author: " . $product1->getProducer() . "\n";
+        print "Автор: " . $product1->getProducer() . "\n";
         print "artist: " . $product2->getProducer() . "\n";
-/* /Листинг 03.29 */
+        /* /Листинг 03.29 */
     }
 }

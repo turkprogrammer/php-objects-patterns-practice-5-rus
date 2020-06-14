@@ -1,17 +1,18 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch05;
 
 /* Листинг 11.25 */
+
 class Login implements Observable
 {
     private $observers = [];
     private $storage;
 
     const LOGIN_USER_UNKNOWN = 1;
-    const LOGIN_WRONG_PASS   = 2;
-    const LOGIN_ACCESS       = 3;
+    const LOGIN_WRONG_PASS = 2;
+    const LOGIN_ACCESS = 3;
 
     public function attach(Observer $observer)
     {
@@ -23,7 +24,7 @@ class Login implements Observable
         $this->observers = array_filter(
             $this->observers,
             function ($a) use ($observer) {
-                return (! ($a === $observer ));
+                return (!($a === $observer));
             }
         );
     }
@@ -36,8 +37,8 @@ class Login implements Observable
     }
 
     // ...
-/* /Листинг 11.25 */
-/* Листинг 11.26 */
+    /* /Листинг 11.25 */
+    /* Листинг 11.26 */
     public function handleLogin(string $user, string $pass, string $ip)
     {
         switch (rand(1, 3)) {
@@ -59,16 +60,17 @@ class Login implements Observable
 
         return $isvalid;
     }
-/* /Листинг 11.26 */
+
+    /* /Листинг 11.26 */
     private function setStatus(int $status, string $user, string $ip)
     {
-        $this->status = array( $status, $user, $ip );
+        $this->status = array($status, $user, $ip);
     }
 
     public function getStatus(): array
     {
         return $this->status;
     }
-/* Листинг 11.25 */
+    /* Листинг 11.25 */
 }
 /* /Листинг 11.25 */

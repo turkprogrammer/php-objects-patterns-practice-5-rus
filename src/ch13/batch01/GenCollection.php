@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch01;
 
 /* Листинг 13.08 */
+
 abstract class GenCollection
 {
     protected $mapper;
@@ -30,7 +31,7 @@ abstract class GenCollection
     {
         $class = $this->targetClass();
 
-        if (! ($object instanceof $class )) {
+        if (!($object instanceof $class)) {
             throw new AppException("This is a {$class} collection");
         }
 

@@ -1,6 +1,7 @@
 <?php
 
 /* Листинг 18.05 */
+
 namespace vitaliyviznyuk\popp5rus\ch18\batch01;
 
 class UserStoreTest extends \PHPUnit_Framework_TestCase

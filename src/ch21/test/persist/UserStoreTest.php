@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace userthing\persist;
 
@@ -37,8 +37,8 @@ class UserStoreTest extends \PHPUnit_Framework_TestCase
             self::fail("Exception should have been thrown");
         } catch (\Exception $e) {
             $const = $this->logicalAnd(
-                //$this->logicalNot( $this->contains("bob stevens")),
-                    $this->isType('object')
+            //$this->logicalNot( $this->contains("bob stevens")),
+                $this->isType('object')
             );
             self::AssertThat($this->store->getUser("a@b.com"), $const);
         }

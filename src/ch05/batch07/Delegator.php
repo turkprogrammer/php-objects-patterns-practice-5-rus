@@ -11,7 +11,7 @@ class Delegator
         $this->thirdpartyShop = new OtherShop();
     }
 
-/* Листинг 05.33 */
+    /* Листинг 05.33 */
     public function __call($method, $args)
     {
         if (method_exists($this->thirdpartyShop, $method)) {
@@ -24,5 +24,5 @@ class Delegator
             );
         }
     }
-/* /Листинг 05.33 */
+    /* /Листинг 05.33 */
 }

@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch11;
 
@@ -14,7 +14,7 @@ class TileForces
 
 
 
-/* Листинг 11.57 */
+    /* Листинг 11.57 */
 
     // TileForces
 
@@ -23,21 +23,22 @@ class TileForces
         $power = 0;
 
         foreach ($this->units as $unit) {
-            if (! is_null($unit)) {
+            if (!is_null($unit)) {
                 $power += $unit->bombardStrength();
             }
         }
 
         return $power;
     }
-/* /Листинг 11.57 */
+
+    /* /Листинг 11.57 */
 
     public function health()
     {
         $health = 0;
 
         foreach ($this->units as $unit) {
-            if (! is_null($unit)) {
+            if (!is_null($unit)) {
                 $health += $unit->getHealth();
             }
         }

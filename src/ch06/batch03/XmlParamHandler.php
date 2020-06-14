@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch06\batch03;
 
 /* Листинг 06.05 */
+
 class XmlParamHandler extends ParamHandler
 {
 
@@ -10,7 +11,7 @@ class XmlParamHandler extends ParamHandler
     {
         // write XML
         // using $this->params
-/* /Листинг 06.05 */
+        /* /Листинг 06.05 */
         $fh = $this->openSource('w');
         fputs($fh, "<params>\n");
         foreach ($this->params as $key => $val) {
@@ -22,14 +23,14 @@ class XmlParamHandler extends ParamHandler
         fputs($fh, "</params>\n");
         fclose($fh);
         return true;
-/* Листинг 06.05 */
+        /* Листинг 06.05 */
     }
 
     public function read(): bool
     {
         // read XML
         // and populate $this->params
-/* /Листинг 06.05 */
+        /* /Листинг 06.05 */
         $el = @simplexml_load_file($this->source);
         if (empty($el)) {
             throw new Exception("could not parse $this->source");
@@ -38,6 +39,6 @@ class XmlParamHandler extends ParamHandler
             $this->params["$param->key"] = "$param->val";
         }
         return true;
-/* Листинг 06.05 */
+        /* Листинг 06.05 */
     }
 }

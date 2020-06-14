@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch06\batch03;
 
 /* Листинг 06.04 */
+
 abstract class ParamHandler
 {
     protected $source;
@@ -22,7 +23,8 @@ abstract class ParamHandler
     {
         return $this->params;
     }
-/* /Листинг 06.04 */
+
+    /* /Листинг 06.04 */
     protected function openSource(string $flag)
     {
         $fh = @fopen($this->source, $flag);
@@ -31,7 +33,8 @@ abstract class ParamHandler
         }
         return $fh;
     }
-/* Листинг 06.04 */
+
+    /* Листинг 06.04 */
 
     public static function getInstance(string $filename): ParamHandler
     {
@@ -42,5 +45,6 @@ abstract class ParamHandler
     }
 
     abstract public function write(): bool;
+
     abstract public function read(): bool;
 }

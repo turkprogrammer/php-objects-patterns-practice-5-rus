@@ -1,13 +1,16 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch08;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
-/* Листинг 11.43 */
+        /* Листинг 11.43 */
         $main_army = new Army();
         $main_army->addUnit(new Archer());
         $main_army->addUnit(new LaserCanonUnit());
@@ -16,12 +19,12 @@ class Runner
         $textdump = new TextDumpArmyVisitor();
         $main_army->accept($textdump);
         print $textdump->getText();
-/* /Листинг 11.43 */
+        /* /Листинг 11.43 */
     }
 
     public static function run2()
     {
-/* Листинг 11.45 */
+        /* Листинг 11.45 */
         $main_army = new Army();
         $main_army->addUnit(new Archer());
         $main_army->addUnit(new LaserCanonUnit());
@@ -32,6 +35,6 @@ class Runner
         print $taxcollector->getReport();
         print "TOTAL: ";
         print $taxcollector->getTax() . "\n";
-/* /Листинг 11.45 */
+        /* /Листинг 11.45 */
     }
 }

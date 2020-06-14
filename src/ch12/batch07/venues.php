@@ -15,13 +15,13 @@ try {
 ?>
 <html>
 <head>
-<title>Venues</title>
+    <title>Venues</title>
 </head>
 <body>
 <h1>Venues</h1>
 
 <?php foreach ($venues as $venue) { ?>
-    <?php print $venue->getName(); ?><br />
+    <?php print $venue->getName(); ?><br/>
 <?php } ?>
 
 </body>

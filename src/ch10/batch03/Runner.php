@@ -4,10 +4,13 @@ namespace vitaliyviznyuk\popp5rus\ch10\batch03;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
 
-        $tank =  new Tank();
+        $tank = new Tank();
         $tank2 = new Tank();
         $soldier = new Soldier();
 

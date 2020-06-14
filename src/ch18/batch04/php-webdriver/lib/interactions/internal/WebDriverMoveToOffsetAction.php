@@ -15,24 +15,27 @@
 
 class WebDriverMoveToOffsetAction
     extends WebDriverMouseAction
-    implements WebDriverAction {
+    implements WebDriverAction
+{
 
-  private $xOffset, $yOffset;
+    private $xOffset, $yOffset;
 
-  public function __construct(WebDriverMouse $mouse,
-                              WebDriverLocatable $location_provider,
-                              $x_offset,
-                              $y_offset) {
-    parent::__construct($mouse, $location_provider);
-    $this->xOffset = $x_offset;
-    $this->yOffset = $y_offset;
-  }
+    public function __construct(WebDriverMouse $mouse,
+                                WebDriverLocatable $location_provider,
+                                $x_offset,
+                                $y_offset)
+    {
+        parent::__construct($mouse, $location_provider);
+        $this->xOffset = $x_offset;
+        $this->yOffset = $y_offset;
+    }
 
-  public function perform() {
-    $this->mouse->mouseMove(
-      $this->getActionLocation(),
-      $this->xOffset,
-      $this->yOffset
-    );
-  }
+    public function perform()
+    {
+        $this->mouse->mouseMove(
+            $this->getActionLocation(),
+            $this->xOffset,
+            $this->yOffset
+        );
+    }
 }

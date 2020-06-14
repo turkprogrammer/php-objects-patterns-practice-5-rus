@@ -28,8 +28,8 @@ class ApplicationHelper
     {
         $dsn = ApplicationRegistry::getDSN();
 
-        if (! is_null($dsn)) {
-            if (! is_null($configpath)) {
+        if (!is_null($dsn)) {
+            if (!is_null($configpath)) {
                 $this->configpath = $configpath;
             }
             //return;
@@ -67,7 +67,7 @@ class ApplicationHelper
         }
 
         foreach ($options->control->command as $command_view) {
-            $command =  trim((string)$command_view['name']);
+            $command = trim((string)$command_view['name']);
 
             if ($command_view->classalias) {
                 $classroot = trim((string)$command_view->classalias['name']);
@@ -75,7 +75,7 @@ class ApplicationHelper
             }
 
             if ($command_view->view) {
-                $view =  trim((string)$command_view->view);
+                $view = trim((string)$command_view->view);
                 $forward = trim((string)$command_view->forward);
                 $map->addView($view, $command, 0);
 
@@ -84,7 +84,7 @@ class ApplicationHelper
                 }
 
                 foreach ($command_view->status as $command_view_status) {
-                    $view =  trim((string)$command_view_status->view);
+                    $view = trim((string)$command_view_status->view);
                     $forward = trim((string)$command_view_status->forward);
                     $stat_str = trim($command_view_status['value']);
                     $status = Command::statuses($stat_str);
@@ -104,7 +104,7 @@ class ApplicationHelper
 
     private function ensure($expr, $message)
     {
-        if (! $expr) {
+        if (!$expr) {
             throw new AppException($message);
         }
     }

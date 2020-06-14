@@ -1,11 +1,12 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch09;
 
 use popp\ch11\batch09\CommandContext;
 
 /* Листинг 11.50 */
+
 class Controller
 {
     private $context;
@@ -26,7 +27,7 @@ class Controller
         $action = (is_null($action)) ? "default" : $action;
         $cmd = CommandFactory::getCommand($action);
 
-        if (! $cmd->execute($this->context)) {
+        if (!$cmd->execute($this->context)) {
             // handle failure
         } else {
             // success

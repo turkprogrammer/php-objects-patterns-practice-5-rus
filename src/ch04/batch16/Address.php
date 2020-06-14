@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch04\batch16;
 
 /* Листинг 04.77 */
+
 class Address
 {
     private $number;

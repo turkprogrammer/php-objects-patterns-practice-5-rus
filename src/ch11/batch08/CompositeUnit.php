@@ -1,14 +1,15 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch08;
 
 /* Листинг 11.40 */
+
 abstract class CompositeUnit extends Unit
 {
     // ...
 
-/* /Листинг 11.40 */
+    /* /Листинг 11.40 */
     private $units = [];
 
     public function getComposite(): Unit
@@ -45,7 +46,7 @@ abstract class CompositeUnit extends Unit
         return $health;
     }
 
-/* Листинг 11.40 */
+    /* Листинг 11.40 */
     public function addUnit(Unit $unit)
     {
         foreach ($this->units as $thisunit) {
@@ -54,7 +55,7 @@ abstract class CompositeUnit extends Unit
             }
         }
 
-        $unit->setDepth($this->depth+1);
+        $unit->setDepth($this->depth + 1);
         $this->units[] = $unit;
     }
 

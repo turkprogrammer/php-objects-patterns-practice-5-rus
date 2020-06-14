@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch09\batch03;
 
 /* Листинг 09.08 */
+
 abstract class Employee
 {
     protected $name;
@@ -12,7 +13,7 @@ abstract class Employee
     public static function recruit(string $name)
     {
         $num = rand(1, count(self::$types)) - 1;
-        $class = __NAMESPACE__ . "\\".self::$types[$num];
+        $class = __NAMESPACE__ . "\\" . self::$types[$num];
         return new $class($name);
     }
 

@@ -4,15 +4,16 @@ namespace vitaliyviznyuk\popp5rus\ch11\parse;
 
 abstract class Expression
 {
-    private static $keycount=0;
+    private static $keycount = 0;
     private $key;
+
     abstract public function interpret(Context $context);
 
     public function getKey()
     {
-        if (! isset($this->key)) {
+        if (!isset($this->key)) {
             self::$keycount++;
-            $this->key=self::$keycount;
+            $this->key = self::$keycount;
         }
         return $this->key;
     }

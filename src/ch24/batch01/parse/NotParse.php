@@ -1,12 +1,12 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch24\batch01\parse;
 
 class NotParse extends CollectionParse
 {
 
-    public function trigger(Scanner $scanner):bool
+    public function trigger(Scanner $scanner): bool
     {
         return true;
     }
@@ -27,7 +27,7 @@ class NotParse extends CollectionParse
         $parser = $this->parsers[0];
         $start_state = $scanner->getState();
 
-        while (! $parser->trigger($scanner) || ! $parser->scan($scanner)) {
+        while (!$parser->trigger($scanner) || !$parser->scan($scanner)) {
             $string .= $scanner->token();
             $scanner->nextToken();
 
@@ -36,10 +36,10 @@ class NotParse extends CollectionParse
             }
         }
 
-        if ($string && ! $this->discard) {
+        if ($string && !$this->discard) {
             $scanner->getContext()->pushResult($string);
         }
 
-        return (! empty($string));
+        return (!empty($string));
     }
 }

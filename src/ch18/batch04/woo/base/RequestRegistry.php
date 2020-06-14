@@ -5,7 +5,7 @@ namespace \popp\ch18\batch04\base;
 class RequestRegistry extends Registry
 {
     private $values = [];
-    private static $instance=null;
+    private static $instance = null;
 
     private function __construct()
     {

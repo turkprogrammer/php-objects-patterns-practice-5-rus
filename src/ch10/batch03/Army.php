@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch10\batch03;
 
 /* Листинг 10.07 */
+
 class Army extends Unit
 {
     private $units = [];
@@ -33,11 +34,12 @@ class Army extends Unit
         }
         return $ret;
     }
-/* /Листинг 10.07 */
+
+    /* /Листинг 10.07 */
     public function getUnits(): array
     {
         return $this->units;
     }
-/* Листинг 10.07 */
+    /* Листинг 10.07 */
 }
 /* /Листинг 10.07 */

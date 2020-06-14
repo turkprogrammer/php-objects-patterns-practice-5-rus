@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch04;
 
@@ -11,7 +11,7 @@ class Login
 
     private $status = [];
 
-/* Листинг 11.22 */
+    /* Листинг 11.22 */
     public function handleLogin(string $user, string $pass, string $ip): bool
     {
         switch (rand(1, 3)) {
@@ -30,25 +30,26 @@ class Login
         }
 
         Logger::logIP($user, $ip, $this->getStatus());
-/* /Листинг 11.22 */
-/* Листинг 11.23 */
-        if (! $isvalid) {
+        /* /Листинг 11.22 */
+        /* Листинг 11.23 */
+        if (!$isvalid) {
             Notifier::mailWarning(
                 $user,
                 $ip,
                 $this->getStatus()
             );
         }
-/* /Листинг 11.23 */
-/* Листинг 11.22 */
+        /* /Листинг 11.23 */
+        /* Листинг 11.22 */
 
         return $isvalid;
     }
-/* /Листинг 11.22 */
+
+    /* /Листинг 11.22 */
 
     private function setStatus(int $status, string $user, string $ip)
     {
-        $this->status = array( $status, $user, $ip );
+        $this->status = array($status, $user, $ip);
     }
 
     public function getStatus(): array

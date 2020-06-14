@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch24\batch01;
 
@@ -10,8 +10,8 @@ abstract class Question
 
     public function __construct(string $prompt, Marker $marker)
     {
-        $this->prompt=$prompt;
-        $this->marker=$marker;
+        $this->prompt = $prompt;
+        $this->marker = $marker;
     }
 
     public function mark(string $response): bool

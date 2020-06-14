@@ -3,13 +3,14 @@
 namespace vitaliyviznyuk\popp5rus\ch04\batch23;
 
 /* Листинг 04.89 */
+
 class ProcessSale
 {
     private $callbacks;
 
     public function registerCallback(callable $callback)
     {
-        if (! is_callable($callback)) {
+        if (!is_callable($callback)) {
             throw new Exception("callback not callable");
         }
         $this->callbacks[] = $callback;

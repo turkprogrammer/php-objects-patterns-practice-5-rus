@@ -4,7 +4,10 @@ namespace vitaliyviznyuk\popp5rus\ch18\batch04\woo\base;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         // runner code here
     }

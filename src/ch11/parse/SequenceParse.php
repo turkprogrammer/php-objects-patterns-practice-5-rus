@@ -12,13 +12,13 @@ class SequenceParse extends CollectionParse
         }
         return $this->parsers[0]->trigger($scanner);
     }
- 
+
     protected function doScan(Scanner $scanner): bool
     {
         $s_copy = clone $scanner;
         foreach ($this->parsers as $parser) {
-            if (! ( $parser->trigger($s_copy) &&
-                    $scan=$parser->scan($s_copy)) ) {
+            if (!($parser->trigger($s_copy) &&
+                $scan = $parser->scan($s_copy))) {
                 return false;
             }
         }

@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch24\batch01\parse;
 
 /* Листинг 24.13 */
+
 class StringLiteralParse extends Parser
 {
     public function trigger(Scanner $scanner): bool
@@ -34,7 +35,7 @@ class StringLiteralParse extends Parser
             $string .= $scanner->token();
         }
 
-        if ($string && ! $this->discard) {
+        if ($string && !$this->discard) {
             $scanner->getContext()->pushResult($string);
         }
 

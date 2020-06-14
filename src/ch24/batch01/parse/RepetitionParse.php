@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch24\batch01\parse;
 
 /* Листинг 24.11 */
+
 class RepetitionParse extends CollectionParse
 {
     private $min;
@@ -44,7 +45,7 @@ class RepetitionParse extends CollectionParse
                 return true;
             }
 
-            if (! $parser->trigger($scanner)) {
+            if (!$parser->trigger($scanner)) {
                 if ($this->min == 0 || $count >= $this->min) {
                     return true;
                 } else {
@@ -54,7 +55,7 @@ class RepetitionParse extends CollectionParse
                 }
             }
 
-            if (! $parser->scan($scanner)) {
+            if (!$parser->scan($scanner)) {
                 if ($this->min == 0 || $count >= $this->min) {
                     return true;
                 } else {

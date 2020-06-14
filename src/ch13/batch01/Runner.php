@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch01;
 
@@ -8,7 +8,10 @@ use popp\ch12\batch06\Conf;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         // set up conf
         self::setUp();
@@ -18,11 +21,11 @@ class Runner
         $venue = new Venue(-1, "The Hatey Lounge");
         $mapper->insert($venue);
 
-/* Листинг 13.03 */
+        /* Листинг 13.03 */
         $mapper = new VenueMapper();
         $venue = $mapper->find(2);
         print_r($venue);
-/* /Листинг 13.03 */
+        /* /Листинг 13.03 */
     }
 
     public static function run2()
@@ -30,7 +33,7 @@ class Runner
         // set up conf
         self::setUp();
 
-/* Листинг 13.04 */
+        /* Листинг 13.04 */
         $mapper = new VenueMapper();
         $venue = new Venue(-1, "The Likey Lounge");
         // add the object to the database
@@ -45,14 +48,14 @@ class Runner
         // once again, go back to the database to prove it worked
         $venue = $mapper->find($venue->getId());
         print_r($venue);
-/* /Листинг 13.04 */
+        /* /Листинг 13.04 */
     }
 
     public static function run3()
     {
         Registry::reset();
 
-/* Листинг 13.07 */
+        /* Листинг 13.07 */
         $reg = Registry::instance();
 
         $collection = $reg->getVenueCollection();
@@ -63,14 +66,14 @@ class Runner
         foreach ($collection as $venue) {
             print $venue->getName() . "\n";
         }
-/* /Листинг 13.07 */
+        /* /Листинг 13.07 */
     }
 
     public static function run4()
     {
         Registry::reset();
 
-/* Листинг 13.09 */
+        /* Листинг 13.09 */
         $genvencoll = new GenVenueCollection();
         $genvencoll->add(new Venue(-1, "Loud and Thumping"));
         $genvencoll->add(new Venue(-1, "Eeezy"));
@@ -81,7 +84,7 @@ class Runner
         foreach ($gen as $wrapper) {
             print_r($wrapper);
         }
-/* /Листинг 13.09 */
+        /* /Листинг 13.09 */
     }
 
     public static function run5()

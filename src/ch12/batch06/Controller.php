@@ -1,12 +1,12 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch06;
 
 class Controller
 {
     private $reg;
-/* Листинг 12.19 */
+    /* Листинг 12.19 */
     // Controller
     private function __construct()
     {
@@ -22,9 +22,12 @@ class Controller
         $view = $controller->getView($request);
         $view->render($request);
     }
-/* /Листинг 12.19 */
+    /* /Листинг 12.19 */
 
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         $instance = new Controller();
         $instance->init();

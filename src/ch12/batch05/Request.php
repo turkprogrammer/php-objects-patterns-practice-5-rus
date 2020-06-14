@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch05;
 
 /* Листинг 12.15 */
+
 abstract class Request
 {
     protected $properties;

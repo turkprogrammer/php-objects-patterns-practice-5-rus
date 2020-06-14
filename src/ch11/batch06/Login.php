@@ -1,20 +1,21 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch06;
 
 /* Листинг 11.33 */
+
 class Login implements \SplSubject
 {
     private $storage;
 
     // ...
-/* /Листинг 11.33 */
+    /* /Листинг 11.33 */
     const LOGIN_USER_UNKNOWN = 1;
-    const LOGIN_WRONG_PASS   = 2;
-    const LOGIN_ACCESS       = 3;
+    const LOGIN_WRONG_PASS = 2;
+    const LOGIN_ACCESS = 3;
 
-/* Листинг 11.33 */
+    /* Листинг 11.33 */
     public function __construct()
     {
         $this->storage = new \SplObjectStorage();
@@ -38,7 +39,7 @@ class Login implements \SplSubject
     }
 
     // ...
-/* /Листинг 11.33 */
+    /* /Листинг 11.33 */
     public function handleLogin(string $user, string $pass, string $ip)
     {
         switch (rand(1, 3)) {
@@ -61,13 +62,13 @@ class Login implements \SplSubject
 
     private function setStatus(int $status, string $user, string $ip)
     {
-        $this->status = array( $status, $user, $ip );
+        $this->status = array($status, $user, $ip);
     }
 
     public function getStatus(): array
     {
         return $this->status;
     }
-/* Листинг 11.33 */
+    /* Листинг 11.33 */
 }
 /* /Листинг 11.33 */

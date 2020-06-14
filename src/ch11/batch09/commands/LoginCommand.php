@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch09\commands;
 
@@ -8,6 +8,7 @@ use popp\ch11\batch09\Command;
 use popp\ch11\batch09\Registry;
 
 /* Листинг 11.47 */
+
 class LoginCommand extends Command
 {
 

@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch24\batch01\marklogic;
 
@@ -18,6 +18,7 @@ use popp\ch24\batch01\interpreter\InterpreterContext;
 use popp\ch24\batch01\interpreter\VariableExpression;
 
 /* Листинг 24.15 */
+
 class MarkParse
 {
     private $expression;
@@ -51,8 +52,8 @@ class MarkParse
         $statement = $this->expression();
         $scanresult = $statement->scan($scanner);
 
-        if (! $scanresult || $scanner->tokenType() != Scanner::EOF) {
-            $msg  = "";
+        if (!$scanresult || $scanner->tokenType() != Scanner::EOF) {
+            $msg = "";
             $msg .= " line: {$scanner->line_no()} ";
             $msg .= " char: {$scanner->char_no()}";
             $msg .= " token: {$scanner->token()}\n";
@@ -64,7 +65,7 @@ class MarkParse
 
     public function expression(): Parser
     {
-        if (! isset($this->expression)) {
+        if (!isset($this->expression)) {
             $this->expression = new SequenceParse();
             $this->expression->add($this->operand());
             $bools = new RepetitionParse();
@@ -100,7 +101,7 @@ class MarkParse
 
     public function operand(): Parser
     {
-        if (! isset($this->operand)) {
+        if (!isset($this->operand)) {
             $this->operand = new SequenceParse();
             $comp = new AlternationParse();
             $exp = new SequenceParse();

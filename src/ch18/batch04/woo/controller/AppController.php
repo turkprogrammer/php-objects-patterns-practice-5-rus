@@ -53,7 +53,7 @@ class AppController
         $previous = $req->getLastCommand();
         $status = $previous->getStatus();
 
-        if (! isset($status) || ! is_int($status)) {
+        if (!isset($status) || !is_int($status)) {
             $status = 0;
         }
 
@@ -84,7 +84,7 @@ class AppController
             if (is_null($cmd)) {
                 $req->setProperty('cmd', 'default');
 
-                return  self::$default_cmd;
+                return self::$default_cmd;
             }
         } else {
             $cmd = $this->getForward($req);

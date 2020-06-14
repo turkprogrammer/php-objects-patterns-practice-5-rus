@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch04;
 
@@ -9,7 +9,10 @@ use popp\ch12\batch06\Conf;
 class Runner
 {
 
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         self::setUp();
 
@@ -31,7 +34,7 @@ class Runner
     {
         self::setUp();
 
-/* Листинг 13.26 */
+        /* Листинг 13.26 */
         $venue = new Venue(-1, "The Green Trees");
 
         $venue->addSpace(
@@ -43,7 +46,7 @@ class Runner
 
 // this could be called from the controller or a helper class
         ObjectWatcher::instance()->performOperations();
-/* /Листинг 13.26 */
+        /* /Листинг 13.26 */
     }
 
 
@@ -78,7 +81,7 @@ class Runner
         $emapper->insert($event1);
         $emapper->insert($event2);
 
-    //function __construct(int $id, string $name, Space $space)
+        //function __construct(int $id, string $name, Space $space)
 
         // now read back
 

@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch18\batch03;
 
@@ -37,14 +37,14 @@ class UserStoreTest extends \PHPUnit_Framework_TestCase
             self::fail("Exception should have been thrown");
         } catch (\Exception $e) {
             $const = $this->logicalAnd(
-                //$this->logicalNot( $this->contains("bob stevens")),
+            //$this->logicalNot( $this->contains("bob stevens")),
                 $this->isType('object')
             );
             self::AssertThat($this->store->getUser("a@b.com"), $const);
         }
     }
 
-/* Листинг 18.12 */
+    /* Листинг 18.12 */
 
 // UserStoreTest
 
@@ -54,5 +54,5 @@ class UserStoreTest extends \PHPUnit_Framework_TestCase
         $user = $this->store->getUser("a@b.com");
         $this->assertEquals($user->getMail(), "a@b.com");
     }
-/* /Листинг 18.12 */
+    /* /Листинг 18.12 */
 }

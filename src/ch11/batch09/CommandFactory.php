@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch09;
 
 /* Листинг 11.49 */
+
 class CommandFactory
 {
     private static $dir = 'commands';
@@ -16,7 +17,7 @@ class CommandFactory
 
         $class = __NAMESPACE__ . "\\commands\\" . UCFirst(strtolower($action)) . "Command";
 
-        if (! class_exists($class)) {
+        if (!class_exists($class)) {
             throw new CommandNotFoundException("no '$class' class located");
         }
 

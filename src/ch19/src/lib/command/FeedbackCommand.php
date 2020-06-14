@@ -22,7 +22,7 @@ class FeedbackCommand extends Command
         $topic = $context->get('topic');
         $result = $msgSystem->despatch($email, $msg, $topic);
 
-        if (! $result) {
+        if (!$result) {
             $this->context->setError($msgSystem->getError());
             return false;
         }

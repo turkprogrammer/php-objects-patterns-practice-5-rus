@@ -1,7 +1,9 @@
 <?php declare(strict_types=1);
+
 namespace vitaliyviznyuk\popp5rus\ch03\batch12;
 
 /* Листинг 03.35 */
+
 class ShopProduct
 {
     public $numPages;
@@ -15,16 +17,17 @@ class ShopProduct
         string $title,
         string $firstName,
         string $mainName,
-        float  $price,
-        int    $numPages = 0,
-        int    $playLength = 0
-    ) {
-        $this->title             = $title;
+        float $price,
+        int $numPages = 0,
+        int $playLength = 0
+    )
+    {
+        $this->title = $title;
         $this->producerFirstName = $firstName;
-        $this->producerMainName  = $mainName;
-        $this->price             = $price;
-        $this->numPages          = $numPages;
-        $this->playLength        = $playLength;
+        $this->producerMainName = $mainName;
+        $this->price = $price;
+        $this->numPages = $numPages;
+        $this->playLength = $playLength;
     }
 
     public function getProducer()
@@ -35,7 +38,7 @@ class ShopProduct
 
     public function getSummaryLine()
     {
-        $base  = "{$this->title} ( {$this->producerMainName}, ";
+        $base = "{$this->title} ( {$this->producerMainName}, ";
         $base .= "{$this->producerFirstName} )";
         return $base;
     }

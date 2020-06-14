@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch11\batch10;
 
@@ -9,6 +9,7 @@ use popp\ch11\batch08\Cavalry;
 use popp\ch11\batch08\LaserCanonUnit;
 
 /* Листинг 11.54 */
+
 class UnitAcquisition
 {
     public function getUnits(int $x, int $y): array

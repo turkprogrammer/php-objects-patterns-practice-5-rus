@@ -11,7 +11,7 @@ class HelperFactory
     public static function getFinder($type)
     {
         $type = preg_replace('|^.*\\\|', "", $type);
-        $mapper = self::$package."\\{$type}Mapper";
+        $mapper = self::$package . "\\{$type}Mapper";
         if (class_exists($mapper)) {
             return new $mapper();
         }
@@ -21,7 +21,7 @@ class HelperFactory
     public static function getCollection($type)
     {
         $type = preg_replace('|^.*\\\|', "", $type);
-        $collection = self::$package."\\{$type}Collection";
+        $collection = self::$package . "\\{$type}Collection";
         if (class_exists($collection)) {
             return new $collection();
         }

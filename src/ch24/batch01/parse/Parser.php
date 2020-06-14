@@ -1,9 +1,10 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch24\batch01\parse;
 
 /* Листинг 24.07 */
+
 abstract class Parser
 {
     const GIP_RESPECTSPACE = 1;
@@ -24,7 +25,7 @@ abstract class Parser
         }
 
         if (isset($options[self::GIP_RESPECTSPACE])) {
-            $this->respectSpace=true;
+            $this->respectSpace = true;
         }
     }
 
@@ -32,7 +33,7 @@ abstract class Parser
     {
         $scanner->nextToken();
 
-        if (! $this->respectSpace) {
+        if (!$this->respectSpace) {
             $scanner->eatWhiteSpace();
         }
     }
@@ -60,7 +61,7 @@ abstract class Parser
 
         $ret = $this->doScan($scanner);
 
-        if ($ret && ! $this->discard && $this->term()) {
+        if ($ret && !$this->discard && $this->term()) {
             $this->push($scanner);
         }
 
@@ -93,7 +94,7 @@ abstract class Parser
 
     protected function invokeHandler(Scanner $scanner)
     {
-        if (! empty($this->handler)) {
+        if (!empty($this->handler)) {
             $this->report("calling handler: " . get_class($this->handler));
             $this->handler->handleMatch($this, $scanner);
         }

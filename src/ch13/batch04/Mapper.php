@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch04;
 
@@ -17,7 +17,7 @@ abstract class Mapper
     {
         $old = $this->getFromMap($id);
 
-        if (! is_null($old)) {
+        if (!is_null($old)) {
             return $old;
         }
 
@@ -25,11 +25,11 @@ abstract class Mapper
         $raw = $this->selectstmt()->fetch();
         $this->selectstmt()->closeCursor();
 
-        if (! is_array($raw)) {
+        if (!is_array($raw)) {
             return null;
         }
 
-        if (! isset($raw['id'])) {
+        if (!isset($raw['id'])) {
             return null;
         }
 
@@ -51,7 +51,7 @@ abstract class Mapper
         return ObjectWatcher::add($obj);
     }
 
-/* Листинг 13.24 */
+    /* Листинг 13.24 */
 
     // Mapper
 
@@ -59,7 +59,7 @@ abstract class Mapper
     {
         $old = $this->getFromMap($raw['id']);
 
-        if (! is_null($old)) {
+        if (!is_null($old)) {
             return $old;
         }
 
@@ -68,7 +68,8 @@ abstract class Mapper
 
         return $obj;
     }
-/* /Листинг 13.24 */
+
+    /* /Листинг 13.24 */
 
     public function insert(DomainObject $obj)
     {
@@ -86,9 +87,14 @@ abstract class Mapper
 
 
     abstract protected function selectAllStmt(): \PDOStatement;
+
     abstract protected function getCollection(array $raw): Collection;
+
     abstract protected function update(DomainObject $object);
+
     abstract protected function doCreateObject(array $raw): DomainObject;
+
     abstract protected function doInsert(DomainObject $object);
+
     abstract protected function selectStmt(): \PDOStatement;
 }

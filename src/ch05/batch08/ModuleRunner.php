@@ -3,11 +3,12 @@
 namespace vitaliyviznyuk\popp5rus\ch05\batch08;
 
 /* Листинг 05.50 */
+
 class ModuleRunner
 {
     private $configData = [
         "popp\\ch05\\batch08\\PersonModule" => ['person' => 'bob'],
-        "popp\\ch05\\batch08\\FtpModule"    => [
+        "popp\\ch05\\batch08\\FtpModule" => [
             'host' => 'example.com',
             'user' => 'anon'
         ]
@@ -16,8 +17,8 @@ class ModuleRunner
     private $modules = [];
 
     // ...
-/* /Листинг 05.50 */
-/* Листинг 05.51 */
+    /* /Листинг 05.50 */
+    /* Листинг 05.51 */
 
     // class ModuleRunner
     public function init()
@@ -25,7 +26,7 @@ class ModuleRunner
         $interface = new \ReflectionClass('popp\\ch05\\batch08\\Module');
         foreach ($this->configData as $modulename => $params) {
             $module_class = new \ReflectionClass($modulename);
-            if (! $module_class->isSubclassOf($interface)) {
+            if (!$module_class->isSubclassOf($interface)) {
                 throw new Exception("unknown module type: $modulename");
             }
             $module = $module_class->newInstance();
@@ -36,9 +37,9 @@ class ModuleRunner
             array_push($this->modules, $module);
         }
     }
-/* /Листинг 05.51 */
+    /* /Листинг 05.51 */
 
-/* Листинг 05.53 */
+    /* Листинг 05.53 */
 
     // class ModuleRunner
     public function handleMethod(Module $module, \ReflectionMethod $method, $params)
@@ -46,13 +47,13 @@ class ModuleRunner
         $name = $method->getName();
         $args = $method->getParameters();
 
-        if (count($args) != 1 || substr($name, 0, 3) != "set" ) {
+        if (count($args) != 1 || substr($name, 0, 3) != "set") {
             return false;
         }
 
         $property = strtolower(substr($name, 3));
 
-        if (! isset($params[$property])) {
+        if (!isset($params[$property])) {
             return false;
         }
 
@@ -67,8 +68,8 @@ class ModuleRunner
             );
         }
     }
-/* /Листинг 05.53 */
+    /* /Листинг 05.53 */
 
-/* Листинг 05.50 */
+    /* Листинг 05.50 */
 }
 /* /Листинг 05.50 */

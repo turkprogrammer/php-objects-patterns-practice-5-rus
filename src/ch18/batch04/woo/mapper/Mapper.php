@@ -14,7 +14,7 @@ abstract class Mapper implements Finder
 
     public function __construct()
     {
-        if (! isset(self::$PDO)) {
+        if (!isset(self::$PDO)) {
             $dsn = ApplicationRegistry::getDSN();
             error_log(print_r($dsn, true));
 
@@ -48,15 +48,15 @@ abstract class Mapper implements Finder
             return $old;
         }
 
-        $this->selectstmt()->execute(array( $id ));
+        $this->selectstmt()->execute(array($id));
         $array = $this->selectstmt()->fetch();
         $this->selectstmt()->closeCursor();
 
-        if (! is_array($array)) {
+        if (!is_array($array)) {
             return null;
         }
 
-        if (! isset($array['id'])) {
+        if (!isset($array['id'])) {
             return null;
         }
 
@@ -96,9 +96,14 @@ abstract class Mapper implements Finder
 
 //  abstract function update( \woo\domain\DomainObject $object );
     abstract protected function getCollection(array $raw);
+
     abstract protected function doCreateObject(array $array);
+
     abstract protected function doInsert(DomainObject $object);
+
     abstract protected function targetClass();
+
     abstract protected function selectStmt();
+
     abstract protected function selectAllStmt();
 }

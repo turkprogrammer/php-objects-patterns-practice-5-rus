@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch24\batch01;
 
@@ -10,7 +10,10 @@ use popp\ch24\batch01\marklogic\MarkParse;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         // runner code here
 
@@ -41,13 +44,13 @@ class Runner
                 } else {
                     print "wrong, try again\n";
                 }
-            } while (! $result);
+            } while (!$result);
         }
     }
 
     public static function run2()
     {
-/* Листинг 24.06 */
+        /* Листинг 24.06 */
         $context = new Context();
         $user_in = "\$input equals '4' or \$input equals 'four'";
         $reader = new StringReader($user_in);
@@ -58,14 +61,14 @@ class Runner
             print "   {$scanner->charNo()}";
             print "   {$scanner->getTypeString()}\n";
         }
-/* /Листинг 24.06 */
+        /* /Листинг 24.06 */
     }
 
     public static function run3()
     {
         //$input      = '4';
         //$statement = "( \$input equals '4' or  \$input equals 'four' )";
-        $input      = 'armpit';
+        $input = 'armpit';
         $statement = "( \$input equals 'five' or \$input equals 'armpit')";
 
         $engine = new MarkParse($statement);

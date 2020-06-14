@@ -1,11 +1,14 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch04;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         $reg = Registry::instance();
         $reg2 = Registry::instance();
@@ -14,10 +17,10 @@ class Runner
 
         // testing the system
 
-/* Листинг 12.08 */
+        /* Листинг 12.08 */
         Registry::testMode();
         $mockreg = Registry::instance();
-/* /Листинг 12.08 */
+        /* /Листинг 12.08 */
 
         print_r($mockreg);
         Registry::testMode(false);

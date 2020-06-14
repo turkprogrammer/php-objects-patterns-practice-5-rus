@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch18\batch04\mapper;
 
@@ -7,13 +7,14 @@ class DeferredEventCollection extends EventCollection
 {
     private $stmt;
     private $valueArray;
-    private $run=false;
+    private $run = false;
 
     public function __construct(
         Mapper $mapper,
         \PDOStatement $stmt_handle,
         array $valueArray
-    ) {
+    )
+    {
         parent::__construct(null, $mapper);
         $this->stmt = $stmt_handle;
         $this->valueArray = $valueArray;
@@ -21,12 +22,12 @@ class DeferredEventCollection extends EventCollection
 
     public function notifyAccess()
     {
-        if (! $this->run) {
+        if (!$this->run) {
             $this->stmt->execute($this->valueArray);
             $this->raw = $this->stmt->fetchAll();
             $this->total = count($this->raw);
         }
 
-        $this->run=true;
+        $this->run = true;
     }
 }

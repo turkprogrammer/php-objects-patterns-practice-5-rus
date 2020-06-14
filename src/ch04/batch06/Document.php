@@ -3,6 +3,7 @@
 namespace vitaliyviznyuk\popp5rus\ch04\batch06;
 
 /* Листинг 04.50 */
+
 class Document extends DomainObject
 {
 }

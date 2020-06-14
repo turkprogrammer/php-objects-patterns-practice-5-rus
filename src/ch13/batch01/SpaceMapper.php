@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch01;
 
@@ -25,7 +25,7 @@ class SpaceMapper extends Mapper
             "INSERT INTO space ( name, venue ) VALUES( ?, ?)"
         );
 
-/* Листинг 13.14 */
+        /* Листинг 13.14 */
 
         // SpaceMapper::__construct()
 
@@ -35,15 +35,16 @@ class SpaceMapper extends Mapper
         $this->findByVenueStmt = $this->pdo->prepare(
             "SELECT * FROM space WHERE venue=?"
         );
-/* /Листинг 13.14 */
+        /* /Листинг 13.14 */
     }
 
-/* Листинг 13.15 */
+    /* Листинг 13.15 */
     public function getCollection(array $raw): Collection
     {
         return new SpaceCollection($raw, $this);
     }
-/* /Листинг 13.15 */
+
+    /* /Листинг 13.15 */
 
     protected function doCreateObject(array $raw): DomainObject
     {
@@ -62,7 +63,7 @@ class SpaceMapper extends Mapper
         return $obj;
     }
 
-/* Листинг 13.21 */
+    /* Листинг 13.21 */
 
     // SpaceMapper
 
@@ -70,17 +71,18 @@ class SpaceMapper extends Mapper
     {
         return Space::class;
     }
-/* /Листинг 13.21 */
+
+    /* /Листинг 13.21 */
 
     protected function doInsert(DomainObject $object)
     {
         $venue = $object->getVenue();
 
-        if (! $venue) {
+        if (!$venue) {
             throw new AppException("cannot save without venue");
         }
 
-        $values = [ $object->getname(), $venue->getId() ];
+        $values = [$object->getname(), $venue->getId()];
         $this->insertStmt->execute($values);
         $id = $this->pdo->lastInsertId();
         $object->setId((int)$id);
@@ -107,12 +109,12 @@ class SpaceMapper extends Mapper
         return $this->selectStmt;
     }
 
-/* Листинг 13.16 */
+    /* Листинг 13.16 */
     public function findByVenue($vid): Collection
     {
         $this->findByVenueStmt->execute([$vid]);
 
         return new SpaceCollection($this->findByVenueStmt->fetchAll(), $this);
     }
-/* /Листинг 13.16 */
+    /* /Листинг 13.16 */
 }

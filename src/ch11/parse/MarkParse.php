@@ -19,7 +19,7 @@ class MarkParse
         $prefab = new VariableExpression('input', $input);
         // add the input variable to Context
         $prefab->interpret($context);
- 
+
         $this->interpreter->interpret($context);
         $result = $context->lookup($this->interpreter);
         return $result;
@@ -31,21 +31,21 @@ class MarkParse
         $scanner = new Scanner($statement);
         $statement = $this->expression();
         $scanresult = $statement->scan($scanner);
-         
-        if (! $scanresult || $scanner->tokenType() != Scanner::EOF) {
-            $msg  = "";
+
+        if (!$scanresult || $scanner->tokenType() != Scanner::EOF) {
+            $msg = "";
             $msg .= " line: {$scanner->lineNo()} ";
             $msg .= " char: {$scanner->charNo()}";
             $msg .= " token: {$scanner->token()}\n";
             throw new Exception($msg);
         }
- 
+
         $this->interpreter = $scanner->popResult();
     }
 
     public function expression(): Parser
     {
-        if (! isset($this->expression)) {
+        if (!isset($this->expression)) {
             $this->expression = new SequenceParse();
             $this->expression->add($this->operand());
             $bools = new RepetitionParse();
@@ -78,7 +78,7 @@ class MarkParse
 
     public function operand(): Parser
     {
-        if (! isset($this->operand)) {
+        if (!isset($this->operand)) {
             $this->operand = new SequenceParse();
             $comp = new AlternationParse();
             $exp = new SequenceParse();

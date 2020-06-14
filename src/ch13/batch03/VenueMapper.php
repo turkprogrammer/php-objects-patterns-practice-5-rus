@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch03;
 
@@ -67,7 +67,7 @@ class VenueMapper extends Mapper
 
     public function update(DomainObject $object)
     {
-        $values = array( $object->getName(), $object->getId(), $object->getId() );
+        $values = array($object->getName(), $object->getId(), $object->getId());
         $this->updateStmt->execute($values);
     }
 

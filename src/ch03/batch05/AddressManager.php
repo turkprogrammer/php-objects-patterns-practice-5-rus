@@ -13,10 +13,11 @@ class AddressManager
         foreach ($this->addresses as $address) {
             print $address;
             if ($resolve) {
-                print " (".gethostbyaddr($address).")";
+                print " (" . gethostbyaddr($address) . ")";
             }
             print "\n";
         }
     }
 }
+
 /* /Листинг 03.15 */

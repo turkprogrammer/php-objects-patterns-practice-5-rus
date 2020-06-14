@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch12\batch08;
 
@@ -7,7 +7,10 @@ use popp\ch12\batch06\Registry;
 
 class Runner
 {
-    public static function run()
+    /**
+     * @return void
+     */
+    public static function run(): void
     {
         include(__DIR__ . "/addvenue.php");
     }

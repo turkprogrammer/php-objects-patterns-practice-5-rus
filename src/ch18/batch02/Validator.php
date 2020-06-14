@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch18\batch02;
 
@@ -14,7 +14,7 @@ class Validator
 
     public function validateUser($mail, $pass)
     {
-        if (! is_array($user = $this->store->getUser($mail))) {
+        if (!is_array($user = $this->store->getUser($mail))) {
             return false;
         }
 

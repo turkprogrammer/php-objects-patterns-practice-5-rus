@@ -1,12 +1,12 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace vitaliyviznyuk\popp5rus\ch13\batch01;
 
 class Venue extends DomainObject
 {
     private $name;
-    private $spaces=null;
+    private $spaces = null;
 
     public function __construct($id, $name)
     {
@@ -14,7 +14,7 @@ class Venue extends DomainObject
         parent::__construct($id);
     }
 
-/* Листинг 13.11 */
+    /* Листинг 13.11 */
 
     // Venue
 
@@ -38,9 +38,9 @@ class Venue extends DomainObject
         $this->getSpaces()->add($space);
         $space->setVenue($this);
     }
-/* /Листинг 13.11 */
+    /* /Листинг 13.11 */
 
-/* Листинг 13.17 */
+    /* Листинг 13.17 */
 
     // Venue
 
@@ -54,7 +54,8 @@ class Venue extends DomainObject
 
         return $this->spaces;
     }
-/* /Листинг 13.17 */
+
+    /* /Листинг 13.17 */
 
     public function getFinder(): Mapper
     {
