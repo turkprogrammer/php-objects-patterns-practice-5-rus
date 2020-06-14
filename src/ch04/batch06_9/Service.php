@@ -4,5 +4,5 @@ namespace vitaliyviznyuk\popp5rus\ch04\batch06_9;
 
 abstract class Service
 {
-    // Базовый класс для службы
+    // service oriented stuff
 }

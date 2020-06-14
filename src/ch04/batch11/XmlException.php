@@ -2,6 +2,7 @@
 
 namespace vitaliyviznyuk\popp5rus\ch04\batch11;
 
+/* Листинг 04.61 */
 class XmlException extends \Exception
 {
     private $error;
@@ -11,7 +12,6 @@ class XmlException extends \Exception
         $shortfile = basename($error->file);
         $msg = "[{$shortfile}, line {$error->line}, col {$error->column}] {$error->message}";
         $this->error = $error;
-
         parent::__construct($msg, $error->code);
     }
 
@@ -20,3 +20,4 @@ class XmlException extends \Exception
         return $this->error;
     }
 }
+/* /Листинг 04.61 */

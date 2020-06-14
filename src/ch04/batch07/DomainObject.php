@@ -2,6 +2,7 @@
 
 namespace vitaliyviznyuk\popp5rus\ch04\batch07;
 
+/* Листинг 04.52 */
 abstract class DomainObject
 {
     private $group;
@@ -18,6 +19,6 @@ abstract class DomainObject
 
     public static function getGroup(): string
     {
-        return 'default';
+        return "default";
     }
 }

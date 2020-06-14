@@ -3,7 +3,6 @@
 namespace vitaliyviznyuk\popp5rus\ch03\batch11;
 
 /* Листинг 03.32 */
-
 class CdProduct
 {
     public $playLength;
@@ -12,13 +11,18 @@ class CdProduct
     public $producerFirstName;
     public $price;
 
-    public function __construct(string $title, string $firstName, string $mainName, float $price, int $playLength)
-    {
-        $this->title = $title;
+    public function __construct(
+        string $title,
+        string $firstName,
+        string $mainName,
+        float  $price,
+        int    $playLength
+    ) {
+        $this->title             = $title;
         $this->producerFirstName = $firstName;
-        $this->producerMainName = $mainName;
-        $this->price = $price;
-        $this->playLength = $playLength;
+        $this->producerMainName  = $mainName;
+        $this->price             = $price;
+        $this->playLength        = $playLength;
     }
 
     public function getPlayLength()
@@ -28,17 +32,16 @@ class CdProduct
 
     public function getSummaryLine()
     {
-        $base = "{$this->title} ( {$this->producerMainName}, ";
+        $base  = "{$this->title} ( {$this->producerMainName}, ";
         $base .= "{$this->producerFirstName} )";
-        $base .= ": Время звучания - {$this->playLength}";
-
+        $base .= ": playing time - {$this->playLength}";
         return $base;
     }
 
     public function getProducer()
     {
-        return $this->producerFirstName . ' ' . $this->producerMainName;
+        return $this->producerFirstName . " "
+            . $this->producerMainName;
     }
 }
-
 /* /Листинг 03.32 */

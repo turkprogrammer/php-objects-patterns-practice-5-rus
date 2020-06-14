@@ -9,25 +9,25 @@ class Runner
         Runner::init();
     }
 
+/* Листинг 04.65 */
     public static function init()
     {
         try {
-            $conf = new Conf(__DIR__ . '/conf.broken.xml');
-
-            print 'user: ' . $conf->get('user') . "\n";
-            print 'host: ' . $conf->get('host') . "\n";
-
-            $conf->set('pass', 'newpass');
+            $conf = new Conf(__DIR__ . "/conf.broken.xml");
+            print "user: " . $conf->get('user') . "\n";
+            print "host: " . $conf->get('host') . "\n";
+            $conf->set("pass", "newpass");
             $conf->write();
         } catch (FileException $e) {
-            // Файл не существует или недоступен
+            // permissions issue or non-existent file
             throw $e;
         } catch (XmlException $e) {
-            // Поврежденный XML-файл
+            // broken xml
         } catch (ConfException $e) {
-            // Неверный формат XML-файла
+            // wrong kind of XML file
         } catch (\Exception $e) {
-            // Ловушка: этот код не должен вызываться
+            // backstop: should not be called
         }
     }
+/* /Листинг 04.65 */
 }

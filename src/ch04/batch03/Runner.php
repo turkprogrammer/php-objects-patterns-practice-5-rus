@@ -2,49 +2,41 @@
 
 namespace vitaliyviznyuk\popp5rus\ch04\batch03;
 
-use vitaliyviznyuk\popp5rus\ch04\batch02\ShopProduct;
-use vitaliyviznyuk\popp5rus\ch04\batch02\BookProduct;
-use vitaliyviznyuk\popp5rus\ch04\batch02\CdProduct;
+use popp\ch04\batch02\ShopProduct;
+use popp\ch04\batch02\BookProduct;
+use popp\ch04\batch02\CdProduct;
 
 class Runner
 {
-    /**
-     * @return void
-     */
-    public static function run(): void
+    public static function run()
     {
+        // runner code here
         print ShopProduct::AVAILABLE;
+    }
 
-        echo PHP_EOL;
+
+    public static function run2()
+    {
 
         // demonstrate abstract instantiation error
         // commented out so that tests run!
         // $writer = new ShopProductWriter();
 
-        $product1 = new BookProduct(
-            'Собачье сердце',
-            'Михаил',
-            'Булгаков',
-            5.99,
-            300
-        );
-
-        $product2 = new CdProduct(
-            'Классическая музыка. Лучшее',
-            'Антонио',
-            'Вивальди',
+        $product1 = new BookProduct("My Antonia", "Willa", "Cather", 5.99, 300);
+        $product2 =   new CdProduct(
+            "Exile on Coldharbour Lane",
+            "The",
+            "Alabama 3",
             10.99,
             60
         );
 
         $textwriter = new TextProductWriter();
-
         $textwriter->addProduct($product1);
         $textwriter->addProduct($product2);
         $textwriter->write();
 
         $xmlwriter = new XmlProductWriter();
-
         $xmlwriter->addProduct($product1);
         $xmlwriter->addProduct($product2);
         $xmlwriter->write();

@@ -8,26 +8,23 @@ class Conf
     private $xml;
     private $lastmatch;
 
-    // Класс class...
+/* Листинг 04.64 */
+
+// Conf class...
 
     public function __construct(string $file)
     {
         $this->file = $file;
-
         if (! file_exists($file)) {
-            throw new FileException("Файл '$file' не найден");
+            throw new FileException("file '$file' does not exist");
         }
-
         $this->xml = simplexml_load_file($file, null, LIBXML_NOERROR);
-
         if (! is_object($this->xml)) {
             throw new XmlException(libxml_get_last_error());
         }
-
-        $matches = $this->xml->xpath('/conf');
-
+        $matches = $this->xml->xpath("/conf");
         if (! count($matches)) {
-            throw new ConfException('Не найден корневой элемент: conf');
+            throw new ConfException("could not find root element: conf");
         }
     }
 
@@ -38,16 +35,15 @@ class Conf
         }
         file_put_contents($this->file, $this->xml->asXML());
     }
+/* /Листинг 04.64 */
 
     public function get(string $str): string
     {
         $matches = $this->xml->xpath("/conf/item[@name=\"$str\"]");
-
         if (count($matches)) {
             $this->lastmatch = $matches[0];
             return (string)$matches[0];
         }
-
         return null;
     }
 
@@ -57,9 +53,7 @@ class Conf
             $this->lastmatch[0]=$value;
             return;
         }
-
         $conf = $this->xml->conf;
-
         $this->xml->addChild('item', $value)->addAttribute('name', $key);
     }
 }

@@ -6,10 +6,19 @@ class CdProduct extends ShopProduct
 {
     private $playLength = 0;
 
-    public function __construct(string $title, string $firstName, string $mainName, float $price, int $playLength)
-    {
-        parent::__construct($title, $firstName, $mainName, $price);
-
+    public function __construct(
+        string $title,
+        string $firstName,
+        string $mainName,
+        float $price,
+        int $playLength
+    ) {
+        parent::__construct(
+            $title,
+            $firstName,
+            $mainName,
+            $price
+        );
         $this->playLength = $playLength;
     }
 
@@ -21,8 +30,7 @@ class CdProduct extends ShopProduct
     public function getSummaryLine(): string
     {
         $base = parent::getSummaryLine();
-        $base .= ": Время звучания - $this->playLength";
-
+        $base .= ": playing time - $this->playLength";
         return $base;
     }
 }

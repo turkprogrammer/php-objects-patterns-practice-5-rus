@@ -2,25 +2,26 @@
 
 namespace vitaliyviznyuk\popp5rus\ch03\batch13;
 
+use popp\ch03\batch13\ShopProduct;
+use popp\ch03\batch13\CdProduct;
+use popp\ch03\batch13\BookProduct;
+use popp\ch03\batch09\AddressManager;
+
 class Runner
 {
-    /**
-     * @return void
-     */
-    public static function run(): void
-    {
-        /* Листинг 03.42 */
 
-        $product2 = new CdProduct(
-            'Классическая музыка. Лучшее',
-            'Антонио',
-            'Вивальди',
+    public static function run1()
+    {
+/* Листинг 03.42 */
+        $product2 =   new CdProduct(
+            "Exile on Coldharbour Lane",
+            "The",
+            "Alabama 3",
             10.99,
+            0,
             60.33
         );
-
-        print "Исполнитель: {$product2->getProducer()}\n";
-
-        /* /Листинг 03.42 */
+        print "artist: {$product2->getProducer()}\n";
+/* /Листинг 03.42 */
     }
 }

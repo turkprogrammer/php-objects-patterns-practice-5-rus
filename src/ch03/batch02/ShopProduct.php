@@ -6,10 +6,9 @@ namespace vitaliyviznyuk\popp5rus\ch03\batch02;
 
 class ShopProduct
 {
-    public $title = 'Стандартный товар';
-    public $producerMainName = 'Фамилия автора';
-    public $producerFirstName = 'Имя автора';
+    public $title = "default product";
+    public $producerMainName = "main name";
+    public $producerFirstName = "first name";
     public $price = 0;
 }
-
 /* /Листинг 03.04 */

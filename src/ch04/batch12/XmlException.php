@@ -12,7 +12,6 @@ class XmlException extends \Exception
         print_r($error);
         $msg = "[{$shortfile}, line {$error->line}, col {$error->column}] {$error->message}";
         $this->error = $error;
-
         parent::__construct($msg, $error->code);
     }
 

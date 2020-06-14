@@ -2,6 +2,7 @@
 
 namespace vitaliyviznyuk\popp5rus\ch04\batch06_9;
 
+/* Листинг 04.43 */
 class UtilityService extends Service
 {
     use PriceUtilities {

@@ -8,47 +8,44 @@ class Conf
     private $xml;
     private $lastmatch;
 
+/* Листинг 04.58 */
     public function __construct(string $file)
     {
         $this->file = $file;
-
-        if (!file_exists($file)) {
-            throw new \Exception("Файл '$file' не найде");
+        if (! file_exists($file)) {
+            throw new \Exception("file '$file' does not exist");
         }
-
         $this->xml = simplexml_load_file($file);
     }
+/* /Листинг 04.58 */
 
+/* Листинг 04.59 */
     public function write()
     {
-        if (!is_writeable($this->file)) {
-            throw new \Exception("Файл '{$this->file}' недоступен по запис");
+        if (! is_writeable($this->file)) {
+            throw new \Exception("file '{$this->file}' is not writeable");
         }
-
         file_put_contents($this->file, $this->xml->asXML());
     }
+/* /Листинг 04.59 */
 
     public function get(string $str): string
     {
         $matches = $this->xml->xpath("/conf/item[@name=\"$str\"]");
         if (count($matches)) {
             $this->lastmatch = $matches[0];
-
             return (string)$matches[0];
         }
-
         return null;
     }
 
     public function set(string $key, string $value)
     {
-        if (!is_null($this->get($key))) {
-            $this->lastmatch[0] = $value;
+        if (! is_null($this->get($key))) {
+            $this->lastmatch[0]=$value;
             return;
         }
-
         $conf = $this->xml->conf;
-
         $this->xml->addChild('item', $value)->addAttribute('name', $key);
     }
 }

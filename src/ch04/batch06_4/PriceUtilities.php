@@ -8,8 +8,8 @@ trait PriceUtilities
 
     public function calculateTax($price)
     {
-        return (($this->taxrate / 100) * $price);
+        return ( ( $this->taxrate/100 ) * $price );
     }
 
-    // Другие служебные методы
+    // other utilities
 }

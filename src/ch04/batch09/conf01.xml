@@ -3,4 +3,4 @@
     <item name="user">bob</item>
     <item name="host">localhost</item>
     <item name="pass">newpass2</item>
-</conf>
+<item name="pass">newpass2</item><item name="pass">newpass2</item><item name="pass">newpass2</item><item name="pass">newpass2</item><item name="pass">newpass2</item><item name="pass">newpass2</item><item name="pass">newpass2</item><item name="pass">newpass2</item><item name="pass">newpass2</item><item name="pass">newpass2</item><item name="pass">newpass2</item><item name="pass">newpass2</item><item name="pass">newpass2</item><item name="pass">newpass2</item><item name="pass">newpass2</item><item name="pass">newpass2</item><item name="pass">newpass2</item><item name="pass">newpass2</item></conf>

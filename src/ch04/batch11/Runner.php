@@ -4,80 +4,71 @@ namespace vitaliyviznyuk\popp5rus\ch04\batch11;
 
 class Runner
 {
-    /**
-     * @return void
-     */
-    public static function run(): void
+    public static function run()
     {
         self::init();
+    }
 
-        echo PHP_EOL;
-
+    public static function run2()
+    {
         self::init2();
     }
 
+/* Листинг 04.66 */
     public static function init()
     {
         try {
-            $fh = fopen(__DIR__ . '/log.txt', 'a');
-
-            fputs($fh, "Начало\n");
-
-            $conf = new Conf(__DIR__ . '/conf.broken.xml');
-
-            print 'user: ' . $conf->get('user') . "\n";
-            print 'host: ' . $conf->get('host') . "\n";
-
-            $conf->set('pass', 'newpass');
+            $fh = fopen(__DIR__ . "/log.txt", "a");
+            fputs($fh, "start\n");
+            $conf = new Conf(dirname(__FILE__) . "/conf.broken.xml");
+            print "user: " . $conf->get('user') . "\n";
+            print "host: " . $conf->get('host') . "\n";
+            $conf->set("pass", "newpass");
             $conf->write();
-
-            fputs($fh, "Конец\n");
+            fputs($fh, "end\n");
             fclose($fh);
         } catch (FileException $e) {
-            // Файл не существует или недоступен
-            fputs($fh, "Проблемы с файлом\n");
+            // permissions issue or non-existent file
+            fputs($fh, "file exception\n");
             throw $e;
         } catch (XmlException $e) {
-            // Поврежденный XML-файл
-            fputs($fh, "Проблемы с XM\n");
+            fputs($fh, "xml exception\n");
+            // broken xml
         } catch (ConfException $e) {
-            // Неверный формат XML-файла
-            fputs($fh, "Проблемы с конфигурацие\n");
+            fputs($fh, "conf exception\n");
+            // wrong kind of XML file
         } catch (\Exception $e) {
-            // Ловушка: этот код не должен вызываться
-            fputs($fh, "Непредвиденные проблем\n");
+            fputs($fh, "general exception\n");
+            // backstop: should not be called
         }
     }
+/* /Листинг 04.66 */
 
     public static function init2()
     {
-        $fh = fopen(__DIR__ . '/log.txt', "w");
-
+        $fh = fopen(__DIR__ . "/log.txt", "w");
         try {
-            fputs($fh, "Начало\n");
-
-            $conf = new Conf(dirname(__FILE__) . '/conf.not-there.xml');
-
-            print 'user: ' . $conf->get('user') . "\n";
-            print 'host: ' . $conf->get('host') . "\n";
-
-            $conf->set('pass', 'newpass');
+            fputs($fh, "start\n");
+            $conf = new Conf(dirname(__FILE__) . "/conf.not-there.xml");
+            print "user: " . $conf->get('user') . "\n";
+            print "host: " . $conf->get('host') . "\n";
+            $conf->set("pass", "newpass");
             $conf->write();
         } catch (FileException $e) {
-            // Файл не существует или недоступен
-            fputs($fh, "Проблемы с файлом\n");
+            // permissions issue or non-existent file
+            fputs($fh, "file exception\n");
             //throw $e;
         } catch (XmlException $e) {
-            // Поврежденный XML-файл
-            fputs($fh, "Проблемы с XM\n");
+            fputs($fh, "xml exception\n");
+            // broken xml
         } catch (ConfException $e) {
-            // Неверный формат XML-файла
-            fputs($fh, "Проблемы с конфигурацие\n");
+            fputs($fh, "conf exception\n");
+            // wrong kind of XML file
         } catch (Exception $e) {
-            // Ловушка: этот код не должен вызываться
-            fputs($fh, "Непредвиденные проблем\n");
+            fputs($fh, "general exception\n");
+            // backstop: should not be called
         } finally {
-            fputs($fh, "Конец\n");
+            fputs($fh, "end\n");
             fclose($fh);
         }
     }

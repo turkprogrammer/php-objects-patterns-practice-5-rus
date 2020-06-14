@@ -2,54 +2,54 @@
 
 namespace vitaliyviznyuk\popp5rus\ch03\batch02;
 
+use popp\ch03\batch02\ShopProduct;
+
 class Runner
 {
-    /**
-     * @return void
-     */
-    public static function run(): void
+    public static function run1()
     {
-        /* Листинг 03.05 */
-
+/* Листинг 03.05 */
         $product1 = new ShopProduct();
         print $product1->title;
+/* /Листинг 03.05 */
+    }
 
-        /* /Листинг 03.05 */
-
-        echo PHP_EOL;
-
-        /* Листинг 03.06 */
-
+    public static function run2()
+    {
+/* Листинг 03.06 */
         $product1 = new ShopProduct();
         $product2 = new ShopProduct();
+        $product1->title="My Antonia";
+        $product2->title="Catch 22";
+/* /Листинг 03.06 */
 
-        $product1->title = 'Собачье сердце';
-        $product2->title = 'Ревизор';
+        print $product1->title."\n";
+        print $product2->title."\n";
+    }
 
-        /* /Листинг 03.06 */
-
+    public static function run3()
+    {
         $product1 = new ShopProduct();
+/* Листинг 03.07 */
+        $product1->arbitraryAddition = "treehouse";
+/* /Листинг 03.07 */
 
-        /* Листинг 03.07 */
+        print $product1->arbitraryAddition."\n";
+    }
 
-        $product1->arbitraryAddition = 'Дополнительный параметр';
-
-        /* /Листинг 03.07 */
-
-        /* Листинг 03.08 */
-
+    public static function run4()
+    {
+/* Листинг 03.08 */
         $product1 = new ShopProduct();
-        $product1->title = 'Собачье сердце';
-        $product1->producerMainName  = 'Булгаков';
-        $product1->producerFirstName = 'Михаил';
+        $product1->title = "My Antonia";
+        $product1->producerMainName  = "Cather";
+        $product1->producerFirstName = "Willa";
         $product1->price = 5.99;
+/* /Листинг 03.08 */
 
-        /* /Листинг 03.08 */
-
-        /* Листинг 03.09 */
-
-        print "Автор: {$product1->producerFirstName} " . "{$product1->producerMainName}\n";
-
-        /* /Листинг 03.09 */
+/* Листинг 03.09 */
+        print "author: {$product1->producerFirstName} "
+            . "{$product1->producerMainName}\n";
+/* /Листинг 03.09 */
     }
 }

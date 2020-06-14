@@ -4,11 +4,10 @@ namespace vitaliyviznyuk\popp5rus\ch04\batch02;
 
 class Runner
 {
-    /**
-     * @return void
-     */
-    public static function run(): void
+    public static function run()
     {
+        // runner code here
+
         $dbgen = new DbGenerate();
         $pdo = $dbgen->getPDO();
 

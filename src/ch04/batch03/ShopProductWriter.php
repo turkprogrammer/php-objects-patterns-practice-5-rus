@@ -2,8 +2,9 @@
 
 namespace vitaliyviznyuk\popp5rus\ch04\batch03;
 
-use vitaliyviznyuk\popp5rus\ch04\batch02\ShopProduct;
+use popp\ch04\batch02\ShopProduct;
 
+/* Листинг 04.05 */
 abstract class ShopProductWriter
 {
     protected $products = [];

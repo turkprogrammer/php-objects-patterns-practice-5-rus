@@ -2,8 +2,9 @@
 
 namespace vitaliyviznyuk\popp5rus\ch03\batch14;
 
-/* Листинг 03.46 */
+use popp\ch03\batch14\ShopProduct;
 
+/* Листинг 03.46 */
 class ShopProductWriter
 {
     public $products = [];
@@ -15,16 +16,13 @@ class ShopProductWriter
 
     public function write()
     {
-        $str = '';
-
+        $str =  "";
         foreach ($this->products as $shopProduct) {
             $str .= "{$shopProduct->title}: ";
             $str .= $shopProduct->getProducer();
             $str .= " ({$shopProduct->getPrice()})\n";
         }
-
         print $str;
     }
 }
-
 /* /Листинг 03.46 */

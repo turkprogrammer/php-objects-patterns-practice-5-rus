@@ -2,6 +2,7 @@
 
 namespace vitaliyviznyuk\popp5rus\ch04\batch06_1;
 
+/* Листинг 04.12 */
 trait PriceUtilities
 {
     private $taxrate = 17;
@@ -11,5 +12,5 @@ trait PriceUtilities
         return (($this->taxrate / 100) * $price);
     }
 
-    // Другие служебные методы
+    // other utilities
 }

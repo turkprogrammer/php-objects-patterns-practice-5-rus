@@ -4,10 +4,7 @@ namespace vitaliyviznyuk\popp5rus\ch04\batch08;
 
 class Runner
 {
-    /**
-     * @return void
-     */
-    public static function run(): void
+    public static function run()
     {
         $logger = create_function(
             '$product',
@@ -17,12 +14,13 @@ class Runner
         $processor = new ProcessSale();
         $processor->registerCallback($logger);
 
-        $processor->sale(new Product('shoes', 6));
+        $processor->sale(new Product("shoes", 6));
         print "\n";
-        $processor->sale(new Product('coffee', 6));
+        $processor->sale(new Product("coffee", 6));
+    }
 
-        echo PHP_EOL;
-
+    public static function run2()
+    {
         $logger2 = function ($product) {
             print "    logging ({$product->name})\n";
         };
@@ -30,35 +28,45 @@ class Runner
         $processor = new ProcessSale();
         $processor->registerCallback($logger2);
 
-        $processor->sale(new Product('shoes', 6));
+        $processor->sale(new Product("shoes", 6));
         print "\n";
-        $processor->sale(new Product('coffee', 6));
+        $processor->sale(new Product("coffee", 6));
+    }
 
-        echo PHP_EOL;
-
+    public static function run3()
+    {
+/* Листинг 04.93 */
         $processor = new ProcessSale();
         $processor->registerCallback([new Mailer(), "doMail"]);
 
         $processor->sale(new Product("shoes", 6));
         print "\n";
         $processor->sale(new Product("coffee", 6));
+/* /Листинг 04.93 */
+    }
 
-        echo PHP_EOL;
-
+    public static function run4()
+    {
+/* Листинг 04.95 */
         $processor = new ProcessSale();
         $processor->registerCallback(Totalizer::warnAmount());
 
         $processor->sale(new Product("shoes", 6));
         print "\n";
         $processor->sale(new Product("coffee", 6));
+/* /Листинг 04.95 */
+    }
 
-        echo PHP_EOL;
-
+    public static function run5()
+    {
+/* Листинг 04.97 */
         $processor = new ProcessSale();
         $processor->registerCallback(Totalizer2::warnAmount(8));
 
         $processor->sale(new Product("shoes", 6));
         print "\n";
         $processor->sale(new Product("coffee", 6));
+/* /Листинг 04.97 */
     }
 }
+// done

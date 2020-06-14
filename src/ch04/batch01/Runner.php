@@ -4,16 +4,15 @@ namespace vitaliyviznyuk\popp5rus\ch04\batch01;
 
 class Runner
 {
-    /**
-     * @return void
-     */
-    public static function run(): void
+    public static function run()
     {
+        // runner code here
         print StaticExample::$aNum;
         StaticExample::sayHello();
+    }
 
-        echo PHP_EOL;
-
+    public static function run2()
+    {
         StaticExample2::sayHello();
         StaticExample2::sayHello();
         StaticExample2::sayHello();

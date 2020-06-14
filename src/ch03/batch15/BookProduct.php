@@ -1,17 +1,26 @@
 <?php declare(strict_types=1);
-
 namespace vitaliyviznyuk\popp5rus\ch03\batch15;
 
-/* Листинг 03.50 */
+use popp\ch03\batch15\ShopProduct;
 
+/* Листинг 03.50 */
 class BookProduct extends ShopProduct
 {
     private $numPages;
 
-    public function __construct(string $title, string $firstName, string $mainName, float $price, int $numPages)
-    {
-        parent::__construct($title, $firstName, $mainName, $price);
-
+    public function __construct(
+        string $title,
+        string $firstName,
+        string $mainName,
+        float  $price,
+        int    $numPages
+    ) {
+        parent::__construct(
+            $title,
+            $firstName,
+            $mainName,
+            $price
+        );
         $this->numPages = $numPages;
     }
 
@@ -22,9 +31,8 @@ class BookProduct extends ShopProduct
 
     public function getSummaryLine()
     {
-        $base = parent::getSummaryLine();
-        $base .= ": $this->numPages стр.";
-
+        $base  = parent::getSummaryLine();
+        $base .= ": page count - $this->numPages";
         return $base;
     }
 
@@ -33,5 +41,4 @@ class BookProduct extends ShopProduct
         return $this->price;
     }
 }
-
 /* /Листинг 03.50 */
