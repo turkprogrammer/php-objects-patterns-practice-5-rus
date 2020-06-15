@@ -31,7 +31,7 @@ class BookProduct extends ShopProduct
     public function getSummaryLine(): string
     {
         $base = parent::getSummaryLine();
-        $base .= ": page count - $this->numPages";
+        $base .= ": {$this->numPages} стр.";
         return $base;
     }
 

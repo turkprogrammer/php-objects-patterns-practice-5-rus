@@ -2,8 +2,6 @@
 
 namespace vitaliyviznyuk\popp5rus\ch03\batch15;
 
-use popp\ch03\batch15\ShopProduct;
-
 /* Листинг 03.49 */
 
 class CdProduct extends ShopProduct
@@ -24,6 +22,7 @@ class CdProduct extends ShopProduct
             $mainName,
             $price
         );
+
         $this->playLength = $playLength;
     }
 
@@ -40,4 +39,5 @@ class CdProduct extends ShopProduct
         return $base;
     }
 }
+
 /* /Листинг 03.49 */

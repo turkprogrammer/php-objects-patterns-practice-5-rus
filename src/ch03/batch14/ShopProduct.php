@@ -8,9 +8,10 @@ class ShopProduct
     public $producerMainName;
     public $producerFirstName;
     public $price;
+
     /* Листинг 03.44 */
 
-// ShopProduct class
+    // Класс ShopProduct...
 
     public $discount = 0;
 
@@ -30,7 +31,8 @@ class ShopProduct
     }
 
     /* Листинг 03.44 */
-//...
+
+    //...
 
     public function setDiscount(int $num)
     {

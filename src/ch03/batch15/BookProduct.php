@@ -2,8 +2,6 @@
 
 namespace vitaliyviznyuk\popp5rus\ch03\batch15;
 
-use popp\ch03\batch15\ShopProduct;
-
 /* Листинг 03.50 */
 
 class BookProduct extends ShopProduct
@@ -35,7 +33,7 @@ class BookProduct extends ShopProduct
     public function getSummaryLine()
     {
         $base = parent::getSummaryLine();
-        $base .= ": page count - $this->numPages";
+        $base .= ": {$this->numPages} стр.";
         return $base;
     }
 
@@ -44,4 +42,5 @@ class BookProduct extends ShopProduct
         return $this->price;
     }
 }
+
 /* /Листинг 03.50 */

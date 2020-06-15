@@ -2,8 +2,6 @@
 
 namespace vitaliyviznyuk\popp5rus\ch03\batch14;
 
-use popp\ch03\batch14\ShopProduct;
-
 /* Листинг 03.46 */
 
 class ShopProductWriter
@@ -26,4 +24,5 @@ class ShopProductWriter
         print $str;
     }
 }
+
 /* /Листинг 03.46 */

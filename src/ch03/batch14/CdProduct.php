@@ -2,8 +2,6 @@
 
 namespace vitaliyviznyuk\popp5rus\ch03\batch14;
 
-use popp\ch03\batch14\ShopProduct;
-
 class CdProduct extends ShopProduct
 {
     public $playLength;

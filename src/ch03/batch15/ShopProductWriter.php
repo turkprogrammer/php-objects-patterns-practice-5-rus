@@ -2,11 +2,10 @@
 
 namespace vitaliyviznyuk\popp5rus\ch03\batch15;
 
-use popp\ch03\batch15\ShopProduct;
-
 class ShopProductWriter
 {
     /* Листинг 03.47 */
+
     private $products = [];
 
     /* /Листинг 03.47 */
