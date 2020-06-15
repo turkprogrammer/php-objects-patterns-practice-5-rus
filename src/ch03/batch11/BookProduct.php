@@ -36,7 +36,7 @@ class BookProduct
     {
         $base = "{$this->title} ( {$this->producerMainName}, ";
         $base .= "{$this->producerFirstName} )";
-        $base .= ": page count - {$this->numPages}";
+        $base .= ":  {$this->numPages}  стр.";
         return $base;
     }
 
@@ -46,4 +46,5 @@ class BookProduct
             . $this->producerMainName;
     }
 }
+
 /* /Листинг 03.33 */

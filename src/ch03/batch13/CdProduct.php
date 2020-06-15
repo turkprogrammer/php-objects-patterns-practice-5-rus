@@ -2,8 +2,6 @@
 
 namespace vitaliyviznyuk\popp5rus\ch03\batch13;
 
-use popp\ch03\batch13\ShopProduct;
-
 /* Листинг 03.41 */
 
 class CdProduct extends ShopProduct
@@ -36,8 +34,9 @@ class CdProduct extends ShopProduct
     {
         $base = "{$this->title} ( {$this->producerMainName}, ";
         $base .= "{$this->producerFirstName} )";
-        $base .= ": playing time - {$this->playLength}";
+        $base .= ": Время звучания - {$this->playLength}";
         return $base;
     }
 }
+
 /* /Листинг 03.41 */

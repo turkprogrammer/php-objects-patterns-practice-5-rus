@@ -15,8 +15,9 @@ class BookProduct extends ShopProduct
     {
         $base = "{$this->title} ( {$this->producerMainName}, ";
         $base .= "{$this->producerFirstName} )";
-        $base .= ": page count - {$this->numPages}";
+        $base .= ":  {$this->numPages}  стр.";
         return $base;
     }
 }
+
 /* /Листинг 03.37 */

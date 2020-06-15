@@ -36,7 +36,7 @@ class CdProduct
     {
         $base = "{$this->title} ( {$this->producerMainName}, ";
         $base .= "{$this->producerFirstName} )";
-        $base .= ": playing time - {$this->playLength}";
+        $base .= ": Время звучания - {$this->playLength}";
         return $base;
     }
 
@@ -46,4 +46,5 @@ class CdProduct
             . $this->producerMainName;
     }
 }
+
 /* /Листинг 03.32 */

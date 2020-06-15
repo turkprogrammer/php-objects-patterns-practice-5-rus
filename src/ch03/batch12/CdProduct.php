@@ -15,7 +15,7 @@ class CdProduct extends ShopProduct
     {
         $base = "{$this->title} ( {$this->producerMainName}, ";
         $base .= "{$this->producerFirstName} )";
-        $base .= ": playing time - {$this->playLength}";
+        $base .= ": Время звучания - {$this->playLength}";
         return $base;
     }
 }

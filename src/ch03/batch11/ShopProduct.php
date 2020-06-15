@@ -12,7 +12,9 @@ class ShopProduct
     public $producerMainName;
     public $producerFirstName;
     public $price;
+
     /* /Листинг 03.30 */
+
     public $type = "book";
 
     /* Листинг 03.30 */
@@ -64,13 +66,17 @@ class ShopProduct
         $base = "{$this->title} ( {$this->producerMainName}, ";
         $base .= "{$this->producerFirstName} )";
         if ($this->type == 'book') {
-            $base .= ": page count - {$this->numPages}";
+            $base .= ":  {$this->numPages}  стр.";
         } elseif ($this->type == 'cd') {
-            $base .= ": playing time - {$this->playLength}";
+            $base .= ": Время звучания - {$this->playLength}";
         }
         return $base;
     }
+
     /* /Листинг 03.31 */
+
     /* Листинг 03.30 */
+
 }
+
 /* /Листинг 03.30 */

@@ -2,8 +2,6 @@
 
 namespace vitaliyviznyuk\popp5rus\ch03\batch13;
 
-use popp\ch03\batch13\ShopProduct;
-
 /* Листинг 03.40 */
 
 class BookProduct extends ShopProduct
@@ -36,8 +34,9 @@ class BookProduct extends ShopProduct
     {
         $base = "{$this->title} ( $this->producerMainName, ";
         $base .= "$this->producerFirstName )";
-        $base .= ": page count - {$this->numPages}";
+        $base .= ":  {$this->numPages}  стр.";
         return $base;
     }
 }
+
 /* /Листинг 03.40 */

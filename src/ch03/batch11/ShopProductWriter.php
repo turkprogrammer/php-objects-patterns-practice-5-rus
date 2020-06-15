@@ -12,7 +12,7 @@ class ShopProductWriter
             !($shopProduct instanceof CdProduct) &&
             !($shopProduct instanceof BookProduct)
         ) {
-            die("wrong type supplied");
+            die("Передан неверный тип данных");
         }
         $str = "{$shopProduct->title}: "
             . $shopProduct->getProducer()
@@ -20,4 +20,5 @@ class ShopProductWriter
         print $str;
     }
 }
+
 /* /Листинг 03.34 */

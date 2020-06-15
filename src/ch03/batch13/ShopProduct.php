@@ -37,4 +37,5 @@ class ShopProduct
         return $base;
     }
 }
+
 /* /Листинг 03.39 */
