@@ -10,6 +10,6 @@ class StaticExample
 
     public static function sayHello()
     {
-        print "hello";
+        print "Здравствуй, Мир!";
     }
 }

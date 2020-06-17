@@ -8,7 +8,9 @@ class ShopProduct
 {
     const AVAILABLE = 0;
     const OUT_OF_STOCK = 1;
+
     /* /Листинг 04.04 */
+
     public $status;
 
     private $title;
@@ -19,7 +21,7 @@ class ShopProduct
 
     /* Листинг 04.03 */
 
-// ShopProduct class...
+    // Класс ShopProduct...
 
     private $id = 0;
     // ...
@@ -40,13 +42,16 @@ class ShopProduct
     }
 
     /* Листинг 04.03 */
+
     public function setID(int $id)
     {
         $this->id = $id;
     }
+
     // ...
 
     /* /Листинг 04.03 */
+
     public function getProducerFirstName(): string
     {
         return $this->producerFirstName;

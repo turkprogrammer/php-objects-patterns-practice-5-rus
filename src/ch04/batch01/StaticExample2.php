@@ -11,6 +11,6 @@ class StaticExample2
     public static function sayHello()
     {
         self::$aNum++;
-        print "hello (" . self::$aNum . ")\n";
+        print "Привет! (" . self::$aNum . ")\n";
     }
 }

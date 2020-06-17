@@ -12,10 +12,9 @@ class Runner
         // runner code here
         print StaticExample::$aNum;
         StaticExample::sayHello();
-    }
 
-    public static function run2()
-    {
+        echo PHP_EOL;
+
         StaticExample2::sayHello();
         StaticExample2::sayHello();
         StaticExample2::sayHello();
